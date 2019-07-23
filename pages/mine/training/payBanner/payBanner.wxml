@@ -1,0 +1,94 @@
+<!-- <view class='slider flexjac'>
+  <view class='sliderImg'>
+    <image src='/img/img/_20180713172418@2x.png' class='img b10'></image>
+  </view>
+  <view class='slidercontent'>#送Ta一身新衣服，是时候向你的店铺表达你浓浓的爱意了#</view>
+</view> -->
+<!-- <view class="banner-box" wx:if="{{imagebox != ''}}">
+  <swiper class="home-banner swiper" indicator-dots="true" autoplay="true" indicator-color="rgba(255,255,255,0.4)" indicator-active-color="rgba(255,255,255,1)" circular='true' interval="3000" duration="1000">
+    <block wx:key="unique" wx:for="{{imagebox}}" wx:for-index="index">
+      <swiper-item>
+        <image class="banner-img" src="{{item}}" bindtap='clickBanner' data-id="{{item}}" data-banner="{{item}}" data-index="{{index}}" class="slide-image" mode="aspectFill" />
+      </swiper-item>
+    </block>
+  </swiper>
+</view> -->
+<!-- 上传 -->
+<view class='form-image'>
+  <image src='{{imgbox||img}}' class='img' bindtap='add_'></image>
+</view>
+<!-- form -->
+<form bindsubmit="teformSubmit" report-submit='true'>
+  <!-- 标题 -->
+  <view class='input-box flexac'>
+    <text>标题</text>
+    <input name="title" value="" placeholder='请输入标题'></input>
+  </view>
+  <!-- 内容 -->
+  <view class='from-text'>
+    <view class='from-txt'>内容：</view>
+    <textarea name="content" placeholder='请输入内容'></textarea>
+  </view>
+  <!-- 推广区域 -->
+  <view class='input-box flexac'>
+    <text>推广区域</text>
+    <view class="section flexac">
+      <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+        <view class="picker">
+          {{region[0]}}-{{region[1]}}-{{region[2]}}
+        </view>
+      </picker>
+      <input name="province" value="{{region[0]}}" style='display: none;'></input>
+      <input name="city" value="{{region[1]}}" style='display: none;'></input>
+      <input name="county" value="{{region[2]}}" style='display: none;'></input>
+      <image src='/img/img/rightto.png' class='right-right'></image>
+    </view>
+  </view>
+  <!-- 投放位置 -->
+  <view class='input-box flexac'>
+    <text>投放位置</text>
+    <view class="section flexac">
+      <picker bindchange="bindPickerChange" value="{{tabIndex}}" range="{{tab}}">
+        <view class="picker">
+          {{tab[tabIndex]}}
+        </view>
+      </picker>
+      <input name="position" value="{{tabIndex}}" style='display: none;'></input>
+      <image src='/img/img/rightto.png' class='right-right'></image>
+    </view>
+  </view>
+  <!-- 推广时间 -->
+  <view class='input-box flexac'>
+    <text>推广时间</text>
+    <view class="section flexac">
+      <picker bindchange="time" value="{{timeIndex}}" range="{{time}}">
+        <view class="picker">
+          {{time[timeIndex]}}
+        </view>
+      </picker>
+      <input name="month" value="{{timeIndex}}" style='display: none;'></input>
+      <image src='/img/img/rightto.png' class='right-right'></image>
+    </view>
+  </view>
+  <!-- 请输入微信 -->
+    <view class='input-box flexac'>
+    <text>微信号</text>
+    <input name="weixin" value="" placeholder='请输入微信号'></input>
+  </view>
+  <!-- 需支付广告币数量 -->
+  <!-- <view class='input-box flexac'>
+    <text>需支付大喇叭</text>
+    <input name='money' value='{{money}}' placeholder='请输入...' disabled='true'></input>
+  </view> -->
+  <view class='inputmargin'>{{text}}</view>
+  <button formType='submit'>立即购买</button>
+</form>
+<!-- 客服 -->
+<view>
+  <image src='/img/img/servicewx.png' class='card-img'>
+    <button open-type="contact" class='card-img' style="opacity:0">进入客服会话</button>
+  </image>
+  <button open-type="contact" class='buy'></button>
+</view>
+
+<view class='widthFix'></view>

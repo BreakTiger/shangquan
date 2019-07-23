@@ -1,0 +1,269 @@
+page {
+  background: rgba(247, 247, 247, 1);
+}
+
+.img-right {
+  width: 11rpx;
+  height: 19rpx;
+}
+
+.auto {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.mt {
+  margin: 20rpx 0;
+}
+
+.mr {
+  margin: 0 23rpx;
+}
+
+.pd {
+  padding: 0 23rpx;
+}
+
+.b-r {
+  border-radius: 10rpx;
+  background: #fff;
+  box-shadow: 12rpx 0rpx 21rpx rgba(153, 153, 153, 0.2);
+}
+
+.header {
+  width: 100%;
+  position: relative;
+}
+
+.header-circle {
+  width: 12rpx;
+  height: 12rpx;
+  background-color: #fa6d22;
+  border-radius: 50%;
+  margin: 40rpx 20rpx 0 0;
+}
+
+.header-status {
+  line-height: 88rpx;
+  color: #fa6d22;
+  border-radius: 20rpx;
+  font-size: 28rpx;
+}
+
+.size28 {
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular;
+  color: rgba(102, 102, 102, 1);
+  margin: 20rpx 0;
+  justify-content: space-between;
+}
+
+.line-75 {
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular;
+  color: rgba(51, 51, 51, 1);
+  line-height: 75rpx;
+}
+
+.color {
+  color: #666;
+}
+
+.header-img {
+  width: 704rpx;
+  height: 6rpx;
+  position: absolute;
+  bottom: 0;
+}
+
+.shop-img {
+  width: 34rpx;
+  height: 32rpx;
+  margin-right: 18rpx;
+  margin-top: 29rpx;
+}
+
+.shop-name {
+  font-size: 30rpx;
+  font-family: PingFangSC-Medium;
+  color: #333;
+  line-height: 88rpx;
+}
+
+.shop-image {
+  width: 190rpx;
+  height: 190rpx;
+  margin-right: 25rpx;
+}
+
+.shopping-name {
+  width: 440rpx;
+  font-size: 30rpx;
+  font-family: PingFangSC-Regular;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.content-price-left {
+  font-size: 28rpx;
+  color: #fa6d22;
+  line-height: 70rpx;
+}
+
+.content-price-right {
+  font-size: 24rpx;
+  color: #999;
+  line-height: 70rpx;
+  text-decoration: line-through;
+  margin-left: 12rpx;
+}
+
+.underline {
+  text-decoration: none;
+}
+
+.content_right {
+  justify-content: space-between;
+  
+}
+
+.vip-discount {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: #efefef 1rpx solid;
+}
+
+.footer {
+  justify-content: flex-end;
+}
+
+button {
+  width: 200rpx;
+  height: 52rpx;
+  font-size: 29rpx;
+  line-height: 52rpx;
+  background-color: #fb7435;
+  color: #fff;
+  /* margin: 21rpx 20rpx; */
+  margin-right:25rpx;
+}
+
+.vip-num {
+  font-size: 26rpx;
+  color: rgba(51, 51, 51, 1);
+}
+
+.num-text {
+  color: #fa6d22;
+}
+
+.input-p {
+  text-align: right;
+  font-size: 28rpx;
+  color: rgba(102, 102, 102, 1);
+  width: 500rpx;
+}
+
+.vip-areatext {
+  width: 100%;
+}
+
+textarea {
+  color: #666;
+  font-size: 30rpx;
+  background: #f7f7f7;
+  margin: 20rpx auto;
+}
+
+/*  */
+
+/* 上传图片 */
+
+.up-pic {
+  /* padding:20rpx 24rpx; */
+  width: 100%;
+  justify-content: center;
+}
+
+.pic-box {
+  margin-top: 20rpx;
+  flex-flow: wrap;
+  width: 95%;
+}
+
+.ap-box {
+  position: relative;
+}
+
+.add-pic {
+  width: 160rpx;
+  height: 160rpx;
+  margin-right: 20rpx;
+  position: relative;
+  margin: 20rpx 30rpx 20rpx 30rpx;
+}
+
+/* 删除图片 */
+
+.img-de {
+  width: 45rpx;
+  height: 45rpx;
+  border-radius: 50%;
+  position: absolute;
+  right: -41rpx;
+  top: 5rpx;
+}
+
+.hong-contant .teamwork-btn {
+  width: 360rpx;
+  height: 88rpx;
+  border-radius: 50rpx;
+  color: white;
+  background-color: #14a1fd;
+  margin: 0 auto;
+  margin-top: 80rpx;
+  margin-bottom: 40rpx;
+}
+
+/*  */
+
+.refund {
+  width: 200rpx;
+  height: 52rpx;
+  font-size: 29rpx;
+  line-height: 52rpx;
+  background-color: #fb7435;
+  color: #fff;
+  margin: 21rpx 20rpx;
+  border-radius: 10rpx;
+  text-align: center;
+}
+
+.color-orange {
+  color: #f7603c;
+}
+
+/* 底部 */
+
+.pay-bottom {
+  width: 100%;
+  height: 98rpx;
+  border-radius: 20rpx;
+  background: rgba(255, 255, 255, 1);
+}
+
+.bottom-text {
+  font-size: 28rpx;
+  margin-left: 35rpx;
+  color: rgba(51, 51, 51, 1);
+}
+
+.bottom-text text {
+  color: #fb7435;
+  padding-left: 25rpx;
+}
+
+.floor{
+  margin-bottom: 20rpx;
+}

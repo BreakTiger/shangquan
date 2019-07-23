@@ -1,0 +1,110 @@
+<view class='flexc auto'>
+
+  <!-- 用户信息 -->
+  <view class='header mt b-r' bindtap='address'>
+    <view class='flexc mr'>
+      <view class='size28 flex'>
+        <view> 姓名：{{name}}</view>
+        <view>{{phone}}</view>
+      </view>
+      <view class='size28' style='margin-bottom:79rpx;'>
+        收货地址：{{address}}
+      </view>
+      <view>
+        <image src='/img/img/address.png' class="header-img"></image>
+      </view>
+    </view>
+  </view>
+
+  <!-- 店铺商品信息 -->
+  <view class='shop mt b-r'>
+    <view class='shop1 flexc mr'>
+      <!-- 第一层 -->
+      <view class='flex floor'>
+        <!-- 店铺名称 -->
+        <image src='/img/img/dianpu1@2x.png' class='shop-img'></image>
+        <view class='shop-name'>店铺一</view>
+      </view>
+
+      <view class='flex floor' wx:for="{{allgoods}}" wx:key="this">
+        <view>
+          <image class='shop-image b10' src='{{item.product_image}}'></image>
+        </view>
+        <!-- 第三层 -->
+        <view class='flexc content_right'>
+          <view class='shopping-name'>{{item.product_name}}</view>
+          <view class='flex content_right'>
+            <view class='content-price flex'>
+              <view class='content-price-left'>
+                ￥{{item.yuanjia}}
+              </view>
+              <!-- <view class='content-price-right'>
+                ￥{{item.yuanjia}}
+              </view> -->
+            </view>
+            <text class='content-price-right underline'>X {{item.num}}</text>
+          </view>
+        </view>
+      </view>
+
+    </view>
+  </view>
+
+
+
+  <view>
+    <view class='flexc mt b-r'>
+      <view class='vip-discount pd'>
+        <view class='line-75'>会员折扣</view>
+        <view class='line-75 color'>-￥{{coust}}
+          <image src='/img/img/rightto.png' class='img-right'></image>
+        </view>
+      </view>
+      <view class='vip-discount pd'>
+        <view class='line-75'>积分抵扣</view>
+        <view class='line-75 color'>-{{jifen}}
+          <image src='/img/img/rightto.png' class='img-right'></image>
+        </view>
+      </view>
+      <view class='vip-discount pd'>
+        <view class='line-75'>配送费</view>
+        <view class='line-75 color'>{{free}}
+          <image src='/img/img/rightto.png' class='img-right'></image>
+        </view>
+      </view>
+
+
+      <!-- 支付方式 -->
+      <view class='vip-discount pd'>
+        <view class='line-75'>支付方式</view>
+        <view class='line-75 color' bindtap='payway'>微信支付</view>
+      </view>
+      <!-- // 支付时间 -->
+      <!-- 快递编号 -->
+      <view class='vip-discount pd' style='justify-content:flex-end;'>
+        <view class='line-75 color'>实付：
+        <text class='color-orange'>￥{{sum-jifen-coust}}</text>
+        </view>
+      </view>
+      <!-- //快递编号 -->
+      <view class='vip-discount pd' style='align-items: center;'>
+        <view class='line-75'>备注</view>
+        <input name="" placeholder='你的要求' value='' class='input-p'></input>
+      </view>
+    </view>
+  </view>
+
+
+  <!-- 折扣end -->
+
+  <!-- 底部按钮 -->
+  <view class='pay-bottom flexac'>
+    <view class='bottom-text'>已优惠
+      <text>￥{{jifen+coust}}</text> </view>
+    <view class='bottom-text'>实付
+      <text>￥{{sum-jifen-coust}}</text> </view>
+    <button bindtap='create'>立即支付</button>
+  </view>
+  
+
+</view>

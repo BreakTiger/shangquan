@@ -1,0 +1,303 @@
+page {
+  background: rgba(247, 247, 247, 1);
+}
+
+/*tab框切换*/
+
+.nav_tab {
+  width: 702rpx;
+  height: 89rpx;
+  border-radius: 20rpx;
+  box-shadow: 12rpx 0px 21rpx rgba(153, 153, 153, 0.2);
+  display: flex;
+  flex-direction: row;
+  margin: 20rpx auto;
+  background: #fff;
+}
+
+.show {
+  line-height: 100rpx;
+  text-align: center;
+  flex: 1;
+  color: #333;
+  font-size: 28rpx;
+  opacity: 0.5;
+}
+
+.hidden {
+  line-height: 100rpx;
+  text-align: center;
+  color: #f9682d;
+  flex: 1;
+  font-size: 28rpx;
+}
+
+.nav_underline {
+  background: #f9682d;
+  width: 54rpx;
+  height: 6rpx;
+  margin-top: -18rpx;
+  margin-left: 89rpx;
+  border-radius: 8rpx;
+}
+
+.balance {
+  justify-content: center;
+  padding-top: 94rpx;
+  padding-bottom: 94rpx;
+  width: 702rpx;
+  height: auto;
+  background: linear-gradient(80deg, rgba(250, 109, 34, 1), rgba(247, 96, 60, 1));
+  border-radius: 20rpx;
+  margin: 20rpx auto;
+  box-shadow: 12rpx 0px 21rpx rgba(153, 153, 153, 0.2);
+}
+
+.balamy {
+  width: 100%;
+  font-size: 30rpx;
+  color: rgba(255, 255, 255, 1);
+}
+
+.balaPrice {
+  width: 100%;
+  margin-top: 25rpx;
+  font-size: 60rpx;
+  color: rgba(255, 255, 255, 1);
+}
+
+.balahhh {
+  width: 80rpx;
+  height: 40rpx;
+  border: 1rpx solid rgba(255, 255, 255, 1);
+  color: #fff;
+  line-height: 40rpx;
+  margin-top: 25rpx;
+  font-size: 28rpx;
+  text-align: center;
+  border-radius: 8rpx;
+}
+
+/* 余额 */
+
+.me {
+  margin: 20rpx auto;
+  width: 702rpx;
+  padding-top: 20rpx;
+  padding-bottom: 20rpx;
+  height: auto;
+  background: #fff;
+  border-radius: 20rpx;
+  box-shadow: 12rpx 0px 21rpx rgba(153, 153, 153, 0.2);
+  justify-content: center;
+}
+
+.me-0 {
+  width: 90%;
+  font-size: 30rpx;
+  color: rgba(51, 51, 51, 1);
+  margin-bottom: 20rpx;
+}
+
+.me-content {
+  width: 100%;
+  height: 144rpx;
+  border-bottom: 1rpx solid #efefef;
+}
+
+.me-contentImg {
+  width: 100rpx;
+  height: 100rpx;
+  margin-left: 35rpx;
+}
+
+.me-con0 {
+  width: 60%;
+  margin-left: 15rpx;
+}
+
+.con0 {
+  width: 100%;
+  font-size: 24rpx;
+  color: rgba(51, 51, 51, 1);
+}
+
+.con1 {
+  margin-top: 25rpx;
+  width: 100%;
+  font-size: 22rpx;
+  color: rgba(102, 102, 102, 1);
+}
+
+.me-con0-num {
+  font-size: 32rpx;
+  color: rgba(255, 68, 39, 1);
+}
+
+/*商户币  */
+
+.put-container {
+  width: 702rpx;
+  height: auro;
+  padding-top: 35rpx;
+  padding-bottom: 135rpx;
+  margin: 20rpx auto;
+  background: rgba(255, 255, 255, 1);
+  border-radius: 20rpx;
+  box-shadow: 0px 0px 0px rgba(102, 102, 102, 0.2);
+}
+
+.put-con0 {
+  margin-left: 25rpx;
+  font-size: 32rpx;
+  color: rgba(51, 51, 51, 1);
+}
+
+.put-c-con0 {
+  width: 100%;
+  font-size: 28rpx;
+  color: #999;
+  margin-top: 60rpx;
+  margin-left: 25rpx;
+}
+
+.put-c-con01 {
+  width: 100%;
+  font-size: 28rpx;
+  color: #999;
+  margin-top: 30rpx;
+  margin-left: 25rpx;
+}
+
+.put-input {
+  border-bottom: 1rpx solid #efefef;
+  margin-top: 35rpx;
+  width: 100%;
+  padding-bottom: 10rpx;
+}
+
+input {
+  font-size: 35rpx;
+  color: rgba(51, 51, 51, 1);
+  width: 68%;
+  padding-left: 10rpx;
+}
+
+.inputText {
+  font-size: 35rpx;
+  color: rgba(255, 68, 39, 1);
+}
+
+button {
+  background: #fa6d22;
+  width: 480rpx;
+  height: 80rpx;
+  background: linear-gradient(80deg, rgba(250, 109, 34, 1), rgba(247, 96, 60, 1));
+  color: #fff;
+  line-height: 80rpx;
+  border-radius: 8rpx;
+  margin-top: 80rpx;
+}
+
+.inputContent {
+  margin-top: 25rpx;
+  padding-bottom: 110rpx;
+  /* text-align: center; */
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular;
+  justify-content: center;
+  color: #999;
+  width: 100%;
+}
+
+/*广告币  */
+
+.currency {
+  width: 702rpx;
+  height: auto;
+  padding-top: 25rpx;
+  padding-bottom: 25rpx;
+  margin: 25rpx auto;
+  background: rgba(255, 255, 255, 1);
+  border-radius: 20rpx;
+  box-shadow: 0px 0px 0px rgba(102, 102, 102, 0.35);
+}
+
+.currenTitle {
+  font-size: 30rpx;
+  font-weight: bold;
+  margin-left: 30rpx;
+  color: rgba(51, 51, 51, 1);
+}
+
+.curren-content {
+  justify-content: space-around;
+  width: 100%;
+}
+
+.curr-content {
+  margin-top: 25rpx;
+  width: 300rpx;
+  height: 160rpx;
+  background: linear-gradient(0deg, rgba(252, 202, 152, 1), rgba(238, 118, 109, 1));
+  align-items: center;
+  border-radius: 20rpx;
+  justify-content: center;
+  box-shadow: 0px 0px 0px rgba(102, 102, 102, 0.2);
+}
+
+.curr-content-1 {
+  margin-top: 25rpx;
+  width: 300rpx;
+  height: 160rpx;
+  background: linear-gradient(0deg, rgba(155, 60, 183, 1), rgba(255, 57, 111, 1));
+  align-items: center;
+  border-radius: 20rpx;
+  justify-content: center;
+  box-shadow: 0px 0px 0px rgba(102, 102, 102, 0.2);
+}
+
+.curr-content-2 {
+  margin-top: 25rpx;
+  width: 300rpx;
+  height: 160rpx;
+  background: linear-gradient(0deg, rgba(35, 188, 187, 1), rgba(69, 233, 148, 1));
+  align-items: center;
+  border-radius: 20rpx;
+  justify-content: center;
+  box-shadow: 0px 0px 0px rgba(102, 102, 102, 0.2);
+}
+
+.curr-content-3 {
+  margin-top: 25rpx;
+  width: 300rpx;
+  height: 160rpx;
+  background: linear-gradient(0deg, rgba(224, 175, 222, 1), rgba(171, 109, 253, 1));
+  align-items: center;
+  border-radius: 20rpx;
+  justify-content: center;
+  box-shadow: 0px 0px 0px rgba(102, 102, 102, 0.2);
+}
+
+.curr-price {
+  font-size: 30rpx;
+  color: #fff;
+}
+
+button {
+  width: 480rpx;
+  height: 80rpx;
+  background: linear-gradient(80deg, rgba(250, 109, 34, 1), rgba(247, 96, 60, 1));
+  border-radius: 8rpx;
+  color: #fff;
+  line-height: 80rpx;
+  font-size: 32rpx;
+  box-shadow: 12rpx 0px 21px rgba(153, 153, 153, 0.2);
+}
+
+.currcontent-price {
+  font-size: 30rpx;
+  margin-top: 25rpx;
+  margin-left: 30rpx;
+  color: rgba(51, 51, 51, 1);
+}

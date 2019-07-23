@@ -1,0 +1,42 @@
+page {
+  background: rgba(247, 247, 247, 1);
+}
+
+.slider {
+  padding-top: 20rpx;
+  width: 705rpx;
+  height: auto;
+  padding-bottom: 20rpx;
+  margin: 20rpx auto;
+  background: rgba(255, 255, 255, 1);
+  border-radius: 40rpx;
+  flex-wrap: wrap;
+}
+
+.sliderImg {
+  width: 662rpx;
+  height: 430rpx;
+  position: relative;
+}
+
+.sliderText {
+  width: 160rpx;
+  height: 60rpx;
+  position: absolute;
+  font-size: 30rpx;
+  line-height: 60rpx;
+  color: rgba(255, 68, 39, 1);
+  background: rgba(255, 255, 255, 1);
+  border-radius: 20rpx;
+  top: 33rpx;
+  right: 20rpx;
+  text-align: center;
+}
+
+.slidercontent {
+  width: 90%;
+  font-size: 34rpx;
+  margin-top: 20rpx;
+  font-family: PingFangSC-Regular;
+  color: rgba(253, 130, 48, 1);
+}

@@ -1,0 +1,188 @@
+<view class='container'>
+
+
+  <view class='top-line'>
+
+    <!-- 轮播图 -->
+
+
+
+    <swiper class='home-swiper' autoplay='true' bindchange='changDot' interval='4000' bindchange='bindchange' style="height:{{imgheights[current]}}rpx;">
+      <!-- 设置自动播放，切换间隔时间-->
+      <swiper-item wx:for="{{detail.image}}" wx:for-index="index" wx:key="product_image">
+        <image src="{{item}}" mode="widthFix" style="height:{{imgheights[current]}}rpx;" bindload="imageLoad" data-src='{{item}}' data-index='{{index}}' class='img' bindtap='previewImage' data-img="{{item}}"></image>
+      </swiper-item>
+    </swiper>
+    <!-- 轮播图光标 -->
+    <view class="dots">
+      <block wx:for="{{[detail.image]}}" wx:key="product_image">
+        <view class="dot {{index == swiperCurrent?'actives':''}}"></view>
+      </block>
+    </view>
+
+
+    <!-- 活动标题 -->
+    <view class='activity-title'>{{detail.title}}</view>
+    <view class='activity-info'>
+      <!-- 价格 -->
+      <view class='price'>
+        <!-- 默认套餐的价格 -->
+        <text class='nowprice'>￥{{detail.price}}</text>
+        <!-- 活动的原定价，不是套餐的 -->
+        <text class='original'>￥{{detail.market_price}}</text>
+      </view>
+
+      <view class='lables'>
+        <view class='labels flexac' wx:if="{{is_invoice == 1}}">
+          <image src='/img/img/icon_draw@2x.png ' style='width:28rpx;height:28rpx;margin-right:10rpx; '></image>
+          <text>可开发票</text>
+        </view>
+        <view class='labels flexac' wx:if="{{detail.is_member!=0}}">
+          <image src='/img/img/icon_draw@2x.png' style='width:28rpx;height:28rpx;margin-right:10rpx;'></image>
+          <text>会员专享</text>
+        </view>
+        <view class='labels flexac' wx:if="{{detail.is_points!=0}}">
+          <image src='/img/img/icon_draw@2x.png' style='width:28rpx;height:28rpx;margin-right:10rpx;'></image>
+          <text>立减{{detail.is_points}}%</text>
+        </view>
+      </view>
+
+    </view>
+  </view>
+
+
+  <!-- 店铺信息 -->
+  <view class='shopContent flex' bindtap='mall' data-id="{{detail.store_id}}">
+    <view class='flexac' style='margin-top:20rpx;'>
+      <view class='shopContentImg'>
+        <image src="{{ detail.store_avatar}}" class='img b10'></image>
+      </view>
+      <view class='flexw shopText'>
+        <view class='shopText_'>{{detail.store_name}}</view>
+      </view>
+    </view>
+  </view>
+
+  <block wx:if="{{detail.user_avatar != ''}}">
+    <view class='join'>
+      <text class='join-title'>TA们({{detail.people_count}}）也参加了</text>
+      <view class='header-line'>
+        <block wx:for='{{detail.user_avatar}}' wx:key='this'>
+          <image src='{{item}}' class='head'></image>
+        </block>
+      </view>
+    </view>
+  </block>
+
+  <view class='hint'>
+
+    <view class='place-info'>
+      <text>集合地：{{detail.resort}}</text>
+      <text>目的地：{{detail.destination}}</text>
+    </view>
+
+    <view class='time'>活动时间：{{times}}</view>
+
+    <view class='nav-phone'>
+      <view class='nav-box'>
+        <text>目的地导航</text>
+        <image src='/img/img/weizhi.png' class='nav' bindtap='local'></image>
+      </view>
+
+      <view class='phone-box'>
+        <text>致电联系</text>
+        <image src='/img/img/dianhua@2x.png' class='phone' bindtap='phone'></image>
+      </view>
+    </view>
+
+  </view>
+
+  <view class='activity-message'>
+    <view class='message-title'>活动详情</view>
+    <view class='meassage-text'>
+      <view wx:for='{{detail.detail_img}}' wx:key='this' style='margin-top:-7rpx;'>
+        <image src='{{item}}' mode="widthFix" class='img' bindtap='previewImage' data-img="{{item}}"></image>
+      </view>
+      <view wx:if='{{detail.detail_img.length==0}}'>暂无详情</view>
+    </view>
+  </view>
+
+
+  <view class='attentions'>
+    <view class='attentions-line'>
+      <text class='attentions-title'>预定须知</text>
+      <image src='/img/img/bottom.png' class='down-icon'></image>
+    </view>
+    <view class='attentions-message'>{{detail.explain}}</view>
+
+  </view>
+
+  <view class='discuss'>
+    <view class='discuss-title'>评论（{{list.length}}）</view>
+
+    <block wx:for='{{list}}' wx:key='this'>
+
+      <view class='discuss-content'>
+        <view class='first-line'>
+          <image src='{{item.user_avatar}}' class='head' style='margin-left:25rpx;border-radius:50%;'></image>
+          <view class='line-box'>
+            <text>{{item.user_name}}</text>
+            <text>{{item.time}}</text>
+          </view>
+          <view class='star'>
+            <i-rate bind:change="onChange5" count="{{5}}" value="{{4}}" size="13">
+            </i-rate>
+          </view>
+        </view>
+        <view class='discuss-text-box'>
+          {{item.content}}
+        </view>
+
+        <view class='discuss-pircture' wx:for='{{list.image}}' wx:key='this'>
+          <image src='{{item}}' class='pic'></image>
+        </view>
+      </view>
+
+    </block>
+
+    <!-- <button class='orders' bindtap='reserve'>立即预定</button> -->
+
+  </view>
+
+  <view class='bottomFixed flexjac' wx:if="{{show}}">
+    <button class='orders' bindtap='reserve'>立即预定</button>
+  </view>
+
+  <!-- 弹窗 -->
+
+  <view class='bg' bindtap='close' wx:if='{{winds}}'></view>
+  <view class='widows' wx:if='{{winds}}'>
+
+    <view class='top'>
+      <image src='{{detail .image[0]}}' class='top-img'></image>
+      <view class='info'>
+        <text>￥{{detail.specifications[select].price}}</text>
+        <text>{{detail.title}}</text>
+      </view>
+    </view>
+
+    <!-- 规格 -->
+    <view class='specification'>
+      <view wx:for='{{detail.specifications}}' wx:key='list' class="{{select==index?'csku':'sku'}}" data-index="{{index}}" bindtap='choice'>
+        {{item.product_name}}
+      </view>
+    </view>
+
+    <!-- 数量控制 -->
+    <view class='number-line'>
+      <text class="{{minusStatuses?'disabled':''}}" disabled="true" data-idx="{{idx}}" data-index="{{index}}" bindtap="bindMinus">-</text>
+      <!-- 数值 -->
+      <input maxlength='5' type='number' class="numberin" value='{{detailDatas.num}}' bindinput="bindChange" />
+      <!-- 加号 -->
+      <text class="normal" data-idx="{{idx}}" data-index="{{index}}" bindtap="bindPlus">+</text>
+    </view>
+    <view class='nextbtn' bindtap='nextTap'>下一步</view>
+  </view>
+</view>
+
+<view style='width:100%;height:200rpx;'></view>

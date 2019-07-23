@@ -1,0 +1,66 @@
+page {
+  background: #fff;
+}
+
+/* 上传图片 */
+
+.flex {
+  display: flex;
+}
+
+.up-pic {
+  /* padding:20rpx 24rpx; */
+  width: 100%;
+  justify-content: center;
+}
+
+.pic-box {
+  margin-top: 20rpx;
+  flex-flow: wrap;
+  width: 95%;
+}
+
+.ap-box {
+  position: relative;
+}
+
+.add-pic {
+  width: 160rpx;
+  height: 160rpx;
+  margin-right: 20rpx;
+  position: relative;
+  margin: 20rpx 30rpx 20rpx 30rpx;
+}
+
+/* 删除图片 */
+
+.img-de {
+  width: 45rpx;
+  height: 45rpx;
+  border-radius: 50%;
+  position: absolute;
+  right: -41rpx;
+  top: 5rpx;
+}
+
+.hong-contant .teamwork-btn {
+  width: 360rpx;
+  height: 88rpx;
+  border-radius: 50rpx;
+  color: white;
+  background-color: #14a1fd;
+  margin: 0 auto;
+  margin-top: 80rpx;
+  margin-bottom: 40rpx;
+}
+
+button {
+  width: 480rpx;
+  margin: 100rpx auto;
+  height: 80rpx;
+  line-height: 80rpx;
+  color: #efefef;
+  font-size: 30rpx;
+  background: linear-gradient(80deg, rgba(253, 130, 48, 1), rgba(247, 97, 59, 1));
+  border-radius: 8rpx;
+}

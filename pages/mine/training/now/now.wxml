@@ -1,0 +1,16 @@
+<view class="forget-container">
+    <form bindsubmit="formSubmitback">
+      <view class='username'>
+        <image src='/img/img/iconpassword.png'></image>
+        <input maxlength='6' name='npwd' placeholder='请设置新密码' type="text" bindinput='userPasswordInput' password="true"  />
+      </view>
+       <view class='username'>
+       <image src='/img/img/iconpassword.png'></image>
+        <input maxlength='6' name='pwd' placeholder='确认新密码' type="text" bindinput="truePasswordInput" password="true" />
+      </view>
+      <!-- <view style='font-size:22rpx;margin-top:30rpx;'>*输入手机号码即可找回对应账号的密码 </view> -->
+      <button class='flexca' formType="submit">提交</button>
+    </form>
+
+</view>
+

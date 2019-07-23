@@ -1,0 +1,30 @@
+<form bindsubmit="teformSubmit" report-submit='true'>
+  <view class='motion flexac'>
+    <view class='motionText'>推广时间</view>
+    <view class="section flexjac">
+      <picker bindchange="bindPickerChange" value="{{arrIndex}}" range="{{array}}">
+        <view class="picker">
+          {{array[arrIndex]}}
+        </view>
+      </picker>
+      <image src='/img/img/jiantou@2x.png' class='sectImg'></image>
+    </view>
+    <input style='display:none;' name='time' value='{{arrIndex}}'></input>
+  </view>
+  <!-- 广告币 -->
+  <view class='motion flexac'>
+    <view class='motionText'>需支付广告币数量</view>
+    <input  name='money' value='{{money}}' placeholder='数量' disabled='true'></input>
+  </view>
+  <view class='proText'>{{text}}</view>
+  <button formType="submit">立即推广</button>
+</form>
+
+
+<!-- 客服 -->
+<view>
+  <image src='/img/img/servicewx.png' class='card-img'>
+    <button open-type="contact" class='card-img' style="opacity:0">进入客服会话</button>
+  </image>
+  <button open-type="contact" class='buy'></button>
+</view>

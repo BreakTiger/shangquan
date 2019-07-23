@@ -1,0 +1,32 @@
+<view class='produc-container flexjac' bindtap='goCar'>
+  <view class='f30'>添加置顶商品</view>
+  <image src='/img/img/add_@2x.png' class='pro-right'></image>
+</view>
+
+<view wx:if="{{pro != ''}}">
+  <view class='pro-content flexw'>
+    <view wx:for="{{pro}}" wx:key="pro">
+      <view class='pro-box flexw'>
+        <view class='flex pro-box-con'>
+          <view class='pro-image'>
+            <image src='{{item.product_image}}' class='img b10'></image>
+          </view>
+          <view class='flexw pro-box-right'>
+            <view class='box-right-top flex'>
+              <view class='f30 box-name'>{{item.product_name}}</view>
+              <view class='select-right' wx:if="{{item.recommend == 1}}">置顶中</view>
+              <view class='_select-right' wx:if="{{item.recommend == 0}}">已到期</view>
+            </view>
+            <view class='box-price'>￥{{item.price}}
+              <text>￥{{item.market_price}}</text>
+            </view>
+          </view>
+        </view>
+        <view class='box-time' wx:if="{{item.recommend == 1}}">置顶到期时间：{{item.expire_time}}</view>
+      </view>
+    </view>
+  </view>
+</view>
+<view wx:else class='none'>
+  暂无商品
+</view>

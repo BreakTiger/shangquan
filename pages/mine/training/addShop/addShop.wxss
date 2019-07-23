@@ -1,0 +1,285 @@
+page {
+  background: rgba(247, 247, 247, 1);
+}
+
+.form-image {
+  width: 100%;
+  position: relative;
+  background: #fff;
+  /* border-bottom: 1rpx solid #efefef; */
+}
+
+.image-text {
+  width: 160rpx;
+  height: 60rpx;
+  text-align: center;
+  line-height: 60rpx;
+  background: rgba(255, 255, 255, 1);
+  border-radius: 20rpx;
+  font-size: 30rpx;
+  position: absolute;
+  top: 20rpx;
+  right: 25rpx;
+  color: rgba(255, 68, 39, 1);
+}
+
+.input-box {
+  width: 100%;
+  border-bottom: 1rpx solid #efefef;
+  height: 88rpx;
+  background: #fff;
+  justify-content: space-between;
+}
+
+.input-box text {
+  font-size: 30rpx;
+  margin-left: 25rpx;
+  color: rgba(51, 51, 51, 1);
+}
+
+input {
+  text-align: right;
+  font-size: 30rpx;
+  width: 243rpx;
+  margin-right: 25rpx;
+}
+
+.to-right {
+  width: 24rpx;
+  height: 24rpx;
+  margin-right: 25rpx;
+}
+
+.shop-detail {
+  margin-left: 25rpx;
+  color: #333;
+}
+
+textarea {
+  width: 699rpx;
+  height: 225rpx;
+  margin: 20rpx auto;
+  background: rgba(247, 247, 247, 1);
+  border-radius: 20rpx;
+  font-size: 30rpx;
+  color: #666;
+  padding: 15rpx 0;
+  padding-left: 10rpx;
+}
+
+button {
+  width: 480rpx;
+  margin: 50rpx auto;
+  height: 80rpx;
+  line-height: 80rpx;
+  color: #efefef;
+  font-size: 30rpx;
+  background: linear-gradient(80deg, rgba(253, 130, 48, 1), rgba(247, 97, 59, 1));
+  border-radius: 8rpx;
+}
+
+.zhezhao {
+  background: #666;
+  width: 100%;
+  height: 100%;
+  opacity: 0.6;
+  position: fixed;
+  top: 0;
+}
+
+.box-Mask {
+  width: 100%;
+  top: 874rpx;
+  height: 500rpx;
+  position: absolute;
+  z-index: 99;
+}
+
+.mask {
+  width: 636rpx;
+  height: auto;
+  padding-top: 47rpx;
+  padding-bottom: 40rpx;
+  background: rgba(255, 255, 255, 1);
+  border-radius: 10rpx;
+  z-index: 999;
+  justify-content: center;
+}
+
+.mask-input {
+  border: 1rpx solid #999;
+  width: 90%;
+}
+
+.left-to {
+  text-align: left;
+  width: 478rpx;
+}
+
+.mask-input text {
+  font-size: 39rpx;
+  color: #999;
+}
+
+.bottom-btn {
+  margin-top: 50rpx;
+  width: 100%;
+  height: 88rpx;
+  justify-content: space-around;
+}
+
+._add {
+  width: 260rpx;
+  margin-left: 20rpx;
+  height: 81rpx;
+  border-radius: 10rpx;
+  text-align: center;
+  line-height: 81rpx;
+  color: #fff;
+  background: linear-gradient(80deg, rgba(253, 130, 48, 1), rgba(247, 97, 59, 1));
+}
+
+.add {
+  width: 260rpx;
+  margin-left: 35rpx;
+  height: 81rpx;
+  border-radius: 10rpx;
+  text-align: center;
+  line-height: 81rpx;
+  color: #fff;
+  background: linear-gradient(80deg, rgba(253, 130, 48, 1), rgba(247, 97, 59, 1));
+}
+
+.width {
+  width: 100%;
+  padding: 25rpx 0;
+  background: #fff;
+}
+
+.right {
+  width: 11rpx;
+  height: 19rpx;
+  margin-left: 15rpx;
+  margin-right: 15rpx;
+}
+
+/*  strat 轮播图 */
+
+.banner-box {
+  background-color: #fff;
+  height: 450rpx;
+  overflow: hidden;
+}
+
+.home-banner {
+  width: 100%;
+  height: 450rpx;
+}
+
+.home-banner image {
+  width: 100%;
+  height: 100%;
+}
+
+/* end 轮播图*/
+
+.del {
+  background-color: orangered;
+  width: 100rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  -webkit-transform: translateX(90px);
+  transform: translateX(90px);
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+.tab-h {
+  display: flex;
+  min-width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+  line-height: 80rpx;
+  background: #fff;
+  font-size: 16px;
+  white-space: nowrap;
+}
+
+.flex {
+  display: flex;
+}
+
+.up-pic {
+  /* padding:20rpx 24rpx; */
+  width: 100%;
+  justify-content: center;
+  padding-bottom: 30rpx;
+}
+
+.pic-box {
+  /* margin-top: 20rpx; */
+  flex-flow: wrap;
+  width: 95%;
+}
+
+.ap-box {
+  position: relative;
+}
+
+.add-pic {
+  width: 160rpx;
+  height: 160rpx;
+  margin-right: 20rpx;
+  position: relative;
+  margin: 20rpx 30rpx 20rpx 30rpx;
+}
+
+/* 删除图片 */
+
+.img-de {
+  width: 45rpx;
+  height: 45rpx;
+  border-radius: 50%;
+  position: absolute;
+  right: -41rpx;
+  top: 5rpx;
+}
+
+.form-image_ {
+  width: 100%;
+  height: 450rpx;
+  position: relative;
+}
+
+.aaa {
+  padding-bottom: 15rpx;
+  width: 100%;
+  font-size: 28rpx;
+  padding-left: 30rpx;
+  background: #fff;
+  border-bottom: 1rpx solid #efefef;
+}
+
+.add-detail {
+  width: auto;
+  background: #fff;
+  padding-left: 30rpx;
+  padding-top: 20rpx;
+}
+
+.ef {
+  color: #efefef;
+}
+
+.float_ {
+  width: 100%;
+  background: #fff;
+  border-bottom: 1rpx solid #efefef;
+  height: 57rpx;
+  font-size: 28rpx;
+  padding-left: 15rpx;
+  color: #999;
+}

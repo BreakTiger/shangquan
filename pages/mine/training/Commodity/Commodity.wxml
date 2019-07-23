@@ -1,0 +1,102 @@
+<view class='modity flexw' bindtap='buyWindow'>
+  <view class='modity-title flex'>商品橱窗({{window.number + mianfeichuchuang || 0}})
+    <view class='window-content flexjac'>
+      <text>添加橱窗</text>
+      <image src='/img/img/add_left.png' class='addImg'></image>
+    </view>
+  </view>
+  <view class='flex windowWrap'>已使用的橱窗({{window.yishiyong}})</view>
+  <!-- <view class='modity-title flex'>免费橱窗({{mianfeichuchuang || 0}})</view> -->
+  <!-- <view class='modity-content flexac' wx:if="{{window != ''}}">
+    <view>{{window!=null?'':'点击添加商品橱窗'}}
+    </view>
+    <view>{{window.time_del ||''}}</view>
+  </view> -->
+</view>
+<!-- 添加商品 -->
+<view class='add-goods flexjac' wx:if="{{sc_id != 2}}" bindtap='addShop'>
+  <view class='c3 f30' bindtap='addShop'>添加商品</view>
+  <image src='/img/img/add_@2x.png' class='addImg' bindtap='addShop'></image>
+</view>
+<!-- 添加活动 -->
+<view wx:if="{{sc_id == 2}}">
+  <view class='add-goods flexjac' bindtap='addactivity'>
+    <view class='c3 f30'>添加商品</view>
+    <image src='/img/img/add_@2x.png' class='addImg'></image>
+  </view>
+</view>
+<!-- //end 添加活动 -->
+<!-- 商品列表 -->
+<view wx:if="{{sc_id != 2}}">
+  <view wx:if="{{shop !=''}}">
+    <view class='goods flexw'>
+      <block wx:for="{{shop}}" wx:key="shop">
+        <scroll-view scroll-x="true" class="tab-h" scroll-left="{{scrollLeft}}">
+          <view class='goodsList flexw'>
+            <view class='flex goodsStatus' wx:if="{{item.status == 0}}">下架</view>
+            <!-- <view class='flex goodsStatus'>已上架</view> -->
+            <view class='flex _goodsStatus' wx:if="{{item.status == 1}}">上架中</view>
+            <view class='flex goodsContent'>
+              <view class='goodsimage' bindtap='go_goods' data-shop="{{item}}">
+                <image class='img b10' src='{{item.product_image[0]}}'></image>
+                <!-- <image class='img b10' src='{{_img[0]}}'></image>      -->
+              </view>
+              <view class='flexw goodsBox' bindtap='go_goods' data-shop="{{item}}">
+                <view class='boxName'>{{item.product_name}}</view>
+                <view class='box-price'>￥{{item.price}}
+                  <text>￥{{item.market_price}}</text>
+                </view>
+              </view>
+              <view class="del" catchtap="del" data-id="{{item.id}}" wx:if="{{item.status == 1}}">下架</view>
+              <view class="del" catchtap="add" data-id="{{item.id}}" wx:if="{{item.status == 0}}">上架</view>
+            </view>
+          </view>
+        </scroll-view>
+      </block>
+    </view>
+  </view>
+  <view wx:else class='none'>
+    商品正在审核或者暂无商品..
+  </view>
+</view>
+<view wx:if="{{sc_id == 2}}">
+  <view wx:if="{{ActiVity !=''}}">
+    <view class='goods flexw'>
+      <block wx:for="{{ActiVity}}" wx:key="shop">
+        <scroll-view scroll-x="true" class="tab-h" scroll-left="{{scrollLeft}}">
+          <view class='goodsList flexw'>
+            <view class='flex goodsStatus' wx:if="{{item.status == 0}}">下架</view>
+            <!-- <view class='flex goodsStatus'>已上架</view> -->
+            <view class='flex _goodsStatus' wx:if="{{item.status == 1}}">上架中</view>
+            <view class='flex goodsContent'>
+              <view class='goodsimage' bindtap='go_ActiVity' data-shop="{{item}}">
+                <image class='img b10' src='{{item.image[0]}}'></image>
+                <!-- <image class='img b10' src='{{_img[0]}}'></image>      -->
+              </view>
+              <view class='flexw goodsBox' bindtap='go_ActiVity' data-shop="{{item}}">
+                <view class='boxName'>{{item.title}}</view>
+                <view class='box-price'>￥{{item.price}}
+                  <text>￥{{item.market_price}}</text>
+                </view>
+              </view>
+              <view class="del" catchtap="ActiVity_del" data-id="{{item.id}}" wx:if="{{item.status == 1}}">下架</view>
+              <view class="del" catchtap="ActiVity_add" data-id="{{item.id}}" wx:if="{{item.status == 0}}">上架</view>
+            </view>
+          </view>
+        </scroll-view>
+      </block>
+    </view>
+  </view>
+  <view wx:else class='none'>
+    商品正在审核或者暂无商品..
+  </view>
+</view>
+<!-- <view wx:else class='none'>
+  商品正在审核或者暂无商品..
+</view> -->
+
+
+
+<view class='page-add-data flexca' wx:if="{{shop.length > 10}}">
+  <text>{{pageTottomText}}</text>
+</view>

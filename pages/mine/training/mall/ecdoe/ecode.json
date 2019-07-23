@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "店铺二维码",
+  "usingComponents": {
+    "i-rate": "/component/rate/index"
+  },
+  "enablePullDownRefresh": true
+}

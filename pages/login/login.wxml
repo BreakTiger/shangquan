@@ -1,0 +1,239 @@
+<view class='line'></view>
+
+
+<!-- 整体容器 -->
+<view class='container'>
+
+  <!-- 顶部栏 -->
+  <view class='flexjac header'>
+    <!-- 定位 -->
+    <view class='header-area flexjac' bindtap='location'>
+      <image src='/img/img/area2x.png' class='area'></image>
+      <text class='f30 areas' data-item='{{item}}'>{{city+district}}</text>
+    </view>
+    <view class='header-search flexac' bindtap='search'>
+      <icon type="search" size="18"></icon>
+      <text class='f30'>搜索店铺</text>
+    </view>
+  </view>
+
+  <!-- 第一个轮播图 -->
+  <swiper class='home-swiper' autoplay='true' bindchange='changDot' interval='4000'>
+    <!-- 设置自动播放，切换间隔时间-->
+    <block wx:for="{{top}}" wx:key="unique">
+      <swiper-item>
+        <image src='{{item.image_url}}' catchtap='swiperTap' data-item='{{item}}' data-id="{{item.id}}"></image>
+      </swiper-item>
+    </block>
+    <view class='pro'></view>
+  </swiper>
+
+  <!-- 轮播图光标 -->
+  <view class="dots">
+    <block wx:for="{{top}}" wx:key="unique">
+      <view class="dot {{index == swiperCurrent?'actives':''}}"></view>
+    </block>
+  </view>
+
+  <!-- 导航图 -->
+  <view wx:if="{{appstatus==1}}">
+    <image src='/img/img/white.png' class='white-bk'>
+      <view class='box-container flexjac'>
+        <view class='box'>
+          <view wx:for="{{navigations}}" wx:key="unique" class='flexw' data-item='{{item}}' bindtap='nav' data-index="{{index}}">
+            <view class='logo flexc'>
+              <view class='flexjc'>
+                <image src='{{item.icon}}' class='logo-img'></image>
+              </view>
+              <text class='f30 logo_text'>{{item.title}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </image>
+  </view>
+
+
+
+
+
+  <!-- 第二个轮播图  -->
+
+  <view wx:if="{{appstatus==1}}">
+    <swiper class='second-swiper' autoplay='true' interval='4000' indicator-dots="true" indicator-color="rgba(255,255,255, 0.5)" indicator-active-color="#FA7A1E">
+      <!-- 设置自动播放，切换间隔时间-->
+      <block wx:for="{{down}}" wx:key="unique">
+        <swiper-item>
+          <image src="{{item.image_url}}" class="slideImage" bindtap='swiperTap_' data-item='{{item}}' data-id="{{item.id}}"></image>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+
+
+
+  <!-- 推荐 -->
+  <view class='recommend'>为你推荐</view>
+  <view class='recommend_name'>精选商家，值得体验</view>
+
+  <block wx:if="{{if_}}">
+    <!-- 推荐店铺的内容 -->
+    <view wx:if="{{appstatus==1}}">
+      <view wx:for="{{shoplist}}" wx:key="unique" style='margin-bottom:10rpx;' bindtap='getin' data-item='{{item}}'>
+
+        <!-- 店铺列表 -->
+        <view class='content flexac'>
+
+          <view class='contentImg'>
+            <image src='{{item.store_avatar}}' class='img' style='border-radius:10rpx;'></image>
+          </view>
+
+          <view class='content_box flexc'>
+
+            <view class='content-top flexac'>
+              <text class='top'>{{item.store_name}}</text>
+              <text class='top_area f24' data-index='{{index}}'>{{distance[index]}}km</text>
+            </view>
+
+            <view class='content-center flexac'>
+              <i-rate bind:change="onChange5 " count="{{5}} " value="{{item.mx}} " size="13 ">
+              </i-rate>
+              <text class='center-text' style='margin-left:15rpx;'>{{item.mx}}</text>
+              <view class='unline'></view>
+              <view class='center-text'>月销{{item.score}}</view>
+            </view>
+
+            <view class='box-iner flexac'>
+              <view class='auto_' wx:if='{{item.sc_id==1}}'>免费配送</view>
+              <view class='auto_' wx:if='{{item.sc_id==2}}'>户外景点</view>
+              <view class='auto_' wx:if='{{item.sc_id==3}}'>上门服务</view>
+              <view class='auto_' wx:if='{{item.sc_id==4}}'>包邮</view>
+
+
+              <view class='auto_'>会员专享</view>
+
+            </view>
+
+            <!-- <view class='content_right flex'>
+        <text class='right f24' bindtap='attentions' data-item='{{item}}' wx:if='{{item.is_follow==0}}'>关注</text>
+        <text class='right f24' bindtap='cancelattentions' data-item='{{item}}' wx:if='{{item.is_follow==1}}'>已关注</text>
+        </view> -->
+
+          </view>
+
+        </view>
+
+        <!-- 商品图片 -->
+        <view class='storeimgline'>
+
+          <view class='storeimg' wx:for='{{item.child}}' wx:key='proid'>
+            <image src='{{item.product_image}}' class='imgcontent'></image>
+            <view class='goodsname'>{{item.product_name}}</view>
+          </view>
+
+
+        </view>
+
+
+
+      </view>
+    </view>
+
+    <view wx:if="{{appstatus==0}}">
+      <!-- 内容 -->
+      <view wx:if="{{shop != ''}}">
+        <view class='container_ flexw'>
+          <view class='container-box' wx:for="{{shop}}" wx:key="this" bindtap='shopDetail' data-index="{{index}}" data-item="{{item}}" data-id="{{item.id}}">
+            <view class='containerImg'>
+              <image src='{{item.product_image}}' class='img b10'></image>
+              <view class='vip' wx:if="{{item.is_member != 0}}">会员专享</view>
+              <view class='discount_'>包邮</view>
+            </view>
+            <view class='containertitle'>{{item.product_name}}</view>
+            <!-- <view class='discount' wx:if="{{item.is_points != 0}}">积分抵扣{{item.is_points}}</view> -->
+            <!-- <view class='containertitle'>原价{{item.market_price}}</view> -->
+            <view class='containerPrice flexac'>
+              <text class='price'>￥{{item.price}}</text>
+              <text class='_price'>销量{{item.xiaoliang}}</text>
+              <view class='discount' wx:if="{{item.is_points != 0}}">立减{{item.is_points}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+
+      <!-- 没有商品 -->
+      <view wx:else class='emp'>暂无商品</view>
+
+    </view>
+  </block>
+
+  <!-- 客服 -->
+  <view class='kefu'>
+    <button open-type='contact' class='btn-kefu'>
+      <image src='/img/img/servicewx.png' class='kefu-icon'></image>
+    </button>
+  </view>
+
+
+</view>
+
+
+
+
+
+
+
+
+
+
+
+<!-- 遮罩 -->
+<view class='userInfo'>
+  <view class='userInfo-box flexac'>
+    <image src='/image/icon/tost.png' class='authorization_'></image>
+    <view class='user-txt'>商小盟-免费开店</view>
+    <view class='user-line'></view>
+    <view class='user-txt'>您的公开信息（昵称和头像等）</view>
+    <view class='f28 c9'>以便于查看优惠信息哦</view>
+    <image src='/img/img/userInfo.png' class='user-button'></image>
+  </view>
+  <button bindgetuserinfo="getUserInfo" open-type="getUserInfo" class='getuser'></button> 
+</view>
+
+
+
+
+
+
+
+<!-- <view class='flexjac '>
+  <image src='/image/icon/tost.png' class='authorization'></image>
+</view>
+
+
+
+
+<button bindgetuserinfo="getUserInfo" open-type="getUserInfo">微信授权</button> -->
+
+
+
+
+
+<!-- <view class='body'>
+  <view class='body-box'>
+    <view class='logo-box'>
+      <view class='logo_bg'>
+        <image src='/image/icon/tost.png'></image>
+      </view>
+      <!-- <view class='logo'>
+        <image src='/image/icon/logo@2x.png'></image>
+      </view> 
+    </view>
+    <view class='btn-box'>
+      <image src='/image/icon/bth_anniu@2x.png'>
+        <text>微信授权</text>
+        <button bindgetuserinfo="getUserInfo" open-type="getUserInfo"></button>
+      </image>
+    </view>
+  </view>
+</view> -->

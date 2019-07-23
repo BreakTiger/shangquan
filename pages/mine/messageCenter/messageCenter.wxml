@@ -1,0 +1,74 @@
+<view class="nav">
+  <view class="{{selected?'red':'default'}}" bindtap="selected">我参加的
+    <view class="{{selected?'nav_underline':''}}"></view>
+  </view>
+  <view class="{{selected1?'red':'default'}}" bindtap="selected1">我发布的
+    <view class="{{selected1?'nav_underline':''}}"></view>
+  </view>
+</view>
+
+
+
+<!-- 我参加的 -->
+<view class="{{selected?'show':'hidden'}}">
+
+  <view class='selectContent' wx:for="{{join}}" wx:key='this' bindtap='joinDetail' data-item='{{item}}'>
+
+    <view class='flexac selectText'>
+      <view class='selectImg'>
+        <image class='img br' src='{{item.user_avatar}}'></image>
+      </view>
+      <view class='flexw selectImgText'>
+        <view class='selectImgTextDate c6'>{{item.user_name}}</view>
+        <view class='selectImgTextDate c9'>{{item.time}}</view>
+      </view>
+      <view class='sign_ f28' wx:if='{{item.status==1}}'>活动进行中</view>
+      <view class='sign_ f28' wx:if='{{item.status==2}}'>活动已结束</view>
+    </view>
+    <view class='centerSelect'>
+      <image src='{{item.image[0]}}' class='img' style='border-radius:10rpx;'></image>
+    </view>
+    <view class='bottomText f29'>
+      {{item.title}}
+    </view>
+  </view>
+
+  <view wx:if='{{join.length==0}}' class='emp'>您还没有参加的活动哦，亲^_^</view>
+
+</view>
+
+
+<!-- 我发布的 -->
+<view class="{{selected1?'show':'hidden'}}">
+
+  <view class='selectContent' wx:for="{{mine}}" wx:key='this' bindtap='joinDetail' data-item='{{item}}'>
+    <view class='flexac selectText'>
+      <view class='selectImg'>
+        <image class='img br' src='{{item.user_avatar}}'></image>
+      </view>
+      <view class='flexw selectImgText'>
+        <view class='selectImgTextDate c6'>{{item.user_name}}</view>
+
+        <!-- 发布时间 -->
+        <view class='selectImgTextDate c9'>{{item.time}}</view>
+      </view>
+
+      <view class='sign_ f28' wx:if='{{item.status==1}}'>活动进行中</view>
+      <view class='sign_ f28' wx:if='{{item.status==2}}'>活动已结束</view>
+    </view>
+    <view class='centerSelect1'>
+
+      <!-- 活动图片 -->
+      <image src='{{item.image[0]}}' class='img' style='border-radius:10rpx;'></image>
+
+      <!-- 活动类型 -->
+      <view class='actmove'>{{item.activity_type}}</view>
+    </view>
+
+    <view class='bottomText f29'>{{item.title}}</view>
+
+  </view>
+
+  <view wx:if='{{mine.length==0}}' class='emp'>您还没有发布任何的活动哦，亲^_^</view>
+
+</view>

@@ -1,0 +1,6 @@
+<view class='container flexac' wx:for="{{list}}" wx:key="this">
+  <view class='containerImg'>
+    <image class='img br' src='{{item.user_avatar}}'></image>
+  </view>
+  <view class='containerName'>{{item.user_name}}</view>
+</view>

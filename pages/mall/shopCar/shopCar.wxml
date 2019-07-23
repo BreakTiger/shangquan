@@ -1,0 +1,63 @@
+<view wx:if="{{ shopData != ''}}">
+  <view class='top-header'></view>
+  <!-- 购物车商品 -->
+  <view class='shop-data flexjac'>
+    <view class='top-to'></view>
+    <!-- 购物车内容 -->
+    <view class='shop flexw' wx:for="{{shopData}}" wx:key="shopData">
+      <view>
+        <!-- 店铺名 -->
+        <view class='flexac one'>
+          <view class='flex'>
+            <image class='select-image' data-index="{{index}}" src='/img/img/icon_select@2x.png' bindtap='selectAll' data-index="{{index}}" wx:if="{{item.store.selected?true:false}}"></image>
+            <image class='select-image' src='/img/img/icon_nomal@2x.png' wx:if="{{item.store.selected?false:true}}" bindtap='selectAll' data-index="{{index}}"></image>
+            <image class='shopImage' src='/img/img/dianpu1@2x.png'></image>
+            <view class='f30'>{{item.store.store_name}}</view>
+          </view>
+          <view>
+            <!-- <image src='/img/img/detele.png' class='select-image' bindtap='detele' data-index="{{index}}"></image> -->
+          </view>
+        </view>
+        <!--  -->
+        <view class='shop-content flexac' wx:for="{{item.product}}" wx:key="product" wx:for-item="value" wx:for-index="key">
+          <!-- 选择按钮 -->
+          <view>
+            <image bindtap='select' data-index="{{index}}" data-erji="{{key}}" class='select-image1' src='/img/img/icon_select@2x.png' wx:if="{{value.selected?true:false}}"></image>
+            <image class='select-image1' bindtap='select' data-erji="{{key}}" data-index="{{index}}" src='/img/img/icon_nomal@2x.png' wx:if="{{value.selected?false:true}}"></image>
+          </view>
+          <!-- 图片 -->
+          <view class='shop-image'>
+            <image class='img b10' src="{{value.product_image}}"></image>
+          </view>
+          <!-- 内容 -->
+          <view class='content-shop flexw'>
+            <view class='f30' class='addpro'>{{value.product_name}}</view>
+            <image src='/img/img/delete@2x.png' class='select-image' bindtap='detele' data-index="{{key}}" data-item="{{value}}" data-id="{{value.id}}" style='margin-right:25rpx;'></image>
+            <view class='flex num-box'>
+              <view class='f30'>{{value.price}}</view>
+              <view class='num-image flexac'>
+                <image src='/img/img/btn_sku_dis_sub@2x.png' bindtap='subtraction' wx:if="{{item.num == 1}}" data-index="{{index}}"></image>
+                <image src='/img/img/btn_sku_nml_sub@2x.png' wx:else bindtap='subtraction' data-index="{{key}}" data-item="{{value}}" data-id="{{value.id}}"></image>
+                <view class='price-num flexjac'>{{value.num}}</view>
+                <image src='/img/img/btn_sku_add@2x.png' bindtap='add' data-index="{{index}}" data-item="{{value}}" data-id="{{value.id}}"></image>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- ----------购物车无商品 -->
+<view wx:else class='flexjac'>
+  <image src='/img/img/default_order@2x.png' class='img-car'></image>
+</view>
+<!-- 底部按钮 -->
+<view class='pay-container flexjc' wx:if="{{shopData != ''}}">
+  <view class='pay-box flexac'>
+    <view class='pay-sum'>合计：
+      <text>{{allPrice}}</text>
+    </view>
+    <button bindtap='Settlement'>去结算</button>
+  </view>
+</view>

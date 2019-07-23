@@ -1,0 +1,34 @@
+<image src='/img/img/background_integral.png' class='header'></image>
+<!-- 我的积分 -->
+<view class='integral_box flexjac'>
+  <view class='box_name flexjac'>我的奖励金</view>
+  <view class='box_num flexjac'>{{topoint}}</view>
+</view>
+<view class='under'></view>
+<view class='accumulat flexac'>
+  <text>奖励金明细</text>
+</view>
+<!-- 积分详情 -->
+<view wx:if="{{loglist != '' }}">
+  <block wx:for="{{loglist}}" wx:key="this">
+    <view class='box-detail flexac'>
+      <!-- <view class='detailImg'>
+      <image src='/img/img/background_integral.png' class='img br'></image>
+    </view> -->
+      <view class='detailBox flexw'>
+        <!-- <view class='detailtop'>订单编号</view> -->
+        <view class='detailcenter'>【{{item.jianjie}}】</view>
+        <view class='detailbottom'>{{item.time}}</view>
+      </view>
+      <view class='flexjac detailright' wx:if="{{item.type == 1}}">
+        + {{item.money}}
+      </view>
+      <view class='flexjac detailright' wx:if="{{item.type == 2}}">
+        - {{item.money}}
+      </view>
+    </view>
+  </block>
+</view>
+<view wx:else class='none'>
+ 暂无记录
+</view>

@@ -1,0 +1,92 @@
+<!-- 活动 -->
+
+<view class='big'>
+  <view class='big-pox flexac'>
+    <view class='pox-img' bindtap='act' data-id="{{activity.store_id}}">
+      <image class='img br' src='{{activity.user_avatar}}'></image>
+    </view>
+    <view class='flexw pox'>
+      <view class='flex poxCon'>
+        <view class='poxname f30'>{{activity.user_name}}</view>
+        <view class='f28 poxborder'>{{activity.activity_type}}</view>
+      </view>
+      <view class='poxtime f28'>{{activity.time}}</view>
+    </view>
+  </view>
+
+  <!-- 标题+内容 -->
+  <view class='introduction f29'>{{activity.title}}</view>
+  <view class='f28 introduction1'>{{activity.content}}</view>
+
+  <!-- 图片 -->
+  <view class='top-c4'>
+    <view class='top-image' wx:for="{{activity.image}}" wx:key="urls" wx:for-item="urls">
+      <image class='img br' src='{{urls}}' data-img="{{urls}}" bindtap='previewImage'></image>
+    </view>
+  </view>
+  <view class='height'></view>
+</view>
+
+<!-- 参与 -->
+<view class='participate flexw' wx:if="{{apply.length > 0}}">
+  <view class='part-ta f30'>TA们（{{apply.length}}）也参加了</view>
+  <view class='partImg flexac'>
+    <view class='part-img' wx:for="{{apply}}" wx:key="this" bindtap='join_people'>
+      <image src='{{item.user_avatar}}'></image>
+    </view>
+  </view>
+</view>
+
+
+<!--  评价-->
+<view class='big'>
+  <view class='bigtext f30'>全部评价</view>
+  <view wx:if="{{comment != ''}}">
+    <view class='big1' wx:for="{{comment}}" wx:key="this">
+      <view class='big-pox flexac'>
+        <view class='pox-img1' bindtap='act' data-id="{{item.store_id}}">
+          <image class='img br' src='{{item.user_avatar}}'></image>
+        </view>
+        <view class='flexw pox'>
+          <view class='flex poxCon'>
+            <view class='poxname f30' bindtap='act' data-id="{{item.store_id}}">{{item.user_name}}</view>
+            <!-- <view>
+              <i-rate bind:change="onChange5" count="{{5}}" value="{{4}}" size="13">
+              </i-rate>
+            </view> -->
+          </view>
+          <view class='poxtime1 f28'>{{item.time}}</view>
+        </view>
+      </view>
+      <view class='width_fix'>
+        <view class='_introduction1 f29'>{{item.content}}</view>
+      </view>
+    </view>
+  </view>
+  <view class='none' wx:else>
+    暂无评价..
+  </view>
+  <view class='height'></view>
+</view>
+<view class='content0'></view>
+
+<!-- 立即加入 -->
+<view class='_join flexjac' wx:if='{{discuss==0}}'>
+  <view class='join flexac'>
+    <input name='text' type='text' placeholder='随便说说...' bindtap='textinput'></input>
+    <button bindtap='join' wx:if='{{activity.is_join==0}}'>立即报名</button>
+    <button bindtap='cancel' wx:if='{{activity.is_join==1}}'>取消报名</button>
+  </view>
+</view>
+
+
+<!-- 弹窗 -->
+<!-- 发布评论 -->
+<view class='_join flexjac' wx:if='{{discuss==1}}'>
+  <form bindsubmit="formSubmit">
+    <view class='join flexac'>
+      <input type='text' name='text' placeholder='随便说说...' bindblur='quxiao' value='{{values}}' maxlength='30'></input>
+      <button formType="submit">发布</button>
+    </view>
+  </form>
+</view>

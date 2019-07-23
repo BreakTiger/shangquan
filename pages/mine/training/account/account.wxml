@@ -1,0 +1,133 @@
+<!-- tab框  -->
+<view class="nav_title">
+  <view class="nav_tab">
+    <view wx:for="{{list}}" wx:key="list" class="{{selected==index?'hidden':'show'}}" data-index='{{index}}' bindtap="selected">{{item}}
+      <view class="{{selected==index?'nav_underline':''}}"></view>
+    </view>
+  </view>
+</view>
+<!-- tab框显示内容 -->
+<!-- strat余额 -->
+<view wx:if="{{selected == 0}}">
+  <!-- 我的余额 -->
+  <view class='balance flexw'>
+    <view class='balamy flexjac'>我的余额（元）</view>
+    <view class='balaPrice flexjac'>{{balance}}</view>
+    <view class='balahhh' bindtap='put' data-balance="{{balance}}">提现</view>
+  </view>
+  <!--  //我的余额  -->
+  <view wx:if="{{moneyList != ''}}">
+    <view class='me flexw'>
+      <view class='me-0'>余额明细</view>
+      <block wx:for="{{moneyList}}" wx:key="moneyList">
+        <view class='me-content flexac'>
+          <!-- <view class='me-contentImg'>
+            <image src='/img/img/_20180704150208@2x.png' class='img'></image>
+          </view> -->
+          <view class='me-con0 flexw'>
+            <view class='con0'>{{item.jianjie}}</view>
+            <view class='con1'>{{item.time}}</view>
+          </view>
+          <view class='me-con0-num flexac' wx:if="{{item.type == 1}}">+ {{item.money}}</view>
+          <view class='me-con0-num flexac' wx:if="{{item.type == 2}}">- {{item.money}}</view>
+        </view>
+      </block>
+    </view>
+  </view>
+  <!-- <view wx:if="{{moneyList == '' || []}}" class='none'>
+    暂无记录..
+  </view> -->
+  <!-- end 我的余额 -->
+</view>
+<!--end余额  -->
+
+<!--商户币  -->
+<view wx:if="{{selected == 1}}">
+  <!-- 我的余额 -->
+  <view class='balance flexw'>
+    <view class='balamy flexjac'>我的商基金</view>
+    <view class='balaPrice flexjac'>{{seller_coin}}</view>
+    <view class='horn' bindtap='Merchant' data-seller_coin="{{seller_coin}}">兑换大喇叭</view>
+  </view>
+  <!--  //我的余额  -->
+  <view wx:if="{{adver != ''}}">
+    <view class='me flexw'>
+      <view class='me-0'>商基金明细</view>
+      <block wx:for="{{adver}}" wx:key="this">
+        <view class='me-content flexac'>
+          <!-- <view class='me-contentImg'>
+            <image src='/img/img/_20180704150208@2x.png' class='img'></image>
+          </view> -->
+          <view class='me-con0 flexw'>
+            <view class='con0'>{{item.jianjie}}</view>
+            <view class='con1'>{{item.time}}</view>
+          </view>
+          <view class='me-con0-num flexac' wx:if="{{item.type == 1}}">+ {{item.money}}</view>
+          <view class='me-con0-num flexac' wx:if="{{item.type == 2}}">- {{item.money}}</view>
+        </view>
+      </block>
+    </view>
+  </view>
+  <!-- <view class='none' wx:if="{{adver == '' || []}}">
+    暂无记录..
+  </view> -->
+  <!-- end 我的余额 -->
+</view>
+
+<!--广告币  -->
+<view wx:if="{{selected == 2}}">
+  <!-- 我的余额 -->
+  <view class='balance flexw'>
+    <view class='balamy flexjac'>我的大喇叭</view>
+    <view class='balaPrice flexjac'>{{adv_coin}}</view>
+    <view class='balahhh' bindtap='Advertisement' data-shop="{{shop}}">充值</view>
+  </view>
+  <!--  -->
+  <view wx:if="{{arr != ''}}">
+    <view class='me flexw'>
+      <view class='me-0'>奖励金明细</view>
+      <block wx:for="{{arr}}" wx:key="arr">
+        <view class='me-content flexac'>
+          <!-- <view class='me-contentImg'>
+            <image src='/img/img/_20180704150208@2x.png' class='img'></image>
+          </view> -->
+          <view class='me-con0 flexw'>
+            <view class='con0'>{{item.jianjie}}</view>
+            <view class='con1'>{{item.time}}</view>
+          </view>
+          <view class='me-con0-num flexjac' wx:if="{{item.type==1}}">+ {{item.money}}</view>
+          <view class='me-con0-num flexjac' wx:if="{{item.type == 2}}">- {{item.money}}
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+  <!-- <view class='none' wx:if="{{arr == '' || []}}">
+    暂无记录..
+  </view> -->
+  <!-- end 我的余额 -->
+</view>
+
+<view class='alert flexac' wx:if="{{alert}}">
+  <view style="width:100%;height:200rpx;" bindtap='cancel'></view>
+  <view class='alert-box'>
+    <form bindsubmit='addUser'>
+      <view class='pa50'>请填写如下信息：</view>
+      <!-- 微信号 -->
+      <view class='alert-input flex'>
+        <text>微信号:</text>
+        <input placeholder='请输入绑定的微信号' name='wechat'></input>
+      </view>
+      <!-- 手机号 -->
+      <view class='alert-input flex'>
+        <text>手机号:</text>
+   <input placeholder='请输入绑定的手机号' name='phone' value="{{phone}}" disabled='true'></input>
+      </view>
+      <view class='flexac bottom-input'>
+        <button class='input-cancel' bindtap='cancel'>取消</button>
+        <button class='input-add' form-type='submit'>保存</button>
+      </view>
+    </form>
+  </view>
+  <view style='width:100%;height:400rpx;' bindtap='cancel'></view>
+</view>

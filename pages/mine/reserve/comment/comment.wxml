@@ -1,0 +1,55 @@
+<form bindsubmit="toformSubmit" report-submit='true'>
+
+  <view class='header flexac'>
+    <!-- 活动图 -->
+    <image src='{{allinfo.image[0]}}' class='header-image'></image>
+    <!-- 活动名字 -->
+    <view class='title-content'>
+      <text>活动名称:{{allinfo.activity_name}}</text>
+      <text>套餐:{{allinfo.activity_sku}}</text>
+    </view>
+  </view>
+
+  <view class='content'>
+
+    <view class="content-start flex">
+      <text>请为该活动打分：</text>
+
+      <!-- 活动评星 -->
+      <i-cell title="基本用法">
+        <i-rate bindchange="onChange1" value="{{starIndex}}">
+          <input style='display:none;' name="onChange1" value="{{starIndex}}"></input>
+        </i-rate>
+      </i-cell>
+    </view>
+
+    <!-- 活动评论 -->
+    <view class="page-section">
+      <view class="textarea-wrp">
+        <textarea auto-focus="true" placeholder='请写下你对次活动的建议' name="sunmmy" />
+      </view>
+    </view>
+  </view>
+
+  <!-- 图片上传 -->
+  <view class='up-pic'>
+    <view class='flex pic-box'>
+      <block wx:key="imgbox" wx:for="{{imgbox}}">
+        <view class='ap-box'>
+          <view class='add-pic'>
+            <image class='add-pic' src='{{item}}'></image>
+            <view class='img-de' data-deindex='{{index}}' bindtap='imgDelete1'>
+              <image class='img' src='/img/img/icon_close2@2x.png'></image>
+            </view>
+          </view>
+        </view>
+      </block>
+      <view class='add-pic' bindtap='addPic1' wx:if="{{imgbox.length<9}}">
+        <image class='img' src='/img/img/add_pic@2x.png'></image>
+      </view>
+    </view>
+  </view>
+
+
+  <button formType="submit">提交评价</button>
+</form>

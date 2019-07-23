@@ -1,0 +1,93 @@
+page{
+  background: #fff;
+}
+.header {
+  width: 100%;
+  height: 383rpx;
+}
+
+.integral_box {
+  flex-wrap: wrap;
+  width: 100%;
+  position: absolute;
+  top: 52rpx;
+}
+
+.box_name {
+  width: 100%;
+  color: #fff;
+  font-size: 34rpx;
+}
+
+.box_num {
+  width: 100%;
+  font-size: 66rpx;
+  margin-top: 20rpx;
+  color: rgba(255, 255, 255, 1);
+}
+
+.under {
+  width: 100%;
+  height: 20rpx;
+  margin-top: 20rpx;
+  background: #F7F7F7;
+}
+
+.accumulat {
+  width: 100%;
+  background: #fff;
+  height: 68rpx;
+  font-size: 30rpx;
+  color: rgba(51, 51, 51, 1);
+  border-bottom: 1rpx solid #efefef;
+}
+
+.accumulat text {
+  margin-left: 25rpx;
+}
+
+.box-detail {
+  width: 100%;
+  background: #fff;
+  height: 167rpx;
+  border-bottom: 1rpx solid #efefef;
+  padding: 0 10rpx;
+}
+
+.detailImg {
+  width: 100rpx;
+  height: 100rpx;
+}
+
+.detailBox {
+  width: 500rpx;
+ 
+  height: auto;
+}
+
+.detailtop {
+  width: 100%;
+  font-size: 24rpx;
+  color: rgba(51, 51, 51, 1);
+}
+
+.detailcenter {
+  width: 100%;
+  font-size: 22rpx;
+  color: rgba(102, 102, 102, 1);
+  margin-top: 15rpx;
+  margin-bottom: 15rpx;
+}
+
+.detailbottom {
+  width: 100%;
+  font-size: 22rpx;
+  font-family: PingFangSC-Regular;
+  color: rgba(102, 102, 102, 1);
+}
+
+.detailright {
+  height: 100%;
+  font-size: 32rpx;
+  color: rgba(250, 109, 34, 1);
+}

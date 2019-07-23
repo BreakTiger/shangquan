@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "户外活动预定",
+  "usingComponents": {
+    "i-input-number": "/dist/input-number/index",
+    "i-input": "/dist/input/index",
+    "i-icon": "/dist/icon/index"
+  }
+}

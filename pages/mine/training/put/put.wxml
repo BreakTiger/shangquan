@@ -1,0 +1,42 @@
+<form bindsubmit='tosubmit' report-submit='true'>
+  <view class='put-container flexw'>
+    <view class='put-con0'>余额（元）</view>
+    <view class='put-c-con0'>提现金额</view>
+    <view class='flexac put-input'>
+      ￥
+      <input placeholder='请输入提现金额' name="money" value="{{money_}}"></input>
+      <view class='inputText' bindtap='money'>全部提现</view>
+    </view>
+    <view class='put-c-con01'>提现到微信零钱</view>
+    <view class='pwd' bindtap='pwd'>忘记密码？</view>
+    <!-- 支付宝账号 -->
+    <view class='flexac boxinput'>
+      <text>微信号：</text>
+      <input name="name" value="{{myInfo[0].wechat!=null?myInfo[0].wechat:''}}" placeholder='请输入微信号'></input>
+    </view>
+    <!-- 支付宝名字 -->
+    <view class='flexac boxinput'>
+      <text>手机号</text>
+      <input name="username" value="{{myInfo[0].phone!=null?myInfo[0].phone:''}}" placeholder='请输入手机号' disabled='true'></input>
+    </view>
+    <!-- 支付宝账号 -->
+    <view class='flexac boxinput'>
+      <text>支付密码：</text>
+      <input name="password" value="" placeholder='请输入密码' password maxlength='6'></input>
+    </view>
+    <button formType='submit'>提现</button>
+    <view class='inputContent flex'>{{info}}</view>
+  </view>
+</form>
+
+<!-- 客服 -->
+<view>
+  <image src='/img/img/servicewx.png' class='card-img'>
+    <button open-type="contact" class='card-img' style="opacity:0">进入客服会话</button>
+  </image>
+  <button open-type="contact" class='buy'></button>
+</view>
+
+<view class='alert flexjac' wx:if="{{alert}}">
+  <view class='alert-box'>{{message}}</view>
+</view>

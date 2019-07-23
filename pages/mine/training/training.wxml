@@ -1,0 +1,84 @@
+<view class='line'></view>
+
+  <!-- 店铺信息 -->
+  <view class='store flexac' bindtap='goShopDetail'>
+    <view class='flexw shopTop'>
+      <view class='topShopName'>{{shop.store_name}}</view>
+      <view class='topShopCenter'>查看并修改店铺信息
+        <image src='/img/img/rightto.png' class='right_'></image>
+      </view>
+      <view class='topShopBottom f24' wx:if="{{shop.expire_time}}">店铺推广到期时间：{{shop.expire_time}} 续费</view>
+    </view>
+    <view class='shopImg'>
+      <image src='{{shop.store_avatar || img}}' class='b10 img'></image>
+      <!-- <image src='{{shop.store_avatar}}' class='br img' wx:if="{{shop.store_avatar != ''}}"></image> -->
+    </view>
+  </view>
+  <!-- 我的账户 -->
+  <view class='account flexjac'>
+    <view class='flexac accContent' bindtap='account'>
+      <image src='/img/img/wodezhanghu@2x.png' class='accImg'></image>
+      <text class='f30 c3'>我的账户</text>
+    </view>
+    <view class='under_'></view>
+    <view class='flexac accContent' bindtap='turnover'>
+      <image src='/img/img/yingyeetongji@2x.png' class='accImg'></image>
+      <text class='f30 c3'>营业额统计</text>
+    </view>
+  </view>
+  <!-- 模块 -->
+  <view class='hhh'>
+    <view class='zhong' data-selectIndex="1" bindtap='navTab' data-sc_id="{{shop.sc_id}}">
+      <image class='hhhImg' src='/img/img/chanpintuiguang@2x.png'></image>
+      <text>产品推广</text>
+    </view>
+    <view class='xia' data-selectIndex="2" bindtap='navTab' data-sc_id="{{shop.sc_id}}">
+      <image class='hhhImg' src='/img/img/shangpinguanli@2x.png'></image>
+      <text>商品管理</text>
+    </view>
+    <view class='zhong' data-selectIndex="3" bindtap='navTab' data-sc_id="{{shop.sc_id}}">
+      <image class='hhhImg' src='/img/img/list2x.png'></image>
+      <text>订单管理</text>
+    </view>
+  </view>
+  <view class='fff'>
+    <view class='zhong' style='border-top: 1rpx solid #efefef;' data-selectIndex="4" bindtap='navTab' data-sc_id="{{shop.sc_id}}">
+      <image class='hhhImg' src='/img/img/userComment.png'></image>
+      <text>用户评价</text>
+    </view>
+    <view class='xia' style='border-top: 1rpx solid #efefef;' data-selectIndex="5" bindtap='navTab' data-sc_id="{{shop.sc_id}}">
+      <image class='hhhImg' src='/img/img/dianputuiguang@2x.png'></image>
+      <text>店铺推广</text>
+    </view>
+    <view class='zhong' style='border-top: 1rpx solid #efefef;' data-selectIndex="6" data-sc_id="{{shop.sc_id}}" bindtap='navTab'>
+      <image class='hhhImg' src='/img/img/lunbotuiguang@2x.png'></image>
+      <text>轮播推广</text>
+    </view>
+  </view>
+  <!-- <view class='flexjac content-box' data-selectIndex="7" bindtap='navTab' data-sc_id="{{shop.sc_id}}">
+    <image class='hhhImg' src='/img/img/goods.png'></image>
+    <view class='content-extension flexjc'>广告推广</view>
+  </view> -->
+  <!-- 新增 -->
+  <view class='hhh_'>
+    <view class='zhong' data-selectIndex="8" bindtap='navTab' data-sc_id="{{shop.sc_id}}">
+      <image class='hhhImg' src='/img/img/wechat.png'></image>
+      <text>微信推广</text>
+    </view>
+    <view class='xia' data-selectIndex="9" bindtap='navTab' data-sc_id="{{shop.sc_id}}">
+      <image class='hhhImg' src='/img/img/one.png'></image>
+      <text>新媒体推广</text>
+    </view>
+    <view class='zhong' data-selectIndex="7" bindtap='navTab' data-sc_id="{{shop.sc_id}}">
+      <image class='hhhImg' src='/img/img/tuihuang.png'></image>
+      <text>广告推广</text>
+    </view>
+  </view>
+  <!-- //新增 -->
+  <view class='bottom flexac'>
+    <view class='tranShop' bindtap='ruturn'>返回</view>
+    <view class='tranShop' bindtap='seeShop'>预览店铺</view>
+  </view>
+  <!-- <view class='tranShop' bindtap='seeShop'>预览店铺</view> -->
+
+<!-- 认证状态 -->

@@ -1,0 +1,44 @@
+<!-- 购物车 -->
+<view class='line'></view>
+<view wx:if="{{ shopData != ''}}">
+  <view style='padding-bottom: 100rpx;'>
+    <!--  -->
+    <view wx:for="{{shopData}}" wx:key="shopData" class='pro'>
+      <view style='width: 60rpx;' class='xuanzhong' bindtap='danxuan' data-index="{{index}}">
+        <image src='/img/img/icon_select@2x.png' style='width: 36rpx; height: 36rpx;margin-top: 8rpx' wx:if="{{item.selected? true:false}}"></image>
+        <image src='/img/img/icon_nomal@2x.png' style='width: 36rpx; height: 36rpx;margin-top: 8rpx;' wx:if="{{item.selected? false:true}}"></image>
+      </view>
+      <view class='tutu'>
+        <image src='{{item.product_image}}' class='pro-image'></image>
+      </view>
+      <view class='wenzi'>
+        <view class='goodsname'>
+          <text class='te' style='font-weight: 600'>{{item.product_name}}</text>
+          <!-- <text class='te' style='margin-left: 20rpx;'>{{pro.types}}</text> -->
+          <image src='/img/img/btn_del2@2x.png' style='width: 36rpx; height: 36rpx;' bindtap='deleteEve' data-index="{{index}}"></image>
+        </view>
+        <view class='zuixia'>
+          <view class='price1'>￥{{item.price}}</view>
+        </view>
+      </view>
+    </view>
+    <view style='clear:both'></view>
+
+
+  </view>
+  <!-- 底部 -->
+  <view class='bottom'>
+    <view>
+      <text style='font-size: 28rpx;margin-right: 20rpx;color:#fff'>合计</text>
+      <!-- <text style='font-size: 36rpx; color: #F87039'>￥{{jiesuan}}</text> -->
+      <text style='font-size: 36rpx; color: #F87039'></text>
+      
+    </view>
+    <view style='width: 260rpx;height: 98rpx;'>
+      <view bindtap='topay' class='topay'>去置顶</view>
+    </view>
+  </view>
+</view>
+<view wx:else class='none'>
+  暂无商品..
+</view>

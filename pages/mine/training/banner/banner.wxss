@@ -1,0 +1,64 @@
+page {
+  background: rgba(239, 239, 239, 1);
+}
+
+.banner {
+  width: 702rpx;
+  height: 108rpx;
+  margin: 20rpx auto;
+  background: rgba(255, 255, 255, 1);
+  border-radius: 20rpx;
+  box-shadow: 12rpx 0px 21rpx rgba(153, 153, 153, 0.2);
+}
+
+.centerImg {
+  width: 30rpx;
+  margin-left: 25rpx;
+  height: 30rpx;
+}
+
+.banner-contaner {
+  width: 702rpx;
+  height: auto;
+  margin: 20rpx auto;
+  background: rgba(255, 255, 255, 1);
+  border-radius: 20rpx;
+  padding-bottom: 15rpx;
+  flex-wrap: wrap;
+}
+
+.bannerBox {
+  width: 100%;
+  border: 1rxp silid #000;
+  height: 239rpx;
+  margin-top: 15rpx;
+}
+
+.box-img {
+  width: 247rpx;
+  height: 218rpx;
+  margin-left: 15rpx;
+}
+
+.box-content {
+  width: 55%;
+  margin-left: 30rpx;
+  height: 218rpx;
+  border-bottom: 1rpx solid #efefef;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.boxcontentText {
+  font-size: 28rpx;
+  margin-top: 25rpx;
+  color: rgba(51, 51, 51, 1);
+  width: 397rpx;
+  height: 41rpx;
+  overflow: hidden;
+}
+
+.emp{
+  text-align: center;
+  margin-top: 100rpx;
+}

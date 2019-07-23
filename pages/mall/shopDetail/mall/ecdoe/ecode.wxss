@@ -1,0 +1,47 @@
+.backimg {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+page {
+  background: #fff;
+}
+
+.share {
+  width: 450rpx;
+  height: 450rpx;
+}
+
+/* 底部 */
+
+.keep {
+  width: 100%;
+  height: 200rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 30rpx;
+}
+
+button::after {
+  border: none;
+}
+
+.bb {
+  width: 480rpx;
+  /* height: 80rpx; */
+  background: #f87039;
+  color: #fff;
+}
+
+.while {
+  width: 100%;
+  height: 200rpx;
+}

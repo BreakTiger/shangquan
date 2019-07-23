@@ -1,0 +1,112 @@
+page {
+  background: rgba(247, 247, 247, 1);
+}
+
+.form-header {
+  width: 703rpx;
+  justify-content: space-between;
+  margin: 20rpx auto;
+  height: 88rpx;
+  background: rgba(255, 255, 255, 1);
+  border-radius: 20rpx;
+  box-shadow: 12rpx 0rpx 21rpx rgba(153, 153, 153, 0.2);
+}
+
+.header-title {
+  margin-left: 25rpx;
+  color: #333;
+}
+
+.header-num {
+  margin-right: 25rpx;
+  color: rgba(153, 153, 153, 1);
+}
+
+.header-textarea {
+  width: 702rpx;
+  height: auto;
+  padding-bottom: 20rpx;
+  margin: 25rpx auto;
+  background: rgba(255, 255, 255, 1);
+  border-radius: 20rpx;
+  box-shadow: 12rpx 0px 21rpx rgba(153, 153, 153, 0.2);
+}
+
+textarea {
+  width: 95%;
+  height: 225rpx;
+  margin: 10rpx 10rpx 10rpx 10rpx;
+  padding-top: 15rpx;
+  padding-left: 10rpx;
+}
+
+.right-onclick {
+  width: 10rpx;
+  height: 18rpx;
+  margin-right: 25rpx;
+  margin-left: 15rpx;
+}
+
+.sele {
+  color: #999;
+}
+
+button {
+  margin-top: 75rpx;
+  width: 480rpx;
+  height: 80rpx;
+  color: #fff;
+  font-size: 32rpx;
+  line-height: 80rpx;
+  background: rgba(247, 95, 60, 1);
+  border-radius: 8prx;
+  box-shadow: 12rpx 0px 21rpx rgba(247, 95, 60, 0.2);
+}
+
+/* 上传图片 */
+
+.up-pic {
+  /* padding:20rpx 24rpx; */
+  width: 100%;
+  justify-content: center;
+}
+
+.pic-box {
+  margin-top: 20rpx;
+  flex-flow: wrap;
+  width: 95%;
+}
+
+.ap-box {
+  position: relative;
+}
+
+.add-pic {
+  width: 160rpx;
+  height: 160rpx;
+  margin-right: 20rpx;
+  position: relative;
+  margin: 20rpx 30rpx 20rpx 30rpx;
+}
+
+/* 删除图片 */
+
+.img-de {
+  width: 45rpx;
+  height: 45rpx;
+  border-radius: 50%;
+  position: absolute;
+  right: -41rpx;
+  top: 5rpx;
+}
+
+.hong-contant .teamwork-btn {
+  width: 360rpx;
+  height: 88rpx;
+  border-radius: 50rpx;
+  color: white;
+  background-color: #14a1fd;
+  margin: 0 auto;
+  margin-top: 80rpx;
+  margin-bottom: 40rpx;
+}

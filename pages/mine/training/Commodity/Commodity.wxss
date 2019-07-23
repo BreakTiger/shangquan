@@ -1,0 +1,156 @@
+page {
+  background: rgba(247, 247, 247, 1);
+}
+
+.modity {
+  margin: 25rpx auto;
+  padding-top: 25rpx;
+  justify-content: center;
+  width: 702rpx;
+  height: auto;
+  background: linear-gradient(180deg, rgba(247, 97, 59, 1), rgba(253, 130, 48, 1));
+  border-radius: 20rpx;
+  padding-bottom: 25rpx;
+  box-shadow: 12rpx 0px 21rpx rgba(247, 98, 56, 0.4);
+}
+
+.modity-title {
+  width: 90%;
+  font-size: 30rpx;
+  margin-bottom: 25rpx;
+  color: rgba(255, 255, 255, 1);
+  justify-content: space-between;
+}
+
+.modity-content {
+  width: 90%;
+  justify-content: space-between;
+  font-size: 30rpx;
+  color: rgba(255, 255, 255, 1);
+}
+
+.add-goods {
+  width: 702rpx;
+  height: 88rpx;
+  background: rgba(255, 255, 255, 1);
+  border-radius: 20rpx;
+  margin: 20rpx auto;
+  box-shadow: 12rpx 0px 21rpx rgba(153, 153, 153, 0.2);
+}
+
+.addImg {
+  width: 30rpx;
+  height: 30rpx;
+  margin-left: 20rpx;
+}
+
+.goods {
+  margin: 20rpx auto;
+  padding-top: 15rpx;
+  width: 702rpx;
+  height: auto;
+  background: rgba(255, 255, 255, 1);
+  border-radius: 20px;
+  padding-bottom: 25rpx;
+}
+
+.goodsList {
+  min-width: 100%;
+  justify-content: center;
+}
+
+.goodsStatus {
+  font-size: 24rpx;
+  justify-content: flex-end;
+  width: 90%;
+  color: rgba(102, 102, 102, 1);
+}
+
+._goodsStatus {
+  font-size: 24rpx;
+  justify-content: flex-end;
+  width: 90%;
+  margin-top: 15rpx;
+  color: #f7603c;
+}
+
+.goodsContent {
+  min-width: 90%;
+}
+
+.goodsimage {
+  width: 189rpx;
+  height: 156rpx;
+  margin-left: 10rpx;
+}
+
+.goodsBox {
+  border-bottom: 1rpx solid #efefef;
+  width: 70%;
+  margin-left: 25rpx;
+}
+
+.boxName {
+  font-size: 28rpx;
+  width: 100%;
+  color: rgba(48, 48, 48, 1);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.box-price {
+  font-size: 28rpx;
+  color: rgba(250, 109, 34, 1);
+}
+
+.box-price text {
+  font-size: 24rpx;
+  color: #999;
+  text-decoration: line-through;
+}
+
+.del {
+  background-color: orangered;
+  width: 90px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  -webkit-transform: translateX(90px);
+  transform: translateX(90px);
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+.tab-h {
+  min-width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+  line-height: 80rpx;
+  background: #fff;
+  font-size: 16px;
+  white-space: nowrap;
+}
+
+.window-content text {
+  padding-left: 25rpx;
+  color: #fff;
+}
+
+.add_window {
+  width: 36rpx;
+  height: 36rpx;
+}
+
+.goodsimage image {
+  width: 156rpx;
+  height: 156rpx;
+}
+
+.windowWrap {
+  width: 90%;
+  margin: 0 auto;
+  color: #fff;
+}

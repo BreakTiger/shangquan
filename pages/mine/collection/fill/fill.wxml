@@ -1,0 +1,67 @@
+<view class='line'></view>
+<view class='shop flexw'>
+  <view class='shoptext'>入驻基本资料</view>
+  <view class='shopContent'>请请认真并准确地填写或修改您的报名基本资料</view>
+</view>
+<!-- from表单提交 -->
+<view>
+  <form>
+    <view class='flexw inputs'>
+      <!-- 手机号 -->
+      <view class='input-box flexac'>
+        <view class='f28'>手机号</view>
+        <input name='mobile' value="{{userInfo.mobile!=null?userInfo.mobile:''}}" placeholder='请输入手机号码'></input>
+      </view>
+      <!-- 姓名 -->
+      <view class='input-box flexac'>
+        <view class='f28'>姓名</view>
+        <input name="" value="1997"></input>
+      </view>
+      <!-- 经营类型 -->
+      <view class='input-box flexac'>
+        <view class='f28'>地区</view>
+        <!-- 时间段 -->
+        <view class="section flexac">
+          <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+            <view class="picker">
+              {{region[0]}}，{{region[1]}}，{{region[2]}}
+            </view>
+          </picker>
+          <input style='display:none;' name="" value=""></input>
+          <image src='/img/img/rightto.png' class='right-right'></image>
+        </view>
+        <!--  -->
+      </view>
+      <!-- 地址 -->
+      <view class='input-box flexac'>
+        <view class='f28'>请输入详细地址</view>
+        <input name='' value='' placeholder='请输入详情地址'></input>
+      </view>
+      <!-- 图片 -->
+      <view class='input-img flexac'>
+        <text class='f28 c6'>身份信息</text>
+      </view>
+      <!-- 上传图片 -->
+      <view class='up-pic'>
+        <view class='flex pic-box'>
+          <block wx:key="imgbox" wx:for="{{imgbox}}">
+            <view class='ap-box'>
+              <view class='add-pic'>
+                <image class='add-pic' src='{{item}}'></image>
+                <view class='img-de' data-deindex='{{index}}' bindtap='imgDelete1'>
+                  <image class='img' src='/img/img/icon_close2@2x.png'></image>
+                </view>
+              </view>
+            </view>
+          </block>
+          <view class='add-pic' bindtap='addPic1' wx:if="{{imgbox.length == 0}}">
+            <image class='img' src='/img/img/add_pic@2x.png'></image>
+          </view>
+        </view>
+      </view>
+      <button>下一步</button>
+    </view>
+  </form>
+</view>
+
+<view bindtap='goShop'>1</view>

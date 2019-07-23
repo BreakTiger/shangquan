@@ -1,0 +1,59 @@
+<form bindsubmit='toSubmit' report-submit='true'>
+  <view class='pro-content flexw'>
+    <view class='flexac' style='width:100%;padding-bottom:15rpx;'>
+      <view class='circular br'></view>
+      <view class='duct'>置顶产品</view>
+    </view>
+    <view wx:for="{{shopData}}" wx:key="shopData">
+      <view class='pro-box flexw'>
+        <view class='flex pro-box-con'>
+          <view class='pro-image'>
+            <image src='{{item.product_image}}' class='img b10'></image>
+          </view>
+          <view class='flexw pro-box-right'>
+            <view class='box-right-top flex'>
+              <view class='f30'>{{item.product_name}}</view>
+              <!-- <view class='select-right'>置顶中</view> -->
+            </view>
+            <view class='box-price'>￥{{item.price}}
+              <text>￥{{item.market_price}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- input -->
+  <view class='from-box flexac'>
+    <text>推广时间</text>
+    <view class="section flexac">
+      <picker bindchange="year" value="{{yearIndex}}" range="{{yearArr}}">
+        <view class="picker">
+          {{yearArr[yearIndex]}}
+        </view>
+      </picker>
+      <input name="month" value="{{yearIndex}}" style='display:none;'></input>
+      <image src='/img/img/jiantou@2x.png' class='input-right'></image>
+    </view>
+  </view>
+  <!-- 需支付广告币数量 -->
+  <view class='from-box flexac'>
+    <text>需支付广告币数量</text>
+    <input name="money" value="{{money}}" disabled='true'></input>
+  </view>
+  <!-- //支付成功 -->
+  <view class='pay-box'>{{text}}</view>
+  <!-- 实际支付：128 -->
+  <view class='from-box flexac' style="margin:180rpx auto;">
+    <text style='padding-right:215rpx;'>实际支付：{{money}}</text>
+    <button formType="submit">立即下单</button>
+  </view>
+</form>
+
+<!-- 客服 -->
+<view>
+  <image src='/img/img/servicewx.png' class='card-img'>
+    <button open-type="contact" class='card-img' style="opacity:0">进入客服会话</button>
+  </image>
+  <button open-type="contact" class='buy'></button>
+</view>

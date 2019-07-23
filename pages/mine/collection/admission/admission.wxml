@@ -1,0 +1,14 @@
+<import src="/pages/wxParse/wxParse.wxml" />
+<view class='line'></view>
+<!-- <view class='flexjac textText'>
+  特别提醒:
+</view> -->
+<!-- 内容 不知道是 文本框还是内容 -->
+<view class='content-text'>
+  <!-- {{text}} -->
+  <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+</view>
+<!-- end 内容 -->
+<view class='flexjac take'>
+  <button bindtap='agree'>我同意</button>
+</view>

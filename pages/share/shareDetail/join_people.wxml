@@ -1,0 +1,6 @@
+<view class='flexac join' wx:for="{{list}}" wx:key="list">
+  <view class='join-img'>
+    <image src='{{item.user_avatar}}' class='br img'></image>
+  </view>
+  <view class='join-name'>{{item.user_name}}</view>
+</view>

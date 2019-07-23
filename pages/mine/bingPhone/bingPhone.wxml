@@ -1,0 +1,17 @@
+<!-- 绑定手机号 -->
+<view class='line'></view>
+<view class='content'>
+  <form report-submit='true' bindsubmit="formSubmit">
+    <view class='box-p'>
+      <text class='phone'>手机号</text>
+      <input name="mobile" type='number' placeholder="请输入手机号" maxlength='11' class='number' bindinput='checkMobile' style='width:450rpx;' />
+    </view>
+    <view class='box-p'>
+      <text class='phone'>验证码</text>
+      <input name="verifycode" placeholder="请输入验证码" class='number' placeholder-style='color:#bbb' />
+      <view wx:if="{{timeout==false}}" bindtap='sendVerifyCode' class='getNum'>获取验证码</view>
+      <view wx:if="{{timeout==true}}" class='getNum'>{{seconds}}后重新发送</view>
+    </view>
+    <button formType="submit" class='submit'>绑定</button>
+  </form>
+</view>

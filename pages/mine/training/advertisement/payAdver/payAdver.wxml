@@ -1,0 +1,144 @@
+<form bindsubmit="teformSubmit">
+  <!-- 推广类型 -->
+  <!-- <view class='motion flexac'>
+    <view class='motionText'>推广类型</view>
+    <view class="section flexjac">
+      <picker bindchange="expandTypeChange" value="{{expandTypeID}}" range="{{expandType}}">
+        <view class="picker">
+          {{expandType[expandTypeID]}}
+        </view>
+      </picker>
+      <image src='/img/img/jiantou@2x.png' class='sectImg'></image>
+    </view>
+    此处的input框可以把滚动选择器的数据放进去，然后点击提交的时候把数据传给后台
+    <input style='display:none;' name="expandType" value="{{expandType[expandTypeID]}}"></input>
+  </view> -->
+  <!-- 推广类型end -->
+
+  <!-- 单选框 -->
+  <view class='motion check-box'>
+    <view class="page__bd ">
+      <view class="section section_gap ">
+        <view>
+          <checkbox-group name="checkbox" class="check">
+            <label bindtap='clicks' wx:for="{{checks}}" wx:key="{{checks}}" wx:for-index="index" data-index="{{index}}" class='{{item.checked?"is_checked":""}}' style="width:200rpx;margin:15rpx 10rpx;">
+              <checkbox value="{{item.value}}" data-val="{{item.name}}" hidden='false' checked='{{item.checked}}' /> {{item.name}}
+            </label>
+          </checkbox-group>
+          <input style='display:none' maxlength="20" name="roomlabel" placeholder='请输入职位名称' value=" {{checks[name]}}" />
+        </view>
+
+        <!-- <checkbox-group class="radio-group flex">
+          <label class="checkbox" wx:for="{{items}}">
+            <radio class="radio" wx:for-items="{{items}}" wx:key="name" value="{{item.value}}" checked="{{item.checked}}" color='#FD8230' bindchange="radioChange" data-checked='{{item.checked}}'>
+            </radio>
+          </label>
+        </checkbox-group>
+        <text>{{item.value}}</text>
+        <input style='display:none;' name="radio" value="{{item.value}}"></input> -->
+        <!-- <checkbox-group bindchange="radioChange" data-checked="{{item.checked}}" class="radio-group flex">
+          <label class="checkbox" wx:for="{{items}}" wx:key="{items}}">
+            <radio value="{{item.name && item.checked}}" checked="{{item.checked}}" color='#F8653A'>
+            </radio>
+            {{item.value}}
+          </label>
+        </checkbox-group> -->
+
+        <!-- <view>
+          <checkbox-group name="checkbox" class="check">
+            <label bindtap='clicks' wx:for="{{checks}}" wx:key="{{checks}}" wx:for-index="index" data-index="{{index}}" class='{{item.checked?"is_checked":""}}'>
+              <checkbox value="{{item.name}}" data-val="{{item.name}}" hidden='false' checked='{{item.checked}}' /> {{item.name}}
+            </label>
+          </checkbox-group>
+          <input style='display:none' maxlength="20" name="roomlabel" placeholder='请输入职位名称' value=" {{checks[name]}}" />
+        </view> -->
+      </view>
+    </view>
+  </view>
+  <!-- 单选框end -->
+
+
+  <!-- 海报 -->
+  <!-- <view class='slider flexjac'>
+    <view class='sliderImg'>
+      <image src='/img/img/_20180713172418@2x.png' class='img' style='border-radius:40rpx;'></image>
+      <view class='slider-text'>+ 海报</view>
+    </view>
+    <view class='slidercontent'>#送Ta一身新衣服，是时候向你的店铺表达你浓浓的爱意了#</view>
+  </view> -->
+  <view class='sliderbox'>
+    <view class='slider-content'>活动内容</view>
+    <textarea placeholder='请输入内容' value="" name="text"></textarea>
+  </view>
+  <!-- 海报end -->
+
+  <!-- 推广区域 -->
+  <view class='motion flexac'>
+    <view class='motionText'>推广区域</view>
+    <view class="section flexjac">
+      <picker mode="region" bindchange="expandAreaChange" value="{{region}}" custom-item="{{customItem}}">
+        <view class="picker">
+          {{region[0]}}-{{region[1]}}-{{region[2]}}
+        </view>
+      </picker>
+      <image src='/img/img/jiantou@2x.png' class='sectImg'></image>
+    </view>
+    <input style='display:none;' name='expandArea' value='{{region[1]}}-{{region[2]}}'></input>
+    <input name="province" value="{{region[0]}}" style='display: none;'></input>
+    <input name="city" value="{{region[1]}}" style='display: none;'></input>
+    <input name="county" value="{{region[2]}}" style='display: none;'></input>
+  </view>
+  <!-- 推广区域end -->
+
+  <!-- 投放位置 -->
+  <!-- <view class='motion flexac'>
+    <view class='motionText'>投放位置</view>
+    <view class="section flexjac">
+      <picker bindchange="putPlaceChange" value="{{putPlaceId}}" range="{{putPlace}}">
+        <view class="picker">
+          {{putPlace[putPlaceId]}}
+        </view>
+      </picker>
+      <image src='/img/img/jiantou@2x.png' class='sectImg'></image>
+    </view>
+    此处的input框可以把滚动选择器的数据放进去，然后点击提交的时候把数据传给后台
+    <input style='display:none;' name="putPlace" value="{{putPlace[putPlaceId]}}"></input>
+  </view> -->
+  <!-- 投放位置end -->
+
+  <!-- 推广时间 -->
+  <!-- <view class='motion flexac'> -->
+    <!-- <view class='motionText'>推广时间(天)</view> -->
+    <!-- <view class="section flexjac">
+      <picker bindchange="expandTimeChange" value="{{expandTimeId}}" range="{{expandTime}}">
+        <view class="picker">
+          {{expandTime[expandTimeId]}}
+        </view>
+      </picker>
+      <image src='/img/img/jiantou@2x.png' class='sectImg'></image>
+    </view> -->
+    <!-- 此处的input框可以把滚动选择器的数据放进去，然后点击提交的时候把数据传给后台 -->
+    <!-- <input placeholder='请输入推广时间(天)' name="expandTime" value="" type='number'></input> -->
+  <!-- </view> -->
+  <!-- 推广时间end -->
+
+  <!-- 广告币 -->
+  <!-- <view class='motion flexac'>
+    <view class='motionText'>需支付广告币数量</view>
+    <input name='num' value='' placeholder='数量' type="number"></input>
+  </view> -->
+  <view class='motion flexac'>
+    <view class='motionText'>微信号</view>
+    <input name='wechat' value='' placeholder='请输入微信号'></input>
+  </view>
+  <view class='proText'>{{text}}</view>
+  <button formType="submit">立即购买</button>
+</form>
+
+<!-- 客服 -->
+<view>
+  <image src='/img/img/servicewx.png' class='card-img'>
+    <button open-type="contact" class='card-img' style="opacity:0">进入客服会话</button>
+  </image>
+  <button open-type="contact" class='buy'></button>
+</view>

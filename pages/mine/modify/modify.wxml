@@ -1,0 +1,32 @@
+<view class='line'></view>
+<form report-submit='true' bindsubmit='saveUserInfo'>
+  <!-- 头像 -->
+  <view class='header flexac'>
+    <view class='f30 header-text'>头像</view>
+    <view class='headerImg' bindtap='chooseAvatar'>
+      <image src='{{avatar||userInfo.avatar}}' class='img br'></image>
+    </view>
+    <image src='/img/img/rightto.png' class='right'></image>
+  </view>
+  <!-- 昵称 -->
+  <view class='inputs flexac'>
+    <view class='f30 header-text'>昵称</view>
+    <input name='nickname' value='{{userInfo.nickname}}' placeholder='请输入昵称'></input>
+  </view>
+  <!-- 昵称 -->
+  <view class='inputs flexac' bindtap='toBind'>
+    <view class='f30 header-text'>绑定手机号</view>
+    <text class='input-text'>{{userInfo.mobile||'尚未绑定手机'}}</text>
+    <image src='/img/img/rightto.png' class='right'></image>
+  </view>
+
+  <!-- <view class='inputs flexac' wx:if="{{!userInfo.mobile}}">
+    <view class='f30 header-text'>绑定手机号</view>
+    <text class='input-text' bindtap='toBind'>{{userInfo.mobile||'尚未绑定手机'}}</text>
+    <image src='/img/img/rightto.png' class='right'></image>
+  </view> -->
+
+
+
+  <button form-type='submit'>保存</button>
+</form>

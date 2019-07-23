@@ -1,0 +1,104 @@
+<view class='line'></view>
+<view class='body-main'>
+
+  <view wx:for="{{list}}" wx:key="shop" style='margin-bottom:20rpx;' data-user_id="{{item.user_id}}" data-itemid="{{item.id}}" data-id="{{item.sc_id}}" bindtap='listdetail'>
+
+    <!-- 店铺内容 -->
+    <view class='content flexac'>
+      <view class='contentImg'>
+        <image src='{{item.store_avatar}}' class='img b10'></image>
+      </view>
+      <view class='content_box flexc'>
+        <view class='content-top flexac'>
+          <text class='top'>{{item.store_name}}</text>
+          <text class='top_area f24' data-index='{{index}}'>{{item.juli}}km</text>
+        </view>
+        <view class='content-center flexac'>
+          <!-- <i-rate bind:change="onChange5" count="{{5}}" value="{{item.avg_cores}}" size="13">
+          </i-rate> -->
+          <i-rate bind:change="onChange5" count="{{5}}" value="{{item.avg_cores}}" size="13"></i-rate>
+          <text class='center-text' style='margin-left:15rpx;'>{{item.avg_cores}}</text>
+          <view class='unline'></view>
+          <view class='center-text'>月销{{item.salenum}}</view>
+        </view>
+        <view class='box-iner flexac'>
+          <!-- <view class='auto_' wx:if="{{item.is_points != 0}}">现金立减</view> -->
+          <!-- <view class='auto_' wx:if="{{item.sc_id == 3}}">上门服务</view> -->
+          <view class='auto_' wx:if="{{item.sc_id == 2}}">户外活动</view>
+          <!-- <view class='auto_' wx:if="{{item.is_menber != 0}}">会员专享</view> -->
+          <!-- <view class='auto_' wx:if="{{item.sc_id == 1}}">免配送费</view> -->
+          <!-- <view class='auto_' wx:if="{{item.sc_id != 4}}">外卖配送</view> -->
+          <view class='auto_' wx:if="{{item.is_invoice == 1}}">可开发票</view>
+        </view>
+        <view class='content_right flex' style='justify-content: flex-end'>
+          <text class='right f24' catchtap='follow' wx:if="{{item.follow_status == 0}}" data-sid="{{item.id}}">关注</text>
+          <text class='right f24' catchtap='_follow' data-sid="{{item.id}}" wx:if="{{item.follow_status == 1}}">已关注</text>
+        </view>
+      </view>
+    </view>
+
+    <!-- 商品名称 -->
+    <view class='ccc flexjac'>
+      <view class='content_ flexac' style='overflow:hidden;width:100%;'>
+        <view class='flexac flexw' wx:for="{{item.child}}" wx:key="{{child}}" style='width:220rpx;margin:0 15rpx;width:220rpx;' wx:for-item="value">
+          <view class='content-img'>
+            <image src='{{value.product_image}}' class='img b10' style='position:relative;'>
+              <view class='autoFix_' wx:if="{{value.is_points!=0}}">立减{{value.is_points}}%</view>
+              <view class='autoFix_' wx:if="{{value.is_member==1}}">会员专享</view>
+              <view class='autoFix' wx:if="{{value.freight==1 && item.sc_id==1}}">免费配送</view>
+              <view class='autoFix' wx:if='{{value.freight==1 && item.sc_id == 3}}'>上门服务</view>
+              <view class='autoFix' wx:if='{{value.freight==1 && item.sc_id == 4}}'>包邮</view>
+            </image>
+          </view>
+          <view class='flexw'>
+            <view style="width:100%;overflow:hidden;height:46rpx;">{{value.product_name}}</view>
+            <!-- <view class='orange'>￥{{value.price}}</view> -->
+          </view>
+        </view>
+        <!-- <view class='content-img'>
+        <image src='/img/img/area2x.png' class='img b10'></image>
+      </view>
+
+      <view class='content-img'>
+        <image src='/img/img/area2x.png' class='img b10'></image>
+      </view> -->
+
+
+        <!-- <view>
+        <view class='contentImg'>
+          <image src='{{item.product_image}}' class='img'></image>
+        </view>
+        <view class='content_box flexc'>
+          <view class='content-top flexac'>
+            <text class='top'>{{item.product_name}}</text>
+            <text class='top_area f24' data-index='{{index}}'>{{distance[index]}}km</text>
+          </view>
+          <view class='content-center flexac'>
+            <i-rate bind:change="onChange5" count="{{5}}" value="{{4}}" size="13">
+          </i-rate>
+            <text class='center-text' style='margin-left:15rpx;'>5.0</text>
+            <view class='unline'></view>
+            <view class='center-text'>月销{{item.salenum}}</view>
+          </view>
+          <view class='content_right flex'>
+            <view class='content-price flex'>
+              <view class='content-price-left'>￥{{item.price}}</view>
+              <view class='content-price-right'>￥{{item.market_price}}</view>
+            </view>
+          </view>
+        </view>
+      </view> -->
+      </view>
+    </view>
+
+
+  </view>
+
+  <view class='emp' wx:if='{{list.length==0}}'>当前没有免费使用的店铺或者商品..</view>
+
+</view>
+
+
+<view class='page-add-data flexca' wx:if="{{list.length > 10}}">
+  <text>{{pageTottomText}}</text>
+</view>

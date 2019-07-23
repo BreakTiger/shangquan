@@ -1,0 +1,197 @@
+page {
+  background: rgba(247, 247, 247, 1);
+}
+
+.motion {
+  margin: 20rpx auto;
+  width: 702rpx;
+  height: 88rpx;
+  background: rgba(255, 255, 255, 1);
+  border-radius: 20rpx;
+  justify-content: space-between;
+  box-shadow: 12rpx 0px 21rpx rgba(153, 153, 153, 0.2);
+}
+
+.motionText {
+  margin-left: 25rpx;
+  font-size: 30rpx;
+  color: rgba(51, 51, 51, 1);
+}
+
+.picker {
+  font-size: 30rpx;
+  margin-right: 10rpx;
+  color: rgba(253, 130, 48, 1);
+}
+
+input {
+  text-align: right;
+  margin-right: 25rpx;
+  width: 300rpx;
+  font-size: 30rpx;
+  color: rgba(253, 130, 48, 1);
+}
+
+.proText {
+  width: 702rpx;
+  font-size: 28rpx;
+  margin: 30rpx auto;
+  color: #999;
+  padding-left: 62rpx;
+}
+
+.sectImg {
+  width: 14rpx;
+  height: 22rpx;
+  margin-right: 25rpx;
+}
+
+button {
+  width: 480rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 32rpx;
+  color: #fff;
+  margin: 100rpx auto;
+  background: linear-gradient(80deg, rgba(247, 97, 59, 1), rgba(253, 130, 48, 1));
+  border-radius: 8rpx;
+}
+
+.slider {
+  padding-top: 20rpx;
+  width: 705rpx;
+  height: auto;
+  padding-bottom: 20rpx;
+  margin: 20rpx auto;
+  background: rgba(255, 255, 255, 1);
+  border-radius: 40rpx;
+  flex-wrap: wrap;
+}
+
+.slider-content {
+  padding-left: 25rpx;
+  font-size: 30rpx;
+  color: rgba(51, 51, 51, 1);
+}
+
+.sliderbox {
+  width: 705rpx;
+  height: auto;
+  margin: 20rpx auto;
+  background: rgba(255, 255, 255, 1);
+  border-radius: 40rpx;
+  box-shadow: 12rpx 0px 21rpx rgba(153, 153, 153, 0.2);
+  padding: 20rpx 0;
+}
+
+.sliderImg {
+  width: 662rpx;
+  height: 430rpx;
+  position: relative;
+}
+
+.slidercontent {
+  width: 90%;
+  font-size: 34rpx;
+  margin-top: 20rpx;
+  font-family: PingFangSC-Regular;
+  color: rgba(253, 130, 48, 1);
+}
+
+.slider-text {
+  width: 160rpx;
+  height: 60rpx;
+  position: absolute;
+  top: 29rpx;
+  right: 34rpx;
+  border-radius: 20rpx;
+  background: #fff;
+  font-size: 30rpx;
+  color: #ff4427;
+  line-height: 60rpx;
+  text-align: center;
+}
+
+.check-box {
+  height: auto;
+}
+
+.radio {
+  font-size: 30rpx;
+  font-family: PingFangSC-Regular;
+  color: rgba(51, 51, 51, 1);
+  margin: 15rpx;
+}
+
+.radio-group {
+  justify-content: space-start;
+  flex-wrap: wrap;
+  padding: 15rpx 0;
+}
+
+textarea {
+  width: 95%;
+  padding-left: 15rpx;
+  padding-top: 15rpx;
+  background: rgba(247, 247, 247, 1);
+  margin: 20rpx auto;
+  border-radius: 20rpx;
+}
+
+/*客服 */
+
+.card-img {
+  width: 100rpx;
+  height: 100rpx;
+  position: fixed;
+  right: 30rpx;
+  bottom: 201rpx;
+}
+
+button::after {
+  background: none;
+}
+
+.buy {
+  width: 100rpx;
+  height: 100rpx;
+  position: fixed;
+  right: 30rpx;
+  bottom: 109rpx;
+  opacity: 0;
+}
+
+label {
+  border: 2rpx solid #aaa;
+}
+
+.check {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 25rpx 0;
+  /* justify-content: space-around; */
+}
+
+.check label {
+  width: 120rpx;
+  height: 60rpx;
+  border-radius: 8rpx;
+  /* background-color: #fff;   */
+  display: flex;
+  align-items: center;
+  margin: 0 5rpx;
+  justify-content: center;
+  /* color: #aaa; */
+  margin-top: 20rpx;
+}
+
+.is_checked {
+  background-color: #14a1fd;
+  opacity: 0.4;
+  color: #fff;
+  border: 2rpx solid #fff;
+}
+
+.is_checked>checkbox {
+  color: red;
+}

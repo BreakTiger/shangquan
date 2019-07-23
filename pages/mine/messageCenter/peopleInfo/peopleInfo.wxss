@@ -1,0 +1,112 @@
+page {
+  background: rgba(247, 247, 247, 1);
+}
+
+.people-container {
+  width: 703rpx;
+  height: 160rpx;
+  background: rgba(255, 255, 255, 1);
+  border-radius: 20rpx;
+  margin: 20rpx auto;
+  box-shadow: 12rpx 0px 21rpx rgba(153, 153, 153, 0.2);
+}
+
+.peopleImg {
+  width: 120rpx;
+  height: 120rpx;
+  margin-left: 20rpx;
+}
+
+.peopleUser {
+  width: 514rpx;
+  margin-left: 15rpx;
+  height: 117rpx;
+}
+
+.peopleUser-name {
+  width: 100%;
+  height: 78rpx;
+  overflow: hidden;
+}
+
+.selectContent {
+  width: 702rpx;
+  height: auto;
+  padding-bottom: 20rpx;
+  margin: 20rpx auto;
+  border-radius: 20rpx;
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 12px 0px 21px rgba(153, 153, 153, 0.2);
+}
+
+.selectText {
+  width: 100%;
+  height: 130rpx;
+}
+
+.selectImg {
+  width: 100rpx;
+  height: 100rpx;
+  margin-left: 20rpx;
+}
+
+.selectImgText {
+  width: 394rpx;
+  margin-left: 15rpx;
+}
+
+.sign {
+  border: 1rpx solid #fa6d22;
+  width: auto;
+  padding-left: 15rpx;
+  padding-right: 15rpx;
+  font-size: 28rpx;
+  border-radius: 10rpx;
+  color: rgba(250, 109, 34, 1);
+}
+
+.selectImgTextDate {
+  width: 100%;
+  font-size: 30rpx;
+}
+
+.centerSelect {
+  width: 659rpx;
+  height: 350rpx;
+  margin: 20rpx auto;
+}
+
+.centerSelect1 {
+  position: relative;
+  width: 659rpx;
+  height: 350rpx;
+  margin: 20rpx auto;
+}
+
+.bottomText {
+  width: 655rpx;
+  height: 68rpx;
+  color: rgba(34, 34, 34, 1);
+  margin: 20rpx auto;
+}
+
+.sign_ {
+  background: rgba(250, 109, 34, 1);
+  border-radius: 10rpx;
+  padding-left: 10rpx;
+  padding-right: 10rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  color: #fff;
+}
+
+.actmove {
+  width: 141rpx;
+  height: 49rpx;
+  background: linear-gradient(80deg, rgba(250, 109, 34, 1), rgba(247, 96, 60, 1));
+  border-radius: 0px 20rpx 20rpx 0px;
+  position: absolute;
+  color: #fff;
+  font-size: 30rpx;
+  top: 141rpx;
+}

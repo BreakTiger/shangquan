@@ -1,0 +1,162 @@
+page {
+  background: rgba(247, 247, 247, 1);
+}
+
+/* 结算 */
+
+.pay-container {
+  width: 100%;
+  height: 150rpx;
+  position: fixed;
+  bottom: 0;
+}
+
+.pay-box {
+  width: 703rpx;
+  height: 98rpx;
+  background: rgba(255, 255, 255, 1);
+  border-radius: 20rpx;
+  justify-content: space-between;
+}
+
+button {
+  width: 200rpx;
+  height: 68rpx;
+  font-size: 30rpx;
+  line-height: 60rpx;
+  color: #fff;
+  background: linear-gradient(80deg, rgba(253, 130, 48, 1), rgba(247, 97, 59, 1));
+  margin-right: 43rpx;
+  border-radius: 10rpx;
+}
+
+.pay-sum {
+  font-size: 28rpx;
+  margin-left: 25rpx;
+  color: rgba(51, 51, 51, 1);
+}
+
+.pay-sum text {
+  font-size: 36rpx;
+  margin-left: 15rpx;
+  color: #fd8230;
+}
+
+/* top-header */
+
+.top-header {
+  width: 100%;
+  height: 81rpx;
+  border-bottom-left-radius: 20rpx;
+  border-bottom-right-radius: 20rpx;
+  background: linear-gradient(rgba(247, 96, 60, 1), rgba(250, 109, 34, 1));
+}
+
+.shop-data {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  flex-wrap: wrap;
+  height: auo;
+  padding-top: 25rpx;
+  padding-bottom: 200rpx;
+  border-radius: 20px;
+  box-shadow: 0px 0px 0px rgba(6, 0, 1, 0.04);
+}
+
+.top-to {
+  width: 702rpx;
+  height: 13rpx;
+}
+
+.shop {
+  margin: 20rpx auto;
+  padding: 15rpx auto;
+  background: #fff;
+  width: 702rpx;
+  border-radius: 20rpx;
+}
+
+/* 购物车内容 */
+
+.shopImage {
+  width: 34rpx;
+  height: 34rpx;
+  margin-left: 15rpx;
+  margin-right: 15rpx;
+}
+
+.select-image {
+  width: 36rpx;
+  height: 36rpx;
+}
+
+.select-image1 {
+  width: 36rpx;
+  height: 36rpx;
+  margin-left: 15rpx;
+}
+
+.one {
+  justify-content: space-between;
+  width: 100%;
+  padding: 25rpx 20rpx;
+}
+
+.shop-content {
+  width: 100%;
+  height: auto;
+  margin: 25rpx auto;
+  /* border-top: 1rpx solid #efefef; */
+  padding: 20rpx 0;
+  /* border-bottom: 1rpx solid #efefef; */
+}
+
+.shop-image {
+  width: 190rpx;
+  height: 190rpx;
+  margin-left: 15rpx;
+}
+
+.content-shop {
+  width: 430rpx;
+  margin-left: 15rpx;
+  justify-content: space-between;
+}
+
+.content-shop image {
+  width: 50rpx;
+  height: 50rpx;
+  /* margin-right: 30rpx; */
+}
+
+.num-box {
+  justify-content: space-between;
+  width: 100%;
+  padding-top: 109rpx;
+}
+
+.price-num {
+  width: 60rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  text-align: center;
+  background: #eee;
+}
+
+.num-image {
+  width: auto;
+  padding-right: 15rpx;
+}
+
+.img-car {
+  margin: 200rpx auto;
+  height: 400rpx;
+  width: 400rpx;
+}
+
+.addpro {
+  width: 330rpx;
+  height: 45rpx;
+  overflow: hidden;
+}

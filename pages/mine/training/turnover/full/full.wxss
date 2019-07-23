@@ -1,0 +1,45 @@
+page{
+  background: #fff;
+}
+
+.title {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: 50rpx 0;
+  padding: 0 50rpx;
+  align-items: center;
+}
+
+.mone {
+  color: #ff4427;
+  font-size: 56rpx;
+}
+
+canvas {
+  width: 100%;
+}
+
+.left {
+  width: 100rpx;
+  margin-right: 50rpx;
+  display: flex;
+  justify-content: center;
+}
+
+.right {
+  width: 100rpx;
+  display: flex;
+  justify-content: center;
+  margin-left: 50rpx;
+}
+
+.left_ {
+  width: 11rpx;
+  height: 19rpx;
+}
+
+.right_ {
+  width: 11rpx;
+  height: 19rpx;
+}

@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "免费试用",
+  "usingComponents": {
+    "i-rate": "/component/rate/index"
+  }
+}

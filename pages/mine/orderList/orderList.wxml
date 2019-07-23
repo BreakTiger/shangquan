@@ -1,0 +1,108 @@
+<view class='main-body'>
+
+  <!-- 头部导航 -->
+  <view class="nav_title">
+    <view class="nav_tab">
+      <view class="{{index==selected?'hidden':'show'}}" data-index='{{index}}' bindtap="selected" wx:for="{{tablist}}" wx:key="list">{{item}}
+        <!-- 下边线 -->
+        <view class="{{selected==index?'nav_underline':''}}"></view>
+      </view>
+    </view>
+  </view>
+
+
+  <!-- 全部 -->
+  <!-- <view class='all' wx:if='{{selected == 0}}'> -->
+
+  <!-- 不锁定 -->
+  <block wx:for='{{all}}' wx:key='this'>
+
+    <view class='mian flexc bgr mt'>
+
+      <view bindtap='ordermain' data-index='{{index}}'>
+        <!-- 订单状态 -->
+        <view class='mian-header flex'>
+
+          <view class='size26'>订单编号：{{item.order_sn}}</view>
+          <!-- 未支付 -->
+          <view class='size26' style='color:#fa6d22' wx:if='{{item.order_status==10}}'>待支付</view>
+          <!-- 已支付 -->
+          <view class='size26' style='color:#fa6d22' wx:if='{{item.order_status==20}}'>待发货</view>
+          <!-- 已发货 -->
+          <view class='size26' style='color:#fa6d22' wx:if='{{item.order_status==30}}'>待收货</view>
+          <!-- 已完成 -->
+          <view class='size26' style='color:#fa6d22' wx:if='{{item.order_status==40}}'>已完成</view>
+          <!-- 退款 -->
+          <view class='size26' style='color:#fa6d22' wx:if='{{item.order_status==50}}'>退款处理中</view>
+          <!-- 退款成功 -->
+          <view class='size26' style='color:#fa6d22' wx:if='{{item.order_status==60}}'>退款成功</view>
+          <!-- 退款失败 -->
+          <view class='size26' style='color:#fa6d22' wx:if='{{item.order_status==70}}'>退款失败</view>
+
+        </view>
+
+        <!-- 商品信息 -->
+        <view class='content flexac' wx:for='{{item.product}}' wx:key='this'>
+
+
+          <view class='contentImg'>
+            <image src='{{item.product_image}}' class='img b10'></image>
+          </view>
+
+
+          <view class='content_box flexc'>
+            <view class='content-top top'>{{item.product_name}}</view>
+
+
+
+            <view class='content-center flexac'>
+              <view class='content-price-left'>￥{{item.pay_price}}</view>
+              <view class='content-price-right'>￥{{item.goods_price}}</view>
+            </view>
+
+            <view class='content_right flex'>
+              <view class='content-price flex'>
+                <view class='content-price-right underline color'>{{all[index].buy_time}}</view>
+              </view>
+              <text class='content-price-right underline'>X {{item.goods_num}}</text>
+            </view>
+
+          </view>
+
+        </view>
+      </view>
+
+
+      <!-- 按钮 -->
+      <view class='flex main-bottom'>
+
+        <!-- 待支付 -->
+        <button class='pay' wx:if='{{item.order_status==10}}' bindtap='payTap' data-item='{{item}}'>付款</button>
+
+        <button class='cancel' wx:if='{{item.order_status==10}}' bindtap='cancelTap' data-item='{{item}}'>取消订单</button>
+
+        <!-- 待收货 -->
+        <button class='affirm' wx:if='{{item.order_status==30 ||item.order_status==70}}' bindtap='receive' data-item='{{item}}'>确认收货</button>
+
+        <!-- 已完成 -->
+        <button class='del' wx:if='{{item.order_status==40||item.order_status==60}}' bindtap='cancelTap' data-item='{{item}}'>删除</button>
+
+        <button class='used' wx:if='{{item.order_status==40 &&item.pingjia_status==0}}' bindtap='evaluate' data-item='{{item}}'>立即评价</button>
+
+        <button class='refund' wx:if='{{item.order_status==30 ||item.order_status == 70}}' bindtap='refund' data-item='{{item}}'>申请退款</button>
+
+
+        <button class='ison' open-type="contact" wx:if="{{item.order_status==50 ||item.order_status==60 }}">联系客服</button>
+
+      </view>
+    </view>
+
+  </block>
+
+  <!-- </view> -->
+
+</view>
+
+<view wx:if="{{all.length == 0}}" class='flexjac listall'>
+  <image src='/img/img/default_order@2x.png' class='img-car'></image>
+</view>

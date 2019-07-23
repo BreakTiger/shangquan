@@ -1,0 +1,221 @@
+/* 页面背景色 */
+
+page {
+  background: rgba(247, 247, 247, 1);
+}
+
+.nav_tab {
+  width: 702rpx;
+  margin: 20rpx auto;
+  height: 100rpx;
+  display: flex;
+  background: #fff;
+  border-radius: 10rpx;
+  flex-direction: row;
+}
+
+/* 未选中的样式 */
+
+.common {
+  line-height: 100rpx;
+  text-align: center;
+  flex: 1;
+  color: #333;
+  font-size: 28rpx;
+  opacity: 0.5;
+}
+
+/* 选中时的样式 */
+
+.active {
+  line-height: 100rpx;
+  text-align: center;
+  color: #fa6d22;
+  flex: 1;
+  font-size: 28rpx;
+}
+
+/* 下划线的样式 */
+
+.nav_underline {
+  background: #fa6d22;
+  width: 54rpx;
+  height: 6rpx;
+  margin-top: -10rpx;
+  margin-left: 44rpx;
+  border-radius: 8rpx;
+}
+
+.bgr {
+  background-color: #fff;
+  border-radius: 10rpx;
+}
+
+.mt {
+  margin-top: 20rpx;
+}
+
+.mian {
+  width: 705rpx;
+  height: 100%;
+  margin: 20rpx auto;
+}
+
+.size26 {
+  font-size: 28rpx;
+  line-height: 86rpx;
+  color: #333;
+}
+
+/* 上 */
+
+.mian-header {
+  justify-content: space-between;
+  margin: 0 30rpx;
+  border-bottom: 1px solid #efefef;
+}
+
+/* 中 */
+
+.content {
+  background-color: #fff;
+  margin: 0 20rpx;
+  height: 200rpx;
+  justify-content: space-around;
+}
+
+.contentImg {
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 8rpx;
+}
+
+.content_box {
+  width: 534rpx;
+  height: 200rpx;
+}
+
+.content-top {
+  justify-content: space-between;
+  height: 62rpx;
+  padding-top: 5rpx;
+}
+
+.top {
+  font-size: 30rpx;
+  font-family: PingFangSC-Medium;
+  color: rgba(48, 48, 48, 1);
+}
+
+.top_area {
+  font-family: PingFangSC-Regular;
+  color: #666;
+  margin-right: 15rpx;
+}
+
+.content-center {
+  height: 68rpx;
+  margin-top: -10rpx;
+}
+
+.content-price-left {
+  font-size: 28rpx;
+  color: #ff4427;
+  line-height: 50rpx;
+}
+
+.content-price-right {
+  font-size: 24rpx;
+  color: #999;
+  line-height: 50rpx;
+  margin-left: 12rpx;
+}
+
+.color {
+  color: #fa6d22;
+}
+
+.content_right {
+  justify-content: space-between;
+}
+
+.main-shop {
+  justify-content: flex-end;
+  margin: 0 30rpx;
+  border-top: 1px solid #efefef;
+}
+
+/* 下 */
+
+.main-bottom {
+  justify-content: space-between;
+  padding: 27rpx 0rpx;
+  border-top: 1px solid #efefef;
+  margin: 0 30rpx;
+}
+
+.btn-line {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.paybtn {
+  width: 135rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  font-size: 30rpx;
+  margin: 21rpx 20rpx;
+}
+
+.cancel {
+  width: 190rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  font-size: 30rpx;
+  margin: 21rpx 20rpx;
+}
+
+.suretap {
+  width: 190rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  font-size: 30rpx;
+  margin: 21rpx 20rpx;
+}
+
+.delbtn {
+  width: 135rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  font-size: 30rpx;
+  margin: 21rpx 20rpx;
+}
+
+.pingjia {
+  width: 190rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  font-size: 30rpx;
+  margin: 21rpx 20rpx;
+}
+
+.img-car {
+  margin: 200rpx auto;
+  height: 400rpx;
+  width: 400rpx;
+}
+
+.listall {
+  width: 100%;
+  position: fixed;
+  top: 100rpx;
+}
+
+button {
+  background: #fff;
+  border: 1rpx solid #999;
+  font-size: 26rpx;
+}

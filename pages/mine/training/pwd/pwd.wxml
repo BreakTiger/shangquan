@@ -1,0 +1,22 @@
+<view class="forget-container">
+    <form bindsubmit="formSubmitto">
+      <view class='username'>
+        <image src='/img/img/icon_user@2x.png'></image>
+        <input maxlength='11' name='phone' placeholder='请输入手机号' type="text" bindinput='blurPhoner' value="{{phone!=null?phone:''}}" disabled='true'/>
+      </view>
+       <view class='username'>
+       <image src='/img/img/btn_edit@2x.png'></image>
+        <input maxlength='4' name='nchange' placeholder='请输入验证码' type="text" bindblur='yanZhengInput' />
+        <view class='get-pwd'>
+          <view  bindtap='yanzhengBtn' class="pwd-text-box flexjac {{getChange?'':'active'}}">
+            <text> {{getText}}</text>
+          </view>
+        </view>
+      </view>
+      <!-- <view style='font-size:22rpx;margin-top:30rpx;'>*输入手机号码即可找回对应账号的密码 </view> -->
+      <button class='flexca' formType="submit">下一步 </button>
+    </form>
+
+</view>
+
+<!-- <view bindtap='a'>0</view> -->

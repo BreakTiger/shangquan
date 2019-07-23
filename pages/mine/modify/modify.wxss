@@ -1,0 +1,63 @@
+page {
+  background: rgba(247, 247, 247, 1);
+}
+
+.header {
+  width: 100%;
+  height: 200rpx;
+  justify-content: space-between;
+  background: #fff;
+  border-bottom: 1rpx solid #efefef;
+}
+
+.headerImg {
+  width: 160rpx;
+  height: 160rpx;
+  margin-right: 60rpx;
+}
+
+.header-text {
+  color: #333;
+  margin-left: 35rpx;
+}
+
+.right {
+  width: 11rpx;
+  height: 19rpx;
+  position: absolute;
+  right: 30rpx;
+}
+
+.inputs {
+  width: 100%;
+  justify-content: space-between;
+  height: 89rpx;
+  border-bottom: 1rpx solid #efefef;
+  background: #fff;
+}
+
+.input-text {
+  margin-right: 60rpx;
+  font-size: 30rpx;
+  font-family: PingFangSC-Regular;
+  color: rgba(51, 51, 51, 1);
+}
+
+input {
+  text-align: right;
+  color: #333;
+  font-size: 28rpx;
+  margin-right: 60rpx;
+}
+
+button {
+  width: 480rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  color: #fff;
+  margin-top: 35rpx;
+  font-size: 32rpx;
+  background: linear-gradient(80deg, rgba(250, 109, 34, 1), rgba(247, 96, 60, 1));
+  border-radius: 8rpx;
+}

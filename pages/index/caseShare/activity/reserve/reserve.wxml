@@ -1,0 +1,156 @@
+<form>
+  <view class='main-body'>
+    <view class='auto24 flex-column'>
+      <view class='bgr header flex-column mt'>
+        <view class='header-title auto20'>
+          杭州 | 亲子海上乐园
+        </view>
+        <view class='line87 auto20'>
+          预定详情
+        </view>
+        <view class='header-combo flex auto20'>
+          <view class='size26'>
+            套餐一
+          </view>
+          <view>
+            <i-panel>
+              <view class='i-input'>
+                <i-input-number value="{{ value1 }}" min="0" max="100" bindchange="handleChange1" />
+              </view>
+            </i-panel>
+          </view>
+        </view>
+        <view class='header-combo flex auto20'>
+          <view class='size26'>
+            预定价格
+          </view>
+          <view class='size26'>
+            ￥{{price}}
+          </view>
+        </view>
+      </view>
+
+
+      <view class='bgr header flex-column mt'>
+        <view class='line87 auto20'>
+          联系人信息
+        </view>
+        <view class='header-combo flex auto20 border-b'>
+          <view class='line70 '>
+            用户名
+          </view>
+          <input placeholder='请输入预定姓名' class='line70'></input>
+        </view>
+        <view class='header-combo flex auto20 border-b'>
+          <view class='line70 '>
+            手机号
+          </view>
+          <input placeholder='请输入有效手机号' class='line70'></input>
+        </view>
+        <view class='header-combo flex auto20'>
+          <view class='line70 '>
+            身份证号
+          </view>
+          <input placeholder='请输入有效身份证号' class='line70'></input>
+        </view>
+      </view>
+
+      <view class='bgr header flex-column mt'>
+        <view class='header-combo flex auto20'>
+          <view class='line87'>
+            预约
+          </view>
+          <view class='correct'>
+            √
+          </view>
+        </view>
+        <view class='header-combo flex auto20'>
+          <view class='size26'>
+            预定日期
+          </view>
+          <view class='size26'>
+            2019-07-07 >
+          </view>
+        </view>
+      </view>
+
+
+
+      <view class='bgr header flex-column mt'>
+        <view class='header-combo flex auto20'>
+          <view class='line87'>
+            备注
+          </view>
+        </view>
+        <view class='header-combo flex'>
+          <i-panel>
+            <i-input type="textarea" placeholder="预约时间及其他备注信息..." />
+          </i-panel>
+        </view>
+      </view>
+
+      <view class='bgr header flex-column mt'>
+        <view class='header-combo flex auto20'>
+          <view class='size26'>
+            会员折扣
+          </view>
+          <view class='size26'>
+            -￥39
+            <i-icon type="enter" />
+          </view>
+        </view>
+        <view class='header-combo flex auto20'>
+          <view class='size26'>
+            支付方式
+          </view>
+          <view class='size26'>
+            -￥40
+            <i-icon type="enter" />
+          </view>
+        </view>
+        <view class='header-combo flex auto20'>
+          <view class='size26'>
+            积分抵扣
+          </view>
+          <view class='size26'>
+            微信支付
+          </view>
+        </view>
+      </view>
+
+      <view style='height:130rpx;'>
+      </view>
+
+
+
+
+
+    </view>
+  </view>
+
+
+
+  <view class='flex footer'>
+    <view class='flex'>
+      <view class='line87'>
+        已优惠
+      </view>
+      <view class='orange'>
+        ￥79
+      </view>
+    </view>
+    <view class='flex'>
+      <view class='line87'>
+        实付
+      </view>
+      <view class='orange'>
+        ￥79
+      </view>
+    </view>
+    <view>
+      <button>
+        立即预定
+      </button>
+    </view>
+  </view>
+</form>

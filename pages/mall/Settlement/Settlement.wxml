@@ -1,0 +1,259 @@
+<form bindsubmit='submit' report-submit='true'>
+  <view class='flexc auto'>
+    <!-- 用户信息 -->
+    <view class='header mt b-r' bindtap='changeadds'>
+      <view class='flexc mr'>
+        <view class='flexac list_'>
+          <view class='size28'>
+            姓名：{{name || '暂无'}}
+          </view>
+          <view>电话：{{phone || '暂无'}}</view>
+        </view>
+        <view class='size28' style='margin-bottom:79rpx;'>
+          地址：{{address || '暂无'}}
+        </view>
+        <view>
+          <image src='/img/img/address.png' class="header-img"></image>
+        </view>
+      </view>
+    </view>
+    <!-- 用户信息end -->
+
+    <!-- 店铺商品信息 -->
+    <view class='shop mt b-r' wx:for="{{jiF}}" wx:key="jiF">
+      <view class='shop1 flexc mr'>
+        <!-- 第一层 -->
+        <view class='flex'>
+          <!-- 店铺名称 -->
+          <image src='/img/img/dianpu1@2x.png' class='shop-img b10'></image>
+          <view class='shop-name'>{{item.store.store_name}}</view>
+        </view>
+        <!-- 第二层 -->
+        <view class='flex' wx:for="{{item.product}}" wx:key="product" wx:for-item="value">
+          <view style='position:relative;'>
+            <image class='shop-image b10' src="{{value.product_image}}">
+            </image>
+            <view class='position' wx:if="{{value.detail.is_member != 0}}">会员专享</view>
+          </view>
+          <!-- 第三层 -->
+          <view class='flexc content_right'>
+            <view class='shopping-name'>{{value.product_name}}</view>
+            <view class='flex content_right'>
+              <view class='content-price flex'>
+                <view class='content-price-left'>
+                  ￥{{value.price}}
+                </view>
+                <!-- <view class='content-price-right'>
+                ￥135
+              </view> -->
+              </view>
+              <text class='content-price-right underline'>X {{value.num}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+
+
+
+
+      <!-- 数量 合计 -->
+      <view class='content-input flexw'>
+        <view class='input-box flexac' style='justify-content:flex-end;'>
+          <view>共{{item.store.allnumber}}件
+            <text>合计：{{item.store.allprice}}</text>
+          </view>
+        </view>
+      </view>
+
+
+
+
+      <!-- 会员折扣 -->
+      <!-- <view class='content-input flexw' wx:if="{{item.product[index].detail.is_member != 0}}">
+        <view class='input-box flexac'>
+          <text>会员折扣</text>
+          <view class='flexac'>
+            <view>{{vip}}折</view>
+            <image src='/img/img/rightto.png' class='input-right'></image>
+          </view>
+        </view>
+      </view> -->
+
+
+
+
+
+      <!-- 运费 -->
+      <view class='content-input flexw' wx:if="{{item.store.detail.sc_id == 4}}">
+        <view class='input-box flexac'>
+          <text>运费</text>
+          <view class='flexac'>
+            <view wx:if="{{item.store.detail.distribution_fee == 0}}">包邮</view>
+            <view wx:else>不包邮</view>
+            <image src='/img/img/rightto.png' class='input-right'></image>
+          </view>
+        </view>
+      </view>
+      <view class='content-input flexw' wx:if="{{item.store.detail.sc_id == 1}}">
+        <view class='input-box flexac'>
+          <text>配送</text>
+          <view class='flexac'>
+            <view wx:if="{{item.store.detail.distribution_fee == 0}}">免配送费</view>
+            <view wx:else>到店自取</view>
+            <image src='/img/img/rightto.png' class='input-right'></image>
+          </view>
+        </view>
+      </view>
+      <view class='content-input flexw' wx:if="{{item.store.detail.sc_id == 3}}">
+        <view class='input-box flexac'>
+          <text>上门服务</text>
+          <view class='flexac'>
+            <view wx:if="{{item.store.detail.distribution_fee == 0}}">支持上门服务</view>
+            <view wx:else>不支持上门服务</view>
+            <!-- <view>免费配送</view> -->
+            <image src='/img/img/rightto.png' class='input-right'></image>
+          </view>
+        </view>
+      </view>
+      <!-- 运费 -->
+      <!-- <view class='content-input flexw'>
+      <view class='input-box flexac' style='justify-content:flex-end;'>
+        <view class='input-text' style='margin-right:25rpx;'>已优惠
+          <text>￥128</text>
+        </view>
+        <view class='input-text'>实际支付
+          <text>￥128</text>
+        </view>
+      </view>
+    </view> -->
+
+
+    
+      <!-- 留言 -->
+      <view class='content-input flexw'>
+        <view class='input-box flexac'>
+          <text>留言</text>
+          <input name="text" value="" placeholder='请输入留言' bindblur='inputText' data-index="{{index}}"></input>
+        </view>
+      </view>
+    </view>
+
+
+
+
+
+
+
+    <!-- 支付方式 -->
+    <view class='pay-type flexac'>
+      <text style="margin-left:25rpx;">支付方式</text>
+      <text style="margin-right:25rpx;">微信支付</text>
+    </view>
+
+    <!-- 会员折扣 -->
+    <view class='content-input flexw' wx:if="{{member > 0}}">
+      <view class='input-box flexac'>
+        <text>会员折扣</text>
+        <view class='flexac'>
+          <view>{{vip}}折</view>
+          <image src='/img/img/rightto.png' class='input-right'></image>
+        </view>
+      </view>
+    </view>
+
+
+    <!-- 商户币抵扣 -->
+    <view wx:if="{{ code == 1}}">
+      <!--选择商基金不可奖励金抵扣 -->
+      <view wx:if="{{table}}">
+        <view class='content-input flexw'>
+          <view class='content-box flexac'>
+            <text>可用商基金：{{seller_coin || 0}}</text>
+            <view class='flexac'>
+              <text class='mr-15'> 最多抵扣：{{probably}}</text>
+              <icon wx:if="{{_selected==1?true:''}}" data-index='{{index}}' bindtap='currency' type="success_circle" size="18" color="#ff5d0f" />
+              <icon wx:if="{{_selected==1?'':'true'}}" data-index='{{index}}' bindtap='currency' type="circle" size="18" color="#ff5d0f" />
+            </view>
+          </view>
+        </view>
+      </view>
+      <!-- ened -->
+      <view wx:if="{{!table}}">
+        <view class='content-input flexw'>
+          <view class='content-box flexac'>
+            <text style='color:#999'>可用商基金：{{seller_coin || 0}}</text>
+            <view class='flexac'>
+              <text class='mr-15' style='color:#999'> 最多抵扣：{{probably}}</text>
+              <icon wx:if="{{_selected==1?true:''}}" data-index='{{index}}' type="success_circle" size="18" color="#ff5d0f" />
+              <!-- <icon wx:if="{{_selected==1?'':'true'}}" data-index='{{index}}' bindtap='_selectMoren' type="circle" size="18" color="#ff5d0f" /> -->
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+
+  </view>
+  <!-- 折扣end -->
+
+
+
+
+
+  <!-- 积分抵扣 -->
+  <view wx:if="{{maybe}}">
+    <view class='content-input flexw'>
+      <view class='content-box flexac'>
+        <text>可用奖励金: {{points || 0}}</text>
+        <view class='flexac'>
+          <text class='mr-15'> 最多抵扣: {{probably}}</text>
+          <icon wx:if="{{selectMoren==1?true:''}}" bindtap='select_Moren' type="success_circle" size="18" color="#ff5d0f" />
+          <icon wx:if="{{selectMoren==1?'':'true'}}" bindtap='select_Moren' type="circle" size="18" color="#ff5d0f" />
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 折扣end -->
+  <!-- 选择商基金不可奖励金抵扣 -->
+  <view wx:if="{{!maybe}}">
+    <view class='content-input flexw'>
+      <view class='content-box flexac'>
+        <text style='color:#999'>可用奖励金: {{points || 0}}</text>
+        <view class='flexac'>
+          <text class='mr-15' style='color:#999'> 最多抵扣: {{probably}}</text>
+          <icon wx:if="{{selectMoren==1?true:''}}" type="success_circle" size="18" color="#ff5d0f" />
+          <!-- <icon wx:if="{{selectMoren==1?'':'true'}}" bindtap='selectMoren' type="circle" size="18" color="#ff5d0f" /> -->
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 选择商基金不可奖励金抵扣-->
+
+
+
+
+
+
+
+
+
+
+  <!-- 底部按钮 -->
+  <view class='flex footer  mt b-r'>
+    <!-- parseFloat(b*100*a/100).toFixed(2) -->
+    <!-- parseFloat(allPrice + biref).toFixed(2) -->
+    <view class='footer-text'>实付款 ：
+      <!-- ￥{{allPrice + biref}} -->
+      ￥{{allPrice}}
+      <!-- ￥{{parseFloat(allPrice + biref).toFixed(2)}} -->
+    </view>
+    <view>
+      <button formType='submit'>
+        结算
+      </button>
+    </view>
+  </view>
+  <!-- 底部按钮end -->
+
+  <!-- </view> -->
+</form>

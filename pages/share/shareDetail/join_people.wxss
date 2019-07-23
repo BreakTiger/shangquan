@@ -1,0 +1,18 @@
+.join {
+  width: 91%;
+  margin: 20rpx auto;
+  height: 135rpx;
+  background: #fff;
+  border-radius: 20rpx;
+}
+
+.join-img {
+  width: 90rpx;
+  height: 90rpx;
+  margin-left: 20rpx;
+}
+
+.join-name {
+  color: #666;
+  margin-left: 25rpx;
+}

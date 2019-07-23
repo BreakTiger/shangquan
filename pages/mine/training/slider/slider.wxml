@@ -1,0 +1,9 @@
+<block wx:for="{{[0,1,2,3,4,5,6,7,8,9]}}" wx:key="this">
+  <view class='slider flexjac'>
+    <view class='sliderImg'>
+      <image src='/img/img/_20180713172418@2x.png' class='img b10'></image>
+      <view class='sliderText'>+ 商品图</view>
+    </view>
+    <view class='slidercontent'>#送Ta一身新衣服，是时候向你的店铺表达你浓浓的爱意了#</view>
+  </view>
+</block>

@@ -1,0 +1,87 @@
+<!-- 轮播图 -->
+<swiper class='home-swiper' autoplay='true' bindchange='changDot' interval='4000'>
+  <block wx:for="{{activity_list}}" wx:key="unique">
+    <swiper-item>
+      <image src='{{item.image_url}}' data-id='{{item.id}}' bindtap='swiper_detail'></image>
+    </swiper-item>
+  </block>
+</swiper>
+
+
+<!-- 轮播图光标 -->
+<view class="dots">
+  <block wx:for="{{activity_list}}" wx:key="unique">
+    <view class="dot {{index == swiperCurrent?'actives':''}}"></view>
+  </block>
+</view>
+
+
+<!-- 活动推荐 -->
+<view class='flexjac content0'>
+
+  <view class='activity '>
+    <view class='activity_name f30'>活动推荐</view>
+    <view class='activity_text f28'>在这里，每一个活动都是惊喜</view>
+  </view>
+
+</view>
+
+
+<view style='padding-top:5rpx;width:100%;'>
+  <!-- 活动内容列表 -->
+  <view class='big' wx:for="{{list}}" wx:key='list-item' bindtap='share' data-item='{{item}}'>
+
+    <view>
+      <view class='big-pox flexac'>
+        <!-- 头像 -->
+        <view class='pox-img' catchtap='store' data-id="{{item.store_id}}">
+          <image class='img' src='{{item.user_avatar}}' style=' border-radius: 60rpx;'></image>
+          <!-- <image class='img' src='{{item.}}' style=' border-radius: 60rpx;'></image> -->
+        </view>
+
+        <!-- 发布者用户名 + 活动类型 + 发布时间 -->
+        <view class='flexw pox'>
+          <view class='flex poxCon'>
+            <view class='poxname f30'>{{item.store_name}}</view>
+            <view class='f28 poxborder'>{{item.activity_type}}</view>
+          </view>
+          <view class='poxtime f28'>{{item.time}}</view>
+        </view>
+
+      </view>
+
+      <!-- 标题+内容 -->
+      <view class='introduction f29'>{{item.title}}</view>
+      <view class='f28 introduction1'>{{item.content}}</view>
+
+    </view>
+
+    <!-- 图片 -->
+    <view class='top-c4'>
+      <view class='top-image' wx:for="{{item.image}}" wx:key="urls" wx:for-item="urls">
+        <image class='img' src='{{urls}}' data-item="{{urls}}" catchtap='previewImage'></image>
+      </view>
+    </view>
+
+    <!-- 报名按钮 -->
+    <view class='bottom'>
+      <button class='botmm' bindtap='apply' wx:if='{{item.is_join==0}}' data-item='{{item}}'>立即报名</button>
+      <button class='botmm' bindtap='cancel' wx:if='{{item.is_join==1}}' data-item='{{item}}'>取消报名</button>
+    </view>
+
+  </view>
+
+  <view class='emp' wx:if='{{list.length==0}}'>当前无活动发布</view>
+
+</view>
+
+
+
+
+<!-- 发帖 -->
+<!-- 判断：商家为1，普通用户为0 -->
+<view class='release' data-item='{{item}}' bindtap='postmessage' wx:if='{{permissions==1}}'>
+  <image class='img' src='/img/img/fatie2x.png'></image>
+</view>
+
+<view class='widthFix'></view>

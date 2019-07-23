@@ -1,0 +1,216 @@
+page {
+  background: rgba(247, 247, 247, 1);
+}
+
+.store {
+  width: 100%;
+  height: 222rpx;
+  background: rgba(255, 255, 255, 1);
+  border-bottom-left-radius: 20rpx;
+  border-bottom-right-radius: 20rpx;
+  box-shadow: 0px 0px 0px rgba(247, 247, 247, 0.35);
+}
+
+.shopTop {
+  width: 500rpx;
+  margin-left: 20rpx;
+  height: auto;
+}
+
+.right_ {
+  width: 10rpx;
+  height: 18rpx;
+}
+
+.shopImg {
+  width: 140rpx;
+  height: 140rpx;
+  margin-left: 20rpx;
+}
+
+.topShopName {
+  width: 100%;
+  font-size: 37rpx;
+  color: rgba(51, 51, 51, 1);
+  font-weight: bold;
+}
+
+.topShopCenter {
+  margin-top: 15rpx;
+  margin-bottom: 20rpx;
+  font-size: 24rpx;
+  font-family: PingFangSC-Regular;
+  color: rgba(51, 51, 51, 1);
+}
+
+.topShopBottomP {
+  color: rgba(51, 51, 51, 1);
+}
+
+.account {
+  margin: 20rpx auto;
+  width: 100%;
+  height: 100rpx;
+  background: rgba(255, 255, 255, 1);
+  border-radius: 20rpx;
+}
+
+.accImg {
+  width: 34rpx;
+  height: 34rpx;
+}
+
+.under_ {
+  margin-left: 70rpx;
+  margin-right: 70rpx;
+  width: 2rpx;
+  height: 33rpx;
+  background: rgba(102, 102, 102, 1);
+}
+
+.accContent text {
+  margin-left: 25rpx;
+}
+
+/*  */
+
+.hhh {
+  width: 100%;
+  margin-top: 25rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background: #fff;
+  height: 250rpx;
+  border-top-left-radius: 20rpx;
+  border-top-right-radius: 20rpx;
+}
+
+.hhh_ {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background: #fff;
+  height: 250rpx;
+  border-bottom-left-radius: 20rpx;
+  border-bottom-right-radius: 20rpx;
+}
+
+.fff {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: 1rpx solid #efefef;
+  background: #fff;
+  height: 250rpx;
+  /* border-bottom-left-radius: 20rpx;
+  border-bottom-right-radius: 20rpx; */
+}
+
+.hhhImg {
+  width: 60rpx;
+  height: 60rpx;
+}
+
+.zhong {
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.hhh text {
+  font-size: 30rpx;
+  margin-top: 20rpx;
+  color: rgba(51, 51, 51, 1);
+}
+
+.hhh_ text {
+  font-size: 30rpx;
+  margin-top: 20rpx;
+  color: rgba(51, 51, 51, 1);
+}
+
+.fff text {
+  font-size: 30rpx;
+  margin-top: 20rpx;
+  color: rgba(51, 51, 51, 1);
+}
+
+.xia {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-right: 2rpx solid rgba(221, 221, 221, 1);
+  border-left: 2rpx solid rgba(221, 221, 221, 1);
+}
+
+.tet {
+  /* width: 20rpx; */
+  color: #666;
+}
+
+.item52 {
+  font-size: 52rpx;
+  /* margin-left: 23rpx; */
+  color: #333;
+}
+
+.tranShop {
+  width: 222rpx;
+  margin: 80rpx auto;
+  color: #333;
+  font-size: 30rpx;
+  line-height: 60rpx;
+  text-align: center;
+  border: 1rpx solid #999;
+  height: 60rpx;
+  background: rgba(255, 255, 255, 1);
+  border-radius: 20rpx;
+}
+
+.content-box {
+  width: 100%;
+  font-size: 30rpx;
+  padding-top: 50rpx;
+  padding-bottom: 50rpx;
+  font-family: PingFangSC-Regular;
+  color: rgba(51, 51, 51, 1);
+  background: #fff;
+  flex-wrap: wrap;
+  /* margin-top: 35rpx; */
+}
+
+.content-extension {
+  width: 100%;
+  font-size: 30rpx;
+  margin-top: 35rpx;
+  font-family: PingFangSC-Regular;
+  color: rgba(51, 51, 51, 1);
+}
+
+/* 认证状态 */
+
+.status {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 75rpx auto;
+}
+
+.topShopBottom {
+  width: 388rpx;
+  overflow: hidden;
+  height: 31rpx;
+}
+
+.bottom {
+  width: 100%;
+  margin: 101rpx auto;
+  height: 98rpx;
+}

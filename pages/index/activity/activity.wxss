@@ -1,0 +1,212 @@
+/* 轮播图图片尺寸 */
+
+page {
+  background: rgba(247, 247, 247, 1);
+}
+
+.home-swiper {
+  width: 100%;
+  height: 419rpx;
+  position: relative;
+  border-bottom-left-radius: 24rpx;
+  border-bottom-right-radius: 24rp;
+}
+
+.home-swiper image {
+  width: 100%;
+  height: 419rpx;
+  border-bottom-left-radius: 24rpx;
+  border-bottom-right-radius: 24rpx;
+}
+
+/* 轮播图指示点 */
+
+.dots {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  top: 318rpx;
+  width: 100%;
+  height: 50rpx;
+  justify-content: center;
+}
+
+.dots .dot {
+  width: 20rpx;
+  height: 20rpx;
+  background-color: #fffaf7;
+  /* border: 1rpx solid #e8672e; */
+  margin-left: 12rpx;
+  border-radius: 20rpx;
+  /* transform: all 0.6; */
+  opacity: 0.44;
+}
+
+/* 调用的css效果 */
+
+.dots .actives {
+  background-color: #fff;
+  opacity: 1;
+}
+
+/* 活动 */
+
+.content0 {
+  width: 100%;
+}
+
+.activity {
+  width: 702rpx;
+  height: 130rpx;
+  background: #fff;
+  /* opacity: 0.3; */
+  border-radius: 40rpx 40rpx 10rpx 10rpx;
+  position: absolute;
+  top: 362rpx;
+}
+
+.activity_name {
+  margin-top: 20rpx;
+  margin-left: 40rpx;
+  color: rgba(51, 51, 51, 1);
+  font-weight: bold;
+}
+
+.activity_text {
+  margin-top: 15rpx;
+  margin-left: 40rpx;
+  color: rgba(102, 102, 102, 1);
+}
+
+.interval {
+  width: 100%;
+  height: 75rpx;
+}
+
+.big {
+  width: 704rpx;
+  height: auto;
+  background: rgba(255, 255, 255, 1);
+  border-radius: 10rpx;
+  margin: 25rpx auto;
+}
+
+.big-pox {
+  width: 100%;
+  height: 140rpx;
+}
+
+.pox {
+  width: 520rpx;
+  margin-left: 20rpx;
+}
+
+.pox-img {
+  width: 120rpx;
+  height: 120rpx;
+  margin-left: 25rpx;
+}
+
+.poxborder {
+  width: auto;
+  line-height: 40rpx;
+  text-align: center;
+  height: 40rpx;
+  color: #f75f3c;
+  border: 1rpx solid #f75f3c;
+  border-radius: 8rpx;
+  padding-left: 15rpx;
+  padding-right: 15rpx;
+}
+
+.poxCon {
+  justify-content: space-between;
+  margin-top: 10rpx;
+  width: 100%;
+}
+
+.poxtime {
+  color: rgba(153, 153, 153, 1);
+  margin-top: 18rpx;
+}
+
+.poxname {
+  color: rgba(102, 102, 102, 1);
+}
+
+.pox_name {
+  color: rgba(153, 153, 153, 1);
+}
+
+.introduction {
+  margin: 20rpx auto;
+  width: 655rpx;
+}
+
+.introduction1 {
+  margin: 20rpx auto;
+  width: 655rpx;
+  color: rgba(102, 102, 102, 1);
+}
+
+.top-c4 {
+  margin-left: 25rpx;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-top: 30rpx;
+  height: auto;
+  max-height: 676rpx;
+  overflow: hidden;
+  /* justify-content: center; */
+}
+
+.top-image {
+  width: 210rpx;
+  height: 210rpx;
+  border-radius: 10rpx;
+  margin: 0 15rpx 15rpx 0rpx;
+}
+
+.top-image image {
+  border-radius: 10rpx;
+}
+
+.bottom {
+  width: 100%;
+  justify-content: flex-end;
+}
+
+.botmm {
+  margin-right: 25rpx;
+  width: 150rpx;
+  height: 40rpx;
+  background: rgba(250, 109, 34, 1);
+  border-radius: 10rpx;
+  box-shadow: 12rpx 0px 21rpx rgba(250, 109, 34, 0.21);
+  line-height: 40rpx;
+  text-align: center;
+  margin-top: 5rpx;
+  /* margin-bottom: 25rpx; */
+  color: #fff;
+  font-size: 24rpx;
+}
+
+.botomm {
+  color: #fff;
+}
+
+.height {
+  height: 25rpx;
+}
+
+/*话题发布*/
+
+.release {
+  width: 100rpx;
+  height: 100rpx;
+  position: fixed;
+  bottom: 55rpx;
+  right: 50rpx;
+}

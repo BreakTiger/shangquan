@@ -1,0 +1,16 @@
+<view class="info flexac">
+  <text>是否开店（开店状态）</text>
+  <view class="body-view">
+    <switch bindchange="switchChange" checked="{{isChecked1}}" color="#FA6D22" />
+  </view>
+</view>
+
+<view class="infoShop flexac" style='margin-top: 20rpx;' bindtap='information'>
+  <text>店铺基本信息</text>
+  <image src='/img/img/rightto.png' class='infoRight'></image>
+</view>
+
+<!-- <view class="infoShop flexac" bindtap='distribution'>
+  <text>关于配送</text>
+  <image src='/img/img/rightto.png' class='infoRight'></image>
+</view> -->

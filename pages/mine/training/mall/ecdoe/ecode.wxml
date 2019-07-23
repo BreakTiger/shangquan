@@ -1,0 +1,8 @@
+<view class='backimg flexjac'>
+<view class='share' bindtap='previewImage'>
+<image src='{{shareTempFilePath}}' class='img'></image>
+</view>
+</view>
+<view class='keep'>
+<button bindtap='saveImageToPhotosAlbum' class='bb'>保存到相册</button>
+</view>

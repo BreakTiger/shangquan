@@ -1,0 +1,61 @@
+<!--start banner   -->
+<!-- 轮播图4张 -->
+<swiper class='home-swiper' autoplay='true' bindchange='changDot' interval='4000'>
+  <!-- 设置自动播放，切换间隔时间-->
+  <swiper-item wx:for="{{[0,1,2,3]}}" wx:for-index="index" wx:key="unique">
+    <image src='/img/img/background2x.png'></image>
+  </swiper-item>
+</swiper>
+<!-- 轮播图光标 -->
+<view class="dots">
+  <block wx:for="{{[0,1,2,3]}}" wx:key="unique">
+    <view class="dot {{index == swiperCurrent?'actives':''}}"></view>
+  </block>
+</view>
+<!-- end banner -->
+
+<!-- 活动推荐 -->
+<view class='flexjac content0'>
+  <view class='activity '>
+    <view class='activity_name f30'>活动推荐</view>
+    <view class='activity_text f28'>在这里，每一个活动都是惊喜</view>
+  </view>
+</view>
+<view class='interval'></view>
+<!-- 活动 -->
+<view class='big' wx:for="{{[0,1,2,3]}}" wx:key='this' bindtap='share'>
+  <view class='big-pox flexac'>
+    <view class='pox-img'>
+      <image class='img' src='/img/img/_20180704150208@2x.png'></image>
+    </view>
+    <view class='flexw pox'>
+      <view class='flex poxCon'>
+        <view class='poxname f30'>1997</view>
+        <view class='f28 poxborder'>公益活动</view>
+      </view>
+      <view class='poxtime f28'>2017-05-07</view>
+    </view>
+  </view>
+  <view class='introduction f29'>
+    亲子欢乐时光这样的公益活动相信一定不会让你枯燥无聊。
+  </view>
+  <view class='f28 introduction1'>
+    热浪岛是东海岸最美丽的岛屿之一，也是最具有热带风情的地方。它位于一个海洋公园内，因此很适合潜水和浮潜。这里的海底生长着500余种色彩缤纷绮丽的珊瑚礁，超过1000种双壳类生物和3000种鱼类品种。
+  </view>
+  <!-- 图片 -->
+  <!-- <view class='top-c4' wx:if="{{topic.image_list != ''}}"> -->
+  <view class='top-c4'>
+    <view class='top-image' wx:for="{{[0,1,2,3,4,5,6,7,8]}}" wx:key="urls" wx:for-item="urls">
+      <image class='img' src='/img/img/background2x.png' data-item="{{urls}}" bindtap='previewImage'></image>
+    </view>
+  </view>
+  <view class='flex bottom'>
+    <view class='botmm'>立即报名</view>
+  </view>
+  <view class='height'></view>
+</view>
+
+<!-- 话题发布按钮 -->
+<view class='release' bindtap='goRelease' data-id="{{shequDetail}}">
+  <image class='img' src='/img/img/fatie2x.png'></image>
+</view>

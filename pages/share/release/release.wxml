@@ -1,0 +1,68 @@
+<view class='line'></view>
+
+<form bindsubmit="formSubmit" report-submit='true'>
+  
+  <!-- 标题 -->
+  <view class='form-header flexac'>
+    <view class='f30 header-title'>标题</view>
+    <input placeholder='请输入标题' class='f30' name='title' bindinput='input_title'></input>
+    <text class='header-num f30'>{{length}}/30</text>
+  </view>
+  
+  <!-- 文本框 -->
+  <view class='header-textarea'>
+    <textarea placeholder='请输入活动内容' value='{{concent}}' class='f30' name="content" ></textarea>
+    
+    <!-- 选择图片 -->
+    <view class='up-pic'>
+      <view class='flex pic-box'>
+        <block wx:key="imgbox" wx:for="{{imgbox}}">
+          <view class='ap-box'>
+            <view class='add-pic'>
+              <image class='add-pic' src='{{item}}'></image>
+              <view class='img-de' data-deindex='{{index}}' bindtap='imgDelete1'>
+                <image class='img' src='/img/img/icon_close2@2x.png'></image>
+              </view>
+            </view>
+          </view>
+        </block>
+        <view class='add-pic' bindtap='addPic1' wx:if="{{imgbox.length<9}}">
+          <image class='img' src='/img/img/add_pic@2x.png' style='margin-top:26rpx;'></image>
+        </view>
+      </view>
+    </view>
+
+  </view>
+  
+  <!-- 活动类型 -->
+  <view class='form-header flexac'>
+    <view class='f30 header-title'>活动类型</view>
+    <view class="section flexac">
+      <picker bindchange="bindPickerChange" value="{{arrindex}}" range="{{array}}">
+        <view class="picker" class='f28 sele'>
+          {{array[arrindex]}}
+        </view>
+      </picker>
+      <input style='display:none;' name='close_book_time' value=''></input>
+      <image src='/img/img/rightto.png' class='right-onclick'></image>
+    </view>
+  </view>
+  
+  <!-- 时间 -->
+  <view class='form-header flexac'>
+    <view class='f30 header-title'>报名截止日期</view>
+    <view class="section flexac">
+      <picker mode="date" value="{{date}}" start="2015-09-01" bindchange="bindDateChange">
+        <view class="picker" class='f28 sele'>
+          {{date}}
+        </view>
+      </picker>
+      <input style='display:none;' name='close_book_time' value='{{date}}'></input>
+      <image src='/img/img/rightto.png' class='right-onclick'></image>
+    </view>
+  </view>
+  
+  <!-- 发布按钮 -->
+  <button formType="submit">发布</button>
+
+</form>

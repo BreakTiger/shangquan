@@ -1,0 +1,41 @@
+page {
+  background: rgba(247, 247, 247, 1);
+}
+
+.info {
+  border-top: 1rpx solid #efefef;
+  width: 100%;
+  height: 89rpx;
+  justify-content: space-between;
+  background: rgba(255, 255, 255, 1);
+}
+
+.info text {
+  margin-left: 25rpx;
+  color: #333;
+  font-size: 30rpx;
+}
+
+.body-view {
+  margin-left: 25rpx;
+}
+
+.infoShop {
+  border-bottom: 1rpx solid #efefef;
+  width: 100%;
+  height: 89rpx;
+  justify-content: space-between;
+  background: rgba(255, 255, 255, 1);
+}
+
+.infoShop text {
+  margin-left: 25rpx;
+  color: #333;
+  font-size: 30rpx;
+}
+
+.infoRight {
+  width: 18rpx;
+  height: 32rpx;
+  margin-right: 25rpx;
+}

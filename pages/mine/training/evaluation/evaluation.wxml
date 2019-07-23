@@ -1,0 +1,50 @@
+<view class='eval-container flex' wx:if="{{mall != ''}}">
+  <view class='box-num'>{{avg}}</view>
+  <view class='flexw box-two'>
+    <view class='start'>
+      <i-rate bind:change="onChange5" count="{{5}}" value="{{avg}}" size="30">
+      </i-rate>
+    </view>
+    <view class='box-text'>共{{count}}人进行了评价</view>
+  </view>
+</view>
+<!-- 间隔 -->
+<view class='underline'></view>
+<!-- 内容 -->
+<view wx:if="{{mycomment != ''}}">
+  <view class='big1' wx:for="{{mycomment}}" wx:key="mycomment">
+    <view class='big-pox flexac'>
+      <view class='pox-img1'>
+        <image class='img br' src='{{item.user_avatar}}'></image>
+      </view>
+      <view class='flexw pox'>
+        <view class='flex poxCon'>
+          <view class='poxname f30'>{{item.user_name}}</view>
+          <view>
+            <i-rate bind:change="onChange5" count="{{5}}" value="{{item.score}}" size="13">
+            </i-rate>
+          </view>
+        </view>
+        <view class='poxtime1 f28'>{{item.created_at}}</view>
+      </view>
+    </view>
+    <view class='width_fix'>
+      <view class='_introduction1 f29'>
+        {{item.comment}}
+      </view>
+      <!-- 图片 -->
+      <view class='top-c4' wx:if="{{item.image != ''}}">
+        <view class='_top-image' wx:for="{{item.image}}" wx:key="urls" wx:for-item="urls">
+          <image class='img' src='{{urls}}' data-urls="{{urls}}" bindtap='previewImage'></image>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- ----------------------------------------------------------------------- -->
+<view class='none' wx:else>
+  暂无评价..
+</view>
+<view class='page-add-data flexca' wx:if="{{mycomment.length > 10}}">
+  <text>{{pageTottomText}}</text>
+</view>

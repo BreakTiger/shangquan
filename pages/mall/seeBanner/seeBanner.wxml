@@ -1,0 +1,44 @@
+<view wx:if="{{product != ''}}">
+  <view class='auto' wx:for="{{product}}" wx:key="product" style='margin-top:-11rpx;'>
+    <image src="{{item.product_image}}" class='img' bindtap='look_' data-store_id="{{item.store_id}}" data-type="{{item.type}}" data-product_id="{{item.product_id}}" mode="widthFix"></image>
+  </view>
+</view>
+<view class='none' wx:else>
+  暂无轮播图..
+</view>
+
+
+<!-- <view class='margin'>
+  <image src='{{other.image}}' class='img'></image>
+</view>
+<view class='content'>{{other.title}}</view>
+<view class='content'>
+  {{other.content}}
+</view>
+
+<view wx:if="{{product != ''}}">
+  <view wx:for="{{product}}" wx:key="product">
+    <view class='content'>{{index+1}}.{{item.title}}</view>
+    <view class='content'>{{item.content}}</view>
+    <view class='flexjac'>
+      内容
+      <view class='container flexw'>
+        <view class='container-box' bindtap='shopDetail'>
+          <view class='containerImg'>
+            <image src='{{shop.product_image}}' class='img b10'></image>
+            <view class='vip' wx:if="{{item.is_member == 1}}">会员专享</view>
+            <view class='discount' wx:if="{{item.is_points == 1}}">积分抵扣{{item.is_points}}</view>
+          </view>
+          <view class='containertitle'>{{shop.product_name}}</view>
+          <view class='containerPrice flexac'>
+            <text class='price'>￥{{shop.product_price}}</text>
+            <text class='_price'>￥{{item.market_price}}</text>
+            <view class='look' bindtap='look' data-product_id="{{item.product_id}}" data-id="{{item.other_id}}" data-type="{{other.typeid}}">去看看</view>
+          </view>
+        </view>
+      </view>
+
+    </view>
+  </view>
+</view> -->
+<view class='while'></view>

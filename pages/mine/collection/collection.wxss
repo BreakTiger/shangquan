@@ -1,0 +1,23 @@
+.backgroundImg {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  top: 0;
+}
+
+.check {
+  width: 100%;
+  position: absolute;
+  bottom: 35rpx;
+}
+
+button {
+  width: 480rpx;
+  height: 80rpx;
+  font-size: 32rpx;
+  background: linear-gradient(0deg, rgba(250, 109, 34, 1), rgba(247, 96, 60, 1));
+  border-radius: 8rpx;
+  color: #fff;
+  line-height: 80rpx;
+}

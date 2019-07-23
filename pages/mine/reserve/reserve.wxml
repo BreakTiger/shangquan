@@ -1,0 +1,303 @@
+<!-- tab框  -->
+<view class="nav_title">
+
+  <view class="nav_tab">
+    <view wx:for="{{list}}" wx:key="list" class="{{selected==index?'active':'common'}}" data-index='{{index}}' bindtap="selected">{{item}}
+      <view class="{{selected==index?'nav_underline':''}}"></view>
+    </view>
+  </view>
+
+  <!-- tab框显示内容 -->
+
+  <!-- 全部 ：包含所有的状态-->
+  <view wx:if="{{selected == 0}}">
+
+    <block wx:for="{{book}}" wx:key="datalist">
+
+      <view class='mian flexc bgr mt'>
+
+        <view data-item='{{item}}' bindtap='getIn'>
+          <view class='mian-header flex'>
+            <view class='size26'>订单编号：{{item.order_sn}}</view>
+            <view class='size26 color' wx:if="{{item.order_status==10}}">待付款</view>
+            <view class='size26 color' wx:if="{{item.order_status==20}}">待使用</view>
+            <view class='size26 color' wx:if="{{item.order_status==50}}">待取消</view>
+            <view class='size26 color' wx:if="{{item.order_status==60}}">已取消</view>
+            <view class='size26 color' wx:if="{{item.order_status==40}}">已完成</view>
+          </view>
+
+          <view class='content flexac'>
+            <!-- 商品图片 左边 -->
+            <view class='contentImg'>
+              <image src='{{item.image[0]}}' class='img' style='border-radius:50%;'></image>
+            </view>
+            <!-- 右边 -->
+            <view class='content_box flexc'>
+              <!-- 商品名称 -->
+              <view class='content-top flexac'>
+                <view>{{item.activity_name}}</view>
+                <text class='top size26' style='margin-left:10rpx;'>{{item.activity_sku}}</text>
+              </view>
+              <!-- 空盒子 -->
+              <view class='content-center flexac'>
+              </view>
+              <!-- 价格和数量 -->
+              <view class='content_right flex'>
+                <view class='content-price flex'>
+                  <view class='content-price-right color'>￥{{item.goods_amount}}</view>
+                </view>
+                <text class='content-price-right underline'>X {{item.activity_number}}</text>
+              </view>
+            </view>
+          </view>
+
+          <!-- 商品件数，优惠 -->
+          <view class='flex main-shop'>
+            <view class='size26'>共{{item.activity_number}}件 优惠：￥{{item.youhui}}</view>
+            <view class='size26 color' style='margin:0 20rpx;'>实付款：￥{{item.pay_price}}</view>
+          </view>
+        </view>
+
+        <!-- 按钮 -->
+        <view class='btn-line'>
+          <button class='cancel' wx:if="{{item.order_status==10||item.order_status==20}}" data-item='{{item}}' bindtap='cencal'>取消预定</button>
+          <button class='paybtn' wx:if="{{item.order_status==10}}" bindtap='payment' data-item='{{item}}'>付款</button>
+          <button class='suretap' wx:if="{{item.order_status==20}}" data-item='{{item}}' bindtap='usetap'>立即使用</button>
+          <button class='pingjia' wx:if="{{item.order_status==40&&item.pingjia_status==0}}" data-item='{{item}}' bindtap='comment'>立即评价</button>
+          <button class='delbtn' wx:if="{{item.order_status==60||item.order_status==40}}" data-item='{{item}}' bindtap='deltap'>删除</button>
+        </view>
+
+      </view>
+
+    </block>
+
+  </view>
+
+  <!-- 待付款 ：未付款-->
+  <view wx:if="{{selected == 1}}">
+
+    <block wx:for="{{book}}" wx:key="datalist">
+
+      <view class='mian flexc bgr mt'>
+
+        <view data-item='{{item}}' bindtap='getIn'>
+          <view class='mian-header flex'>
+            <view class='size26'>订单编号：{{item.order_sn}}</view>
+            <view class='size26 color' wx:if="{{item.order_status==10}}">待付款</view>
+          </view>
+
+          <view class='content flexac'>
+            <!-- 商品图片 左边 -->
+            <view class='contentImg'>
+              <image src='{{item.image[0]}}' class='img' style='border-radius:50%;'></image>
+            </view>
+            <!-- 右边 -->
+            <view class='content_box flexc'>
+              <!-- 商品名称 -->
+              <view class='content-top flexac'>
+                <text class='top size26' style='margin-left:10rpx;'>{{item.activity_sku}}</text>
+              </view>
+              <!-- 空盒子 -->
+              <view class='content-center flexac'>
+              </view>
+              <!-- 价格和数量 -->
+              <view class='content_right flex'>
+                <view class='content-price flex'>
+                  <view class='content-price-right color'>￥{{item.activity_price}}</view>
+                </view>
+                <text class='content-price-right underline'>X {{item.activity_number}}</text>
+              </view>
+            </view>
+          </view>
+
+          <!-- 商品件数，优惠 -->
+          <view class='flex main-shop'>
+            <view class='size26'>共{{item.activity_number}}件 优惠：￥{{item.youhui}}</view>
+            <view class='size26 color' style='margin:0 20rpx;'>实付款：￥{{item.pay_price}}</view>
+          </view>
+        </view>
+
+        <!-- 按钮 -->
+        <view class='btn-line'>
+          <button class='cancel' wx:if="{{item.order_status==10}}" data-item='{{item}}' bindtap='cencal'>取消预定</button>
+          <button class='paybtn' wx:if="{{item.order_status==10}}" bindtap='payment' data-item='{{item}}'>付款</button>
+        </view>
+
+      </view>
+
+    </block>
+
+  </view>
+
+  <!-- 待使用 ：已付款-->
+  <view wx:if="{{selected == 2}}">
+
+    <block wx:for="{{book}}" wx:key="datalist">
+
+      <view class='mian flexc bgr mt'>
+        <view data-item='{{item}}' bindtap='getIn'>
+          <view class='mian-header flex'>
+            <view class='size26'>订单编号：{{item.order_sn}}</view>
+            <view class='size26 color' wx:if="{{item.order_status==20}}">待使用</view>
+          </view>
+
+          <view class='content flexac'>
+            <!-- 商品图片 左边 -->
+            <view class='contentImg'>
+              <image src='{{item.image[0]}}' class='img' style='border-radius:50%;'></image>
+            </view>
+            <!-- 右边 -->
+            <view class='content_box flexc'>
+              <!-- 商品名称 -->
+              <view class='content-top flexac'>
+                <text class='top size26' style='margin-left:10rpx;'>{{item.activity_sku}}</text>
+              </view>
+              <!-- 空盒子 -->
+              <view class='content-center flexac'>
+              </view>
+              <!-- 价格和数量 -->
+              <view class='content_right flex'>
+                <view class='content-price flex'>
+                  <view class='content-price-right color'>￥{{item.activity_price}}</view>
+                </view>
+                <text class='content-price-right underline'>X {{item.activity_number}}</text>
+              </view>
+            </view>
+          </view>
+
+          <!-- 商品件数，优惠 -->
+          <view class='flex main-shop'>
+            <view class='size26'>共{{item.activity_number}}件 优惠：￥{{item.youhui}}</view>
+            <view class='size26 color' style='margin:0 20rpx;'>实付款：￥{{item.pay_price}}</view>
+          </view>
+        </view>
+
+        <!-- 按钮 -->
+        <view class='btn-line'>
+          <button class='cancel' wx:if="{{item.order_status==10||item.order_status==20}}" data-item='{{item}}' bindtap='cencal'>取消预定</button>
+          <button class='suretap' wx:if="{{item.order_status==20}}" data-item='{{item}}' bindtap='usetap'>立即使用</button>
+        </view>
+
+      </view>
+
+    </block>
+
+  </view>
+
+  <!-- 已取消 ：取消预定-->
+  <view wx:if="{{selected == 3}}">
+
+    <block wx:for="{{book}}" wx:key="datalist">
+
+      <view class='mian flexc bgr mt'>
+
+        <view data-item='{{item}}' bindtap='getIn'>
+          <view class='mian-header flex'>
+            <view class='size26'>订单编号：{{item.order_sn}}</view>
+            <view class='size26 color' wx:if="{{item.order_status==50}}">待取消</view>
+            <view class='size26 color' wx:if="{{item.order_status==60}}">已取消</view>
+          </view>
+
+          <view class='content flexac'>
+            <!-- 商品图片 左边 -->
+            <view class='contentImg'>
+              <image src='{{item.image[0]}}' class='img' style='border-radius:50%;'></image>
+            </view>
+            <!-- 右边 -->
+            <view class='content_box flexc'>
+              <!-- 商品名称 -->
+              <view class='content-top flexac'>
+                <text class='top size26' style='margin-left:10rpx;'>{{item.activity_sku}}</text>
+              </view>
+              <!-- 空盒子 -->
+              <view class='content-center flexac'>
+              </view>
+              <!-- 价格和数量 -->
+              <view class='content_right flex'>
+                <view class='content-price flex'>
+                  <view class='content-price-right color'>￥{{item.activity_price}}</view>
+                </view>
+                <text class='content-price-right underline'>X {{item.activity_number}}</text>
+              </view>
+            </view>
+          </view>
+
+          <!-- 商品件数，优惠 -->
+          <view class='flex main-shop'>
+            <view class='size26'>共{{item.activity_number}}件 优惠：￥{{item.youhui}}</view>
+            <view class='size26 color' style='margin:0 20rpx;'>实付款：￥{{item.pay_price}}</view>
+          </view>
+        </view>
+
+        <!-- 按钮 -->
+        <view class='btn-line'>
+          <button class='delbtn' wx:if="{{item.order_status==60}}" data-item='{{item}}' bindtap='deltap'>删除</button>
+        </view>
+
+      </view>
+
+    </block>
+
+  </view>
+
+  <!-- 待评价 ：活动结束-->
+  <view wx:if="{{selected == 4}}">
+
+    <block wx:for="{{book}}" wx:key="datalist">
+
+      <view class='mian flexc bgr mt'>
+
+        <view data-item='{{item}}' bindtap='getIn'>
+          <view class='mian-header flex'>
+            <view class='size26'>订单编号：{{item.order_sn}}</view>
+            <view class='size26 color' wx:if="{{item.order_status==40}}">已完成</view>
+          </view>
+
+          <view class='content flexac'>
+            <!-- 商品图片 左边 -->
+            <view class='contentImg'>
+              <image src='{{item.image[0]}}' class='img' style='border-radius:50%;'></image>
+            </view>
+            <!-- 右边 -->
+            <view class='content_box flexc'>
+              <!-- 商品名称 -->
+              <view class='content-top flexac'>
+                <text class='top size26' style='margin-left:10rpx;'>{{item.activity_sku}}</text>
+              </view>
+              <!-- 空盒子 -->
+              <view class='content-center flexac'>
+              </view>
+              <!-- 价格和数量 -->
+              <view class='content_right flex'>
+                <view class='content-price flex'>
+                  <view class='content-price-right color'>￥{{item.activity_price}}</view>
+                </view>
+                <text class='content-price-right underline'>X {{item.activity_number}}</text>
+              </view>
+            </view>
+          </view>
+
+          <!-- 商品件数，优惠 -->
+          <view class='flex main-shop'>
+            <view class='size26'>共{{item.activity_number}}件 优惠：￥{{item.youhui}}</view>
+            <view class='size26 color' style='margin:0 20rpx;'>实付款：￥{{item.pay_price}}</view>
+          </view>
+        </view>
+
+        <!-- 按钮 -->
+        <view class='btn-line'>
+          <button class='pingjia' wx:if="{{item.order_status==40&&item.pingjia_status==0}}" data-item='{{item}}' bindtap='comment'>立即评价</button>
+          <button class='delbtn' wx:if="{{item.order_status==60||item.order_status==40}}" data-item='{{item}}' bindtap='deltap'>删除</button>
+        </view>
+
+      </view>
+
+    </block>
+
+  </view>
+
+</view>
+
+<view wx:if="{{book.length == 0}}" class='flexjac listall'>
+  <image src='/img/img/default_order@2x.png' class='img-car'></image>
+</view>

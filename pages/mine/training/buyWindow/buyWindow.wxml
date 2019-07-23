@@ -1,0 +1,43 @@
+<form bindsubmit='toSubmit'  report-submit='true'>
+  <!-- 购买橱窗数量 -->
+  <view class='window flexac'>
+    <text>购买橱窗数量</text>
+    <view class="section flexac">
+      <picker bindchange="num" value="{{numIndex}}" range="{{num}}">
+        <view class="picker">
+          {{num[numIndex]}}
+        </view>
+      </picker>
+      <input name="num" style='display:none;' value='{{numIndex}}'></input>
+      <image src='/img/img/rightto.png' class='to-right'></image>
+    </view>
+  </view>
+  <!-- 时间 -->
+  <!-- <view class='window flexac'>
+    <text style='width:150rpx;'>时间</text>
+    <view class="section flexac">
+      <picker bindchange="num1" value="{{timeindex}}" range="{{time}}">
+        <view class="picker">
+          {{time[timeindex]}}
+        </view>
+        <input style='display:none;' value='{{timeindex}}' name='month'></input>
+      </picker>
+      <image src='/img/img/rightto.png' class='to-right'></image>
+    </view>
+  </view> -->
+  <!-- 需支付金额 -->
+  <view class='window flexac'>
+    <text>需支付金额</text>
+    <text>{{price}}</text>
+    <input name='money' style='display:none;' value='{{price}}'></input>
+  </view>
+  <view class='explain'>{{text}}</view>
+  <button formType='submit'>立即购买</button>
+</form>
+
+<!-- 客服 -->
+<view class='kefu'>
+  <button open-type='contact' class='btn-kefu'>
+    <image src='/img/img/servicewx.png' class='kefu-icon'></image>
+  </button>
+</view>

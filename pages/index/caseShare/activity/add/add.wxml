@@ -1,0 +1,169 @@
+<form bindsubmit='creatOrder' report-submit='true'>
+  <view class='container'>
+    <!-- 订单基本信息F -->
+    <view class='order'>
+      <view class='line title'>{{all.title}}</view>
+      <view class='lastline'>
+        <text class='title'>数量:</text>
+        <text>X{{num}}</text>
+      </view>
+      <view class='lastline'>
+        <text class='line-title'>套餐:</text>
+        <text class='line-title'>{{sku.product_name}}</text>
+      </view>
+      <view class='lastline'>
+        <text class='line-title'>单价:</text>
+        <text class='line-title'>￥{{sku.price}}</text>
+      </view>
+    </view>
+
+    <!-- 购买人信息 -->
+    <view class='person'>
+      <view class='line title'>联系人信息</view>
+      <!-- 用户名 -->
+      <view class='lastline'>
+        <text class='line-title'>用户名</text>
+        <input placeholder='请输入预定姓名' name='username' bindinput='username' class='line-input'></input>
+      </view>
+
+      <!-- 手机号 -->
+      <view class='lastline'>
+        <text class='line-title'>手机号</text>
+        <input placeholder='请输入有效手机号' name='phone' type='number' bindinput='phone' class='line-input'></input>
+      </view>
+
+      <!-- 身份证 -->
+      <view class='lastline'>
+        <text class='line-title'>身份证号</text>
+        <input placeholder='请输入有效身份证号' name='code' bindinput='code' class='line-input'></input>
+      </view>
+    </view>
+
+    <!-- 备注 -->
+    <view class='alone-line'>
+      <text class='line-title'>备注</text>
+      <input type="textarea" bindinput='hint' placeholder="预约时间及其他备注信息..." class='line-input' />
+    </view>
+
+    <!-- 支付方式 -->
+    <view class='alone-line'>
+      <text class='line-title'>支付方式</text>
+      <text class='line-title'>微信支付</text>
+    </view>
+
+    <!-- 会员折扣 -->
+    <view wx:if="{{all.is_member==1}}">
+      <view wx:if="{{zhekou!=1}}">
+        <view class='alone-line'>
+          <text class='line-title'>会员折扣</text>
+          <text>{{zhekou}}%</text>
+        </view>
+      </view>
+    </view>
+
+
+
+
+    <!-- 商户购买时显示的内容 -->
+    <view wx:if="{{is_store==1}}">
+      <view wx:if="{{all.is_points!=0}}">
+        <!-- 商基金 -->
+        <view wx:if="{{table}}">
+          <view class='alone-line'>
+            <text class='line-title'>可用商基金：{{coin}}</text>
+            <view class='icons'>
+              <text class='line-title'>最多抵扣:</text>
+              <text class='line-title' style='color: #fb7435;'>{{usepath1}}</text>
+              <icon wx:if="{{selected1==1?true:''}}" bindtap='selectcoin' type="success_circle" size="25" color="#ff5d0f" />
+              <icon wx:if="{{selected1==1?'':'true'}}" bindtap='selectcoin' type="circle" size="25" color="#ff5d0f" />
+            </view>
+          </view>
+        </view>
+
+        <view wx:if="{{!table}}">
+          <view class='alone-line' style='color:#999'>
+            <text class='line-title'>可用商基金：{{coin}}</text>
+            <view class='icons'>
+              <text class='line-title'>最多抵扣:</text>
+              <text class='line-title' style='color: #999;'>{{usepath1}}</text>
+              <icon wx:if="{{selected1==1?'':'true'}}" type="circle" size="25" color="#999" />
+            </view>
+          </view>
+        </view>
+
+
+        <!-- 奖励金 -->
+        <view wx:if="{{mabye}}">
+          <view class='alone-line'>
+            <text class='line-title'>可用奖励金：{{upoint}}</text>
+            <view class='icons'>
+              <text class='line-title'>最多抵扣:</text>
+              <text class='line-title' style='color: #fb7435;'>{{usepath2}}</text>
+              <icon wx:if="{{selected2==1?true:''}}" bindtap='currency' type="success_circle" size="25" color="#ff5d0f" />
+              <icon wx:if="{{selected2==1?'':'true'}}" bindtap='currency' type="circle" size="25" color="#ff5d0f" />
+            </view>
+          </view>
+        </view>
+
+
+        <view wx:if="{{!mabye}}">
+          <view class='alone-line' style='color:#999'>
+            <text class='line-title'>可用奖励金：{{upoint}}</text>
+            <view class='icons'>
+              <text class='line-title'>最多抵扣:</text>
+              <text class='line-title' style='color: #999;'>{{usepath2}}</text>
+              <icon wx:if="{{selected2==1?'':'true'}}" type="circle" size="25" color="#999" />
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <!-- 普通用户购买时现实的内容 -->
+    <view wx:if="{{is_store!=1}}">
+      <view wx:if="{{all.is_points!=0}}">
+
+        <!-- 奖励金 -->
+
+        <view class='alone-line'>
+          <text class='line-title'>可用奖励金：{{upoint}}</text>
+          <view class='icons'>
+            <text class='line-title'>最多抵扣:</text>
+            <text class='line-title' style='color: #fb7435;'>{{usepath2}}</text>
+            <icon wx:if="{{selected2==1?true:''}}" bindtap='currency' type="success_circle" size="25" color="#ff5d0f" />
+            <icon wx:if="{{selected2==1?'':'true'}}" bindtap='currency' type="circle" size="25" color="#ff5d0f" />
+          </view>
+        </view>
+
+      </view>
+    </view>
+
+    <view class='downbox'></view>
+
+    <!-- 计算面板 -->
+    <view class='calculate-line'>
+
+      <view class='calculate-result f30'>
+        <text>实付款</text>
+        <text class='pc'>￥{{sums}}</text>
+      </view>
+
+      <button formType="submit" class='orderbtn'>立即预定</button>
+
+    </view>
+  </view>
+
+</form>
+
+<view class='alert flexjac' wx:if="{{alert}}">
+  <view class='mask'>
+    <form>
+      <view class='mask-name flexjac'>提示</view>
+      <view class='mask-pay flexjac'>确认支付？</view>
+      <view class='mask-input flexac'>
+        <view>取消</view>
+        <button>确定</button>
+      </view>
+    </form>
+  </view>
+</view>

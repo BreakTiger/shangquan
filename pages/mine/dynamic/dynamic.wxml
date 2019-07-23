@@ -1,0 +1,34 @@
+<view class='container'>
+
+  <view wx:if='{{list.length!=0}}'>
+    <block wx:for="{{list}}" wx:key='this'>
+      <view class='shop flexjac' bindtap='getin' data-item="{{item}}">
+        <view class='shopImg'>
+          <image src='{{item.store_avatar}}' class='img br'></image>
+        </view>
+        <view class='shopCenter flexw'>
+          <view class='shopName f28'>{{item.store_name}}</view>
+          <view class='shopContent flexac'>
+            <i-rate bind:change="onChange5" count="{{5}}" value="{{item.avg_cores}}" size="13">
+            </i-rate>
+            <view class='num'>{{item.avg_cores}}</view>
+            <view class='num-text'></view>
+            <view class='num'>月销{{item.m_salenum}}</view>
+          </view>
+        </view>
+        <view class='shopRight flexw'>
+          <view class='right_area' data-index='{{index}}'>{{item.juli}}km</view>
+          <view class='guanzhu' catchtap='cancel' data-item='{{item}}'>取消关注</view>
+        </view>
+      </view>
+    </block>
+  </view>
+
+
+
+  <!-- 为空时显示 -->
+  <view wx:if='{{list.length==0}}' class='none'>
+    当前无关注店铺
+  </view>
+
+</view>

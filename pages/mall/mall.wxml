@@ -1,0 +1,119 @@
+<view class='flexjac search-box'>
+  <view class='search flexjac' bindtap='search'>
+    <icon type="search" size="18"></icon>
+    <text class='f30'>搜索</text>
+  </view>
+</view>
+
+<!-- 轮播图  -->
+<!-- <view class='background'>
+  <swiper autoplay="true" circular="false" indicator-dots="false" indicator-color="rgba(255,250,247,1);" indicator-active-color="#fff" style="width: 100%;height: 440rpx;">
+    <block wx:for="{{banner}}" wx:key="banner">
+      <swiper-item>
+        <image src="{{item.image_url}}" class="slideImage b10" style="width: 100%; height: 440rpx;" bindtap='seeBanner' data-img="{{item}}" data-id="{{item.id}}" mode="scaleToFill" />
+      </swiper-item>
+    </block>
+  </swiper>
+</view> -->
+<view class='background'>
+  <swiper autoplay="true" style="width: 100%;height: 440rpx;">
+    <block wx:for="{{banner}}" wx:key="banner">
+      <swiper-item>
+        <image src="{{item.image_url}}" class="slideImage b10" style="width: 100%; height: 440rpx;" bindtap='seeBanner' data-img="{{item}}" data-id="{{item.id}}" mode="scaleToFill" />
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+<!-- end 轮播图 -->
+
+
+<!-- 第二个轮播图 -->
+<swiper class='home-swiper' autoplay='true' interval='4000'>
+  <!-- 设置自动播放，切换间隔时间-->
+  <block wx:for="{{banner_}}" wx:key="unique">
+    <swiper-item>
+      <image src='{{item.image_url}}' catchtap='seeBanner' data-item='{{item}}' data-id="{{item.id}}"></image>
+    </swiper-item>
+  </block>
+</swiper>
+
+
+<!-- <swiper autoplay="true" circular="true" indicator-dots="true" indicator-color="rgba(255,250,247,1);" indicator-active-color="#fff" style="width: 95%;height: 140rpx;margin:15rpx auto;">
+  <block wx:for="{{banner_}}" wx:key="banner">
+    <swiper-item>
+      <image src="{{item.image_url}}" class="slideImage b10" style="width: 100%; height: 100%;" bindtap='seeBanner' data-img="{{item}}" data-id="{{item.id}}" mode="scaleToFill" />
+    </swiper-item>
+  </block>
+</swiper> -->
+<!-- end 第二个轮播图 -->
+
+
+<!-- 三个产品推荐 -->
+<view class='three flex'>
+  <image src='/img/img/tt_left@2x.png' style='width: 133rpx; height: 14rpx;margin-right: 50rpx'></image>
+  <text style="font-size: 30rpx; color: #333;">好物推荐</text>
+  <image src='/img/img/tt_right@2x.png' style='width: 133rpx; height: 14rpx;margin-left: 50rpx;'></image>
+</view>
+<!-- // -->
+<view class='tree flexjac b10'>
+  <view class='tree-img'>
+    <image src='{{three[0].product_image}}' class='img b10' bindtap='shopDetail' data-id="{{three[0].id}}"></image>
+  </view>
+  <view class='tree-row flexac'>
+    <view class='row-img'>
+      <image src='{{three[1].product_image}}' class='img b10' data-id="{{three[1].id}}" bindtap='shopDetail'></image>
+    </view>
+    <view class='row-img' style='margin-top:5rpx;'>
+      <image src='{{three[2].product_image}}' class='img b10' data-id="{{three[2].id}}" bindtap='shopDetail'></image>
+    </view>
+  </view>
+</view>
+<!-- end 三个产品推荐 -->
+
+
+
+<!-- tab -->
+<scroll-view scroll-x="true" class="tab-h" scroll-left="{{scrollLeft}}">
+  <block wx:for="{{mall}}" wx:key="mall">
+    <view class="tab-item {{index==idx?'tab-item1':''}}" data-index="{{index}}" bindtap="swichNav">{{item.stc_name}}
+      <view style='width:100%;font-size:26rpx;padding-bottom:5rpx;' data-index="{{index}}" bindtap="swichNav">{{item.child}}</view>
+    </view>
+  </block>
+</scroll-view>
+<!-- // tab -->
+
+
+
+
+<!-- 内容 -->
+<view wx:if="{{shop != ''}}">
+  <view class='container flexw'>
+    <view class='container-box' wx:for="{{shop}}" wx:key="this" bindtap='shopDetail' data-index="{{index}}" data-item="{{item}}" data-id="{{item.id}}">
+      <view class='containerImg'>
+        <image src='{{item.product_image}}' class='img b10'></image>
+        <view class='vip' wx:if="{{item.is_member != 0}}">会员专享</view>
+        <view class='discount_' wx:if="{{item.freight == 1}}">包邮</view>
+        <view class='discount' wx:if="{{item.is_points != 0}}">立减{{item.is_points}}%</view>
+      </view>
+      <view class='containertitle'>{{item.product_name}}</view>
+      <!-- <view class='discount' wx:if="{{item.is_points != 0}}">积分抵扣{{item.is_points}}</view> -->
+      <!-- <view class='containertitle'>原价{{item.market_price}}</view> -->
+      <view class='containerPrice flexac'>
+        <text class='price'>￥{{item.price}}</text>
+        <text class='_price'>销量{{item.yuexiao}}</text>
+        <!-- <view class='discount' wx:if="{{item.is_points != 0}}">立减{{item.is_points}}%</view> -->
+      </view>
+      <view style='width:100%' class='flexac'>
+        <!-- <view class='discount' wx:if="{{item.is_points != 0}}">立减{{item.is_points}}%</view> -->
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- 没有商品 -->
+<view wx:else class='emp'>暂无商品</view>
+
+<!-- 购物车 -->
+<view class='release' bindtap='shopCar' data-id="{{shequDetail}}">
+  <image class='img' src='/img/img/gobar.png'></image>
+</view>

@@ -1,0 +1,61 @@
+page {
+  background: rgba(247, 247, 247, 1);
+}
+
+.distri {
+  width: 100%;
+  height: 89rpx;
+  border-top: 1rpx solid #efefef;
+  border-bottom: 1rpx solid #efefef;
+  background: rgba(255, 255, 255, 1);
+  justify-content: space-between;
+}
+
+.distri_ {
+  width: 100%;
+  height: 89rpx;
+  border-bottom: 1rpx solid #efefef;
+  background: rgba(255, 255, 255, 1);
+  justify-content: space-between;
+}
+
+.distri text {
+  font-size: 30rpx;
+  margin-left: 35rpx;
+  color: rgba(51, 51, 51, 1);
+}
+
+.distri_ text {
+  font-size: 30rpx;
+  margin-left: 35rpx;
+  color: rgba(51, 51, 51, 1);
+}
+
+.distriImg {
+  width: 11rpx;
+  height: 19rpx;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+}
+
+.picker {
+  font-size: 30rpx;
+  color: #333;
+}
+
+input {
+  color: #333;
+  text-align: right;
+  font-size: 30rpx;
+}
+
+button {
+  width: 480rpx;
+  margin: 120rpx auto;
+  height: 80rpx;
+  color: #fff;
+  line-height: 80rpx;
+  text-align: center;
+  background: linear-gradient(80deg, rgba(250, 109, 34, 1), rgba(247, 96, 60, 1));
+  border-radius: 8rpx;
+}

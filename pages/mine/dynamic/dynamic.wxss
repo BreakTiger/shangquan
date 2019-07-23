@@ -1,0 +1,89 @@
+page {
+  background: rgba(247, 247, 247, 1);
+}
+
+.container{
+  width: 750rpx;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.shopImg {
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 10rpx;
+}
+
+.shop {
+  width: 703rpx;
+  height: 180rpx;
+  margin: 20rpx auto;
+  background: rgba(255, 255, 255, 1);
+  border-radius: 20rpx;
+  box-shadow: 12rpx 0px 21rpx rgba(153, 153, 153, 0.2);
+}
+
+.shopCenter {
+  width: 400rpx;
+  height: 180rpx;
+  margin-left: 20rpx;
+}
+
+.shopName {
+  padding-top: 20rpx;
+  width: 100%;
+  color: rgba(48, 48, 48, 1);
+}
+
+.shopContent {
+  width: 100%;
+  height: 50rpx;
+  margin-bottom: 67rpx;
+}
+
+.num-text {
+  width: 2rpx;
+  height: 18rpx;
+  margin-left: 25rpx;
+  margin-right: 15rpx;
+  background: rgba(63, 63, 63, 1);
+}
+
+.num {
+  font-size: 24rpx;
+  color: rgba(63, 63, 63, 1);
+}
+
+.shopRight {
+  width: 128rpx;
+  height: 90%;
+  justify-content: space-around;
+}
+
+.right_area {
+  font-size: 24rpx;
+  color: rgba(63, 63, 63, 1);
+  margin-top: 11rpx;
+}
+
+.guanzhu {
+  border: 1rpx solid #FE862F;
+  border-radius: 8rpx;
+  width: auto;
+  height: 40rpx;
+  text-align: center;
+  line-height: 40rpx;
+  font-size:24rpx;
+  padding-left: 15rpx;
+  padding-right: 15rpx;
+  color: #FE862F;
+  margin-top: 55rpx;
+}
+
+.em{
+  font-size: 40rpx;
+  color:#000;
+  text-align: center;
+  margin-top: 470rpx;
+}

@@ -1,0 +1,21 @@
+<view class='line'></view>
+<!-- 选择图片 -->
+<view class='up-pic'>
+  <view class='flex pic-box'>
+    <block wx:key="imgbox" wx:for="{{imgbox}}">
+      <view class='ap-box'>
+        <view class='add-pic'>
+          <image class='add-pic' src='{{item}}'></image>
+          <view class='img-de' data-deindex='{{index}}' bindtap='imgDelete1'>
+            <image class='img' src='/img/img/icon_close2@2x.png'></image>
+          </view>
+        </view>
+      </view>
+    </block>
+    <view class='add-pic' bindtap='addPic1' wx:if="{{imgbox.length<9}}">
+      <image class='img' src='/img/img/add_pic@2x.png' style='margin-top: 25rpx;'></image>
+    </view>
+  </view>
+</view>
+
+<button bindtap='add'>确定添加</button>

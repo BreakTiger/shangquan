@@ -1,0 +1,278 @@
+.search-box {
+  width: 100%;
+  height: 100rpx;
+  position: fixed;
+  top: 0;
+  background: #fff;
+  z-index: 999;
+}
+
+.search {
+  width: 80%;
+  height: 60rpx;
+  background: #efefef;
+  border-radius: 30rpx;
+  /* position: fixed; *//* top: 10rpx; */
+  z-index: 999rpx;
+}
+
+.search text {
+  margin-left: 25rpx;
+  color: #707070;
+}
+
+.tab-h {
+  height: 118rpx;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+  line-height: 80rpx;
+  background: #fff;
+  font-size: 16px;
+  white-space: nowrap;
+  z-index: 99;
+  border-top: 2rpx solid #efefef;
+  border-bottom: 2rpx solid #efefef;
+  /* position: fixed;
+  top: 101rpx; */
+}
+
+.tab-item {
+  margin: 0 40rpx;
+  display: inline-block;
+  text-align: center;
+  font-size: 30rpx;
+  line-height: 50rpx;
+}
+
+.tab-item1 {
+  text-align: center;
+  margin: 0 40rpx;
+  display: inline-block;
+  color: #f87039;
+  line-height: 50rpx;
+  font-size: 36rpx;
+  position: relative;
+}
+
+.tab-item1:after {
+  content: "";
+  display: block;
+  height: 8rpx;
+  width: 105rpx;
+  background: #f87039;
+  position: absolute;
+  bottom: 0;
+  left: 5rpx;
+  border-radius: 16rpx;
+}
+
+.tab-item .active {
+  color: #f87039;
+  position: relative;
+}
+
+.tab-item.active:after {
+  content: "";
+  display: block;
+  height: 8rpx;
+  width: 52rpx;
+  background: #f87039;
+  position: absolute;
+  bottom: 0;
+  left: 5rpx;
+  border-radius: 16rpx;
+}
+
+/*end tab */
+
+.container {
+  width: 100%;
+  height: auto;
+}
+
+.container-box {
+  margin-top: 20rpx;
+  width: 100%;
+  margin-left: 25rpx;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: auto;
+  max-height: 676rpx;
+  overflow: hidden;
+  margin-bottom: 29rpx;
+}
+
+.container-box {
+  width: 340rpx;
+  border-radius: 10rpx;
+  background: #fff;
+}
+
+.containerImg {
+  width: 340rpx;
+  height: 340rpx;
+  position: relative;
+}
+
+.containertitle {
+  width: 100%;
+  font-size: 30rpx;
+  color: #333;
+  margin-top: 15rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.containerPrice {
+  width: 100%;
+  padding-bottom: 20rpx;
+  font-size: 30rpx;
+  margin-top: 15rpx;
+}
+
+.price {
+  color: #fa6d22;
+  /* margin-left: 25rpx; */
+}
+
+._price {
+  font-size: 24rpx;
+  margin-left: 20rpx;
+  /* text-decoration: line-through; */
+  color: #999;
+}
+
+.vip {
+  width: auto;
+  padding-left: 10rpx;
+  padding-right: 10rpx;
+  position: absolute;
+  font-size: 24rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  color: #fff;
+  background: #ed5736;
+  top: 0;
+}
+
+.discount {
+  /* width: auto;
+  padding-left: 10rpx;
+  padding-right: 10rpx;
+  /* position: absolute; *//* bottom: 0; *//* right: 0; *//*font-size: 24rpx;
+  margin-left: 10rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  color: #fff;
+  background: #eba27c; *//* width: auto;
+  padding-left: 10rpx;
+  padding-right: 10rpx;
+  font-size: 24rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  color: #fff;
+  background: #eba27c; */
+  width: auto;
+  padding-left: 10rpx;
+  padding-right: 10rpx;
+  font-size: 24rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  color: #fff;
+  background: #eba27c;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  border-bottom-right-radius: 10rpx;
+}
+
+.discount_ {
+  width: auto;
+  padding-left: 10rpx;
+  padding-right: 10rpx;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  font-size: 24rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  color: #fff;
+  background: #d0626c;
+  border-bottom-left-radius: 10rpx;
+}
+
+/*购物车*/
+
+.release {
+  width: 100rpx;
+  height: 100rpx;
+  position: fixed;
+  bottom: 55rpx;
+  right: 50rpx;
+}
+
+.background {
+  margin-top: 102rpx;
+  width: 100%;
+}
+
+.emp {
+  text-align: center;
+}
+
+/* 三个推荐 */
+
+.three {
+  width: 100%;
+  height: 57rpx;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.three-img {
+  width: 50%;
+  height: 100%;
+}
+
+.tree {
+  width: 95%;
+  background: #fff;
+  justify-content: space-around;
+  margin: 0 auto;
+  padding: 5rpx 0;
+  height: 356rpx;
+}
+
+.tree-img {
+  width: 49%;
+  height: 100%;
+}
+
+.tree-row {
+  width: 49%;
+  height: 100%;
+  flex-direction: column;
+}
+
+.row-img {
+  width: 98%;
+  height: 48%;
+}
+
+.home-swiper {
+  width: 95%;
+  height: 140rpx;
+  margin: 15rpx auto;
+  position: relative;
+  border-radius: 10rpx;
+}
+
+.home-swiper image {
+  width: 100%;
+  height: 100%;
+  border-radius: 10rpx;
+}

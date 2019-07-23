@@ -1,0 +1,6 @@
+{
+  "usingComponents": { 
+    "i-rate": "/component/rate/index"
+  },
+    "enablePullDownRefresh": true
+}

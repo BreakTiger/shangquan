@@ -1,0 +1,35 @@
+<view class='turn flexw' bindtap='full'>
+  <view class='turnName flexjac'>总营业额</view>
+  <view class='turnPrice'>{{turnover || '0.00'}}</view>
+</view>
+
+<view class='pickTime flexjac'>
+  <view class="section flexac">
+    <picker mode="date" value="{{date}}" start="2015-09-01" bindchange="bindDateChange">
+      <view class="picker">
+        {{date}}
+      </view>
+    </picker>
+    <image src='/img/img/bottom.png' class='right'></image>
+  </view>
+</view>
+<view wx:if="{{order != ''}}">
+  <block wx:for="{{order}}" wx:key="order">
+    <view class='propl flexac'>
+      <!-- <view class='proplImg'>
+      <image src='/img/img/_20180704150208@2x.png' class='img'></image>
+    </view> -->
+      <view class='flexw proContent'>
+        <view class='prodin'>{{item.store_name}}订单编号{{item.order_sn}}</view>
+        <text class=''>{{item.buy_time}}</text>
+      </view>
+      <view class='flexjac'>
+        <view class='pronum' wx:if="{{item.type == 1 }}">+{{item.money}}</view>
+        <view class='pronum' wx:if="{{item.type == 2 }}">-{{item.money}}</view>
+      </view>
+    </view>
+  </block>
+</view>
+<view wx:else class='none;'>
+  暂无订单..
+</view>

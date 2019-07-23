@@ -1,0 +1,80 @@
+<swiper class='home-swiper' autoplay="true" circular="true" indicator-dots="true" indicator-color="rgba(0,0,0, .5)" indicator-active-color="#FA7A1E">
+  <!-- 设置自动播放，切换间隔时间-->
+  <block wx:for="{{top}}" wx:key="unique">
+    <swiper-item>
+      <image src='{{item.image_url}}' data-item='{{item}}' catchtap='getActivity'></image>
+    </swiper-item>
+  </block>
+</swiper>
+
+
+<!-- 图片 -->
+
+<view class='two-enter'>
+
+  <swiper autoplay="true" circular="true" class='two-swiper'>
+    <block wx:for="{{down1}}" wx:key="this">
+      <swiper-item>
+        <image class='enterimg' src='{{item.image_url}}' bindtap='getenter' data-item='{{item}}'></image>
+      </swiper-item>
+    </block>
+  </swiper>
+
+
+  <swiper autoplay="true" circular="true" class='two-swiper'>
+    <block wx:for="{{down2}}" wx:key="this">
+      <swiper-item>
+        <image class='enterimg' src='{{item.image_url}}' bindtap='getenter' data-item='{{item}}'></image>
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+
+
+<view class='content '>
+
+  <view class='_contenter ' wx:for="{{outlist}}" wx:key="this" bindtap='activity' data-item='{{item}}'>
+
+    <view class='contentImg '>
+      <image src='{{item.image[0]}} ' class='img ' style='border-top-left-radius:10rpx;border-top-right-radius:10rpx; '></image>
+    </view>
+    <view class='contentText '>{{item.title}}</view>
+    <view class='evaluate '>
+      <!-- <view>
+        <i-rate bind:change="onChange5" count="{{5}}" value="{{4}}" size="13"></i-rate>
+        <text class='const '>4.8分</text>
+      </view> -->
+
+      <text class='disance ' data-index='{{index}} '>{{item.juli}}km</text>
+    
+    
+    </view>
+
+    <view class='labelsline '>
+
+
+      <view class='price'>￥{{item.price}}</view>
+      <text class='original'>￥{{item.market_price}}</text>
+
+      <view class='labels' wx:if="{{item.is_member==1}}">
+        <image src='/img/img/icon_draw@2x.png ' style='width:28rpx;height:28rpx;margin-right:10rpx; '></image>
+        <text>会员专享</text>
+      </view>
+
+      <view class='labels' wx:if="{{item.is_points!=0}}">
+        <image src='/img/img/icon_draw@2x.png ' style='width:28rpx;height:28rpx;margin-right:10rpx; '></image>
+        <text>立减{{item.is_points}}%</text>
+      </view>
+
+      <view class='labels' wx:if="{{item.is_invoice==1}}">
+        <image src='/img/img/icon_draw@2x.png ' style='width:28rpx;height:28rpx;margin-right:10rpx; '></image>
+        <text>可开发票</text>
+      </view>
+
+
+    </view>
+    <view class='areaContent '>目的地：{{item.destination}}</view>
+  </view>
+
+  <view wx:if='{{outlist.length==0}}' class='emp-line'>暂无活动发布哦</view>
+</view>

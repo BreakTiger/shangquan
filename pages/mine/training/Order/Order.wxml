@@ -1,0 +1,337 @@
+<view class='main-body'>
+  <!-- 头部导航 -->
+  <scroll-view scroll-x="true" class="tab-h" scroll-left="{{scrollLeft}}">
+    <view class="nav_title">
+      <view class="nav_tab">
+        <view wx:for="{{list}}" wx:key="list" class="{{selected==index?'hidden':'show'}}" data-index='{{index}}' bindtap="selected">{{item}}
+          <view class="{{selected==index?'nav_underline':''}}"></view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+  <!--  end 头部导航 -->
+  <!-- 内容 -->
+  <view wx:if="{{quanbu!=''}}">
+    <view wx:if="{{item.order_status != 10}}">
+      <view class='mian flexc bgr mt' wx:for="{{quanbu}}" wx:key="quanbu" data-item="{{item}}" bindtap='order'>
+        <!-- 上 -->
+        <view class='mian-header flex'>
+          <view class='size26'>订单编号：{{item.order_sn}}</view>
+          <!-- *******************订单状态******************************** -->
+          <!--order_status  10未支付   20  已支付  30已发货   40 已完成  50 退款  60退款成功 70退款失败-->
+          <!-- *************************************************************** -->
+          <!-- <view class='size26' style='color:#fa6d22' wx:if="{{item.order_status == 10}}">未支付
+        </view> -->
+          <view class='size26' style='color:#fa6d22' wx:if="{{item.order_status == 20}}">待发货</view>
+          <view class='size26' style='color:#fa6d22' wx:if="{{item.order_status == 30}}">已发货</view>
+          <view class='size26' style='color:#fa6d22' wx:if="{{item.order_status == 40}}">已完成</view>
+          <view class='size26' style='color:#fa6d22' wx:if="{{item.order_status == 50}}">退款中</view>
+          <view class='size26' style='color:#fa6d22' wx:if="{{item.order_status == 60}}">退款完成</view>
+          <view class='size26' style='color:#fa6d22' wx:if="{{item.order_status == 70}}">退款失败</view>
+        </view>
+        <!-- *************************end 订单状态 ******************* -->
+        <!-- 中 --------------------------------------------------------------------->
+        <view class='content flexac' wx:for="{{item.product}}" wx:key="product" wx:for-item="value">
+          <view class='contentImg'>
+            <image src='{{value.product_image}}' class='img b10'></image>
+          </view>
+          <view class='content_box flexc'>
+            <view class='content-top flexac'>
+              <view class='top size26'>{{value.product_name}}</view>
+              <view>X {{value.goods_num }}</view>
+            </view>
+            <view class='content-center flexac'>
+              <view class='content-price-left'>
+                ￥{{value.pay_price}}
+              </view>
+              <view>
+                {{item.buy_time}}
+              </view>
+            </view>
+            <!-- <view class='content_right flex'>
+              <view class='content-price flex'>
+                <view class='content-price-right underline color'>
+                  {{item.buy_time}}
+                </view>
+              </view>
+              <text class='content-price-right underline'>X {{value.goods_num
+}}</text>
+            </view> -->
+          </view>
+        </view>
+        <!-- 下 -->
+        <!-- *******************订单状态*************************************** -->
+        <!--order_status  10未支付   20  已支付  30已发货   40 已完成  50 退款  60退款成功-->
+        <!-- *************************************************************** -->
+        <!-- 确认发货 -->
+        <view class='flex main-bottom' wx:if="{{item.order_status == 20}}">
+          <view></view>
+          <view>
+            <button catchtap='deliver' data-id="{{item.id}}">确认发货</button>
+          </view>
+        </view>
+        <!-- end 确认发货 -->
+        <!-- 退款中 -->
+        <view class='flex main-bottom' style='justify-content: flex-end' wx:if="{{item.order_status == 50}}">
+          <view>
+            <button catchtap='agree_' data-id="{{item.id}}">拒绝退款</button>
+          </view>
+          <view style='width:19rpx;'>
+          </view>
+          <view>
+            <button catchtap='refuse_' data-id="{{item.id}}">确认退款</button>
+          </view>
+        </view>
+        <!-- end 退款中 -->
+      </view>
+    </view>
+    <!-- end 确认发货 -->
+
+
+  </view>
+  <!-- </view> -->
+  <!-- 内容end -->
+
+  <view wx:if="{{quanbu== '' || quanbu == undefined}}" class='flexjac'>
+    <image src='/img/img/default_order@2x.png' class='img-car'></image>
+  </view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- 内容 -->
+  <!-- <view class='mian flexc bgr mt'>
+
+    <view class='mian-header flex '>
+      <view class='size26'>
+        订单编号：123456
+      </view>
+      <view class='size26' style='color:#fa6d22'>
+        代发货
+      </view>
+    </view>
+
+    <view class='content flexac'>
+      <view class='contentImg'>
+        <image src='/img/img/VIP@2x.png' class='img'></image>
+      </view>
+      <view class='content_box flexc'>
+        <view class='content-top flexac'>
+          <text class='top size26'>商品名称</text>
+        </view>
+        <view class='content-center flexac'>
+          <view class='content-price-left'>
+            ￥98
+          </view>
+          <view class='content-price-right'>
+            ￥135
+          </view>
+        </view>
+        <view class='content_right flex'>
+          <view class='content-price flex'>
+            <view class='content-price-right underline color'>
+              2018-8-17 17：45
+            </view>
+          </view>
+          <text class='content-price-right underline'>X 1</text>
+        </view>
+      </view>
+    </view>
+
+  </view> -->
+
+  <!-- 
+  <view class='mian flexc bgr mt'>
+
+    <view class='mian-header flex '>
+      <view class='size26'>
+        订单编号：123456
+      </view>
+      <view class='size26' style='color:#fa6d22'>
+        待使用
+      </view>
+    </view>
+
+    <view class='content flexac'>
+      <view class='contentImg'>
+        <image src='/img/img/VIP@2x.png' class='img'></image>
+      </view>
+      <view class='content_box flexc'>
+        <view class='content-top flexac'>
+          <text class='top size26'>商品名称</text>
+        </view>
+        <view class='content-center flexac'>
+          <view class='content-price-left'>
+            ￥98
+          </view>
+          <view class='content-price-right'>
+            ￥135
+          </view>
+        </view>
+        <view class='content_right flex'>
+          <view class='content-price flex'>
+            <view class='content-price-right underline color'>
+              2018-8-17 17：45
+            </view>
+          </view>
+          <text class='content-price-right underline'>X 1</text>
+        </view>
+      </view>
+    </view>
+
+    <view class='flex main-bottom'>
+      <view></view>
+      <view>
+        <button>已到店消费</button>
+      </view>
+    </view>
+  </view>
+ -->
+  <!-- 
+
+  <view class='mian flexc bgr mt'>
+
+    <view class='mian-header flex '>
+      <view class='size26'>
+        订单编号：123456
+      </view>
+      <view class='size26' style='color:#fa6d22'>
+        代发货
+      </view>
+    </view>
+
+    <view class='content flexac'>
+      <view class='contentImg'>
+        <image src='/img/img/VIP@2x.png' class='img'></image>
+      </view>
+      <view class='content_box flexc'>
+        <view class='content-top flexac'>
+          <text class='top size26'>商品名称</text>
+        </view>
+        <view class='content-center flexac'>
+          <view class='content-price-left'>
+            ￥98
+          </view>
+          <view class='content-price-right'>
+            ￥135
+          </view>
+        </view>
+        <view class='content_right flex'>
+          <view class='content-price flex'>
+            <view class='content-price-right underline color'>
+              2018-8-17 17：45
+            </view>
+          </view>
+          <text class='content-price-right underline'>X 1</text>
+        </view>
+      </view>
+    </view>
+
+  </view>
+ -->
+
+  <!-- 
+  <view class='mian flexc bgr mt'>
+
+    <view class='mian-header flex '>
+      <view class='size26'>
+        订单编号：123456
+      </view>
+      <view class='size26' style='color:#fa6d22'>
+        退款处理中
+      </view>
+    </view>
+
+    <view class='content flexac'>
+      <view class='contentImg'>
+        <image src='/img/img/VIP@2x.png' class='img'></image>
+      </view>
+      <view class='content_box flexc'>
+        <view class='content-top flexac'>
+          <text class='top size26'>商品名称</text>
+        </view>
+        <view class='content-center flexac'>
+          <view class='content-price-left'>
+            ￥98
+          </view>
+          <view class='content-price-right'>
+            ￥135
+          </view>
+        </view>
+        <view class='content_right flex'>
+          <view class='content-price flex'>
+            <view class='content-price-right underline color'>
+              2018-8-17 17：45
+            </view>
+          </view>
+          <text class='content-price-right underline'>X 1</text>
+        </view>
+      </view>
+    </view>
+
+    <view class='flex main-bottom' style='justify-content: flex-end'>
+      <view>
+        <button>拒绝退款</button>
+      </view>
+      <view style='width:19rpx;'>
+      </view>
+      <view>
+        <button>确认退款</button>
+      </view>
+    </view>
+  </view>
+
+ -->
+  <!-- 
+  <view class='mian flexc bgr mt'>
+
+    <view class='mian-header flex '>
+      <view class='size26'>
+        订单编号：123456
+      </view>
+      <view class='size26' style='color:#fa6d22'>
+        退款成功/退款失败
+      </view>
+    </view>
+
+    <view class='content flexac'>
+      <view class='contentImg'>
+        <image src='/img/img/VIP@2x.png' class='img'></image>
+      </view>
+      <view class='content_box flexc'>
+        <view class='content-top flexac'>
+          <text class='top size26'>商品名称</text>
+        </view>
+        <view class='content-center flexac'>
+          <view class='content-price-left'>
+            ￥98
+          </view>
+          <view class='content-price-right'>
+            ￥135
+          </view>
+        </view>
+        <view class='content_right flex'>
+          <view class='content-price flex'>
+            <view class='content-price-right underline color'>
+              2018-8-17 17：45
+            </view>
+          </view>
+          <text class='content-price-right underline'>X 1</text>
+        </view>
+      </view>
+    </view>
+
+  </view> -->
+
+
+</view>

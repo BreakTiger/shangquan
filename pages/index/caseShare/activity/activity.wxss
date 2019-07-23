@@ -1,0 +1,543 @@
+.container {
+  width: 750rpx;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.top-line {
+  width: 100%;
+  height: auto;
+  background-color: #fff;
+  border-radius: 0 0 25rpx 25rpx;
+  margin-bottom: 20rpx;
+}
+
+.swiper-box {
+  width: 100%;
+  height: 400rpx;
+}
+
+.swiper-box .swiper-pircture {
+  width: 100%;
+  height: 100%;
+}
+
+.activity-title {
+  width: 100%;
+  font-size: 28rpx;
+  color: #000;
+  margin: 25rpx 0;
+  padding: 0 25rpx;
+}
+
+.activity-info {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 25rpx;
+  margin-bottom: 25rpx;
+}
+
+.price {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.nowprice {
+  height: auto;
+  color: #fa6d22;
+  font-size: 30rpx;
+}
+
+.original {
+  font-size: 25rpx;
+  color: #999;
+  text-decoration: line-through;
+  margin-left: 15rpx;
+}
+
+.lables {
+  display: flex;
+  flex-direction: row;
+}
+
+.labels text {
+  font-size: 30rpx;
+  color: #000;
+}
+
+.join {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  border-radius: 25rpx;
+  margin-bottom: 20rpx;
+}
+
+.join-title {
+  margin: 10rpx;
+}
+
+.header-line {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0 15rpx;
+  margin: 15rpx 0;
+}
+
+.head {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 40rpx;
+  margin: 10rpx;
+}
+
+.hint {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  border-radius: 25rpx;
+  margin-bottom: 20rpx;
+}
+
+.place-info {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  justify-content: space-between;
+  padding: 0 30rpx;
+  margin-top: 20rpx;
+}
+
+.place-info text {
+  font-size: 30rpx;
+  margin-bottom: 20rpx;
+}
+
+.time {
+  padding-left: 30rpx;
+  margin-bottom: 20rpx;
+  font-size: 24rpx;
+}
+
+.nav-phone {
+  /* width: 100%;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 25rpx;
+  padding-left: 30rpx; */
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 25rpx;
+}
+
+.nav-box {
+  /* display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-right: 173rpx; */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 50%;
+  justify-content: center;
+  border-right: 1rpx solid #666;
+}
+
+.nav-box text {
+  font-size: 30rpx;
+  margin-right: 35rpx;
+}
+
+.nav-box .nav {
+  width: 46rpx;
+  height: 44rpx;
+}
+
+.phone-box {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 50%;
+  justify-content: center;
+}
+
+.phone-box text {
+  font-size: 30rpx;
+  margin-right: 35rpx;
+}
+
+.phone-box .phone {
+  width: 46rpx;
+  height: 44rpx;
+}
+
+.stroe {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 25rpx;
+  margin-bottom: 20rpx;
+}
+
+.left {
+  margin-left: 25rpx;
+}
+
+.mid {
+  margin-left: 30rpx;
+}
+
+.right {
+  margin-left: 200rpx;
+}
+
+.stroename {
+  font-size: 30rpx;
+  color: #000;
+}
+
+.stroeinfo-box {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.stroeinfo {
+  font-size: 24rpx;
+}
+
+.right-icon {
+  width: 28rpx;
+  height: 28rpx;
+}
+
+.activity-message {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  border-radius: 25rpx;
+  margin-bottom: 20rpx;
+}
+
+.message-title {
+  font-size: 34rpx;
+  color: #000;
+  margin-left: 25rpx;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+}
+
+.meassage-text {
+  width: 100%;
+  word-break: break-all;
+  margin-bottom: 20rpx;
+}
+
+.show {
+  height: 50rpx;
+  line-height: 50rpx;
+  font-size: 26rpx;
+  margin-bottom: 20rpx;
+}
+
+.discuss {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  border-radius: 25rpx 25rpx 0 0;
+}
+
+.discuss-title {
+  padding-left: 25rpx;
+  margin: 25rpx 0;
+}
+
+.first-line {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 20rpx;
+}
+
+.line-box {
+  display: flex;
+  flex-direction: column;
+  margin-left: 40rpx;
+}
+
+.line-box text {
+  font-size: 24rpx;
+}
+
+.star {
+  margin-left: 200rpx;
+}
+
+.discuss-text-box {
+  width: 580rpx;
+  height: auto;
+  word-break: break-all;
+  margin-left: 150rpx;
+  margin-bottom: 20rpx;
+  font-size: 24rpx;
+}
+
+.discuss-pircture {
+  width: 590rpx;
+  height: 400rpx;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin-left: 137rpx;
+}
+
+.pic {
+  width: 161rpx;
+  height: 162rpx;
+  margin: 10rpx;
+}
+
+.orders {
+  width: 650rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  background-color: #f75f3c;
+  font-size: 33rpx;
+  color: #fff;
+}
+
+.discuss-content {
+  margin-bottom: 20rpx;
+}
+
+.attentions {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  margin-bottom: 20rpx;
+  border-radius: 25rpx;
+}
+
+.attentions-line {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 25rpx;
+  margin: 20rpx 0;
+}
+
+.down-icon {
+  width: 28rpx;
+  height: 18rpx;
+}
+
+.attentions-message {
+  width: 100%;
+  padding: 0 25rpx;
+  word-break: break-all;
+  margin-bottom: 20rpx;
+}
+
+.shopContent {
+  width: 100%;
+  border-radius: 10rpx;
+  margin: 20rpx auto;
+  padding-bottom: 20rpx;
+  height: auto;
+  background: #fff;
+}
+
+.shopContentImg {
+  width: 80rpx;
+  height: 80rpx;
+  margin-left: 20rpx;
+}
+
+.shopText_ {
+  font-size: 28rpx;
+  width: 100%;
+  color: rgba(51, 51, 51, 1);
+}
+
+.shopTextvip {
+  font-size: 24rpx;
+  color: rgba(63, 63, 63, 1);
+}
+
+.textFix {
+  width: 2rpx;
+  margin-left: 15rpx;
+  margin-right: 15rpx;
+  height: 18rpx;
+  background: rgba(63, 63, 63, 1);
+}
+
+.shopText {
+  margin-left: 25rpx;
+}
+
+.bg {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 9;
+}
+
+.widows {
+  width: 100%;
+  background-color: #fff;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: 10;
+}
+
+.top {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 40rpx;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  margin-top: 52rpx;
+}
+
+.top-img {
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 8rpx;
+  border: 4rpx solid rgba(255, 255, 255, 0.4);
+  margin-top: -60rpx;
+  margin-right: 25rpx;
+  margin-left: 25rpx;
+}
+
+.specification {
+  width: 94%;
+  margin: 25rpx auto;
+  padding: 25rpx 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.sku {
+  border: 1rpx solid #999;
+  border-radius: 8rpx;
+  padding: 8rpx;
+  color: #999;
+  margin-right: 25rpx;
+}
+
+.csku {
+  border: 1rpx solid #f75f3c;
+  border-radius: 8rpx;
+  padding: 8rpx;
+  color: #f75f3c;
+  margin-right: 25rpx;
+}
+
+.nextbtn {
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+  background-color: #f75f3c;
+  font-size: 32rpx;
+  color: #fff;
+  text-align: center;
+}
+
+.number-line {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  margin-bottom: 25rpx;
+  padding-right: 30rpx;
+}
+
+.number-line text {
+  width: 50rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  text-align: center;
+  /* border: 1rpx solid #000; */
+  background: #f7f7f7;
+  border: 1rpx solid #efefef;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.number-line input {
+  width: 65rpx;
+  height: 35rpx;
+  display: block;
+  text-align: center;
+  font-size: 30rpx;
+  padding: 0 5rpx;
+  background: #eeeeee;
+}
+
+/* 轮播图指示点 */
+
+.dots {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  top: 420rpx;
+  width: 100%;
+  height: 50rpx;
+  justify-content: flex-end;
+  right: 34rpx;
+}
+
+.dots .dot {
+  width: 15rpx;
+  height: 15rpx;
+  /* background-color: #333; */
+  background: #fffaf7;
+  margin-left: 12rpx;
+  border-radius: 20rpx;
+  /* transform: all 0.6; */
+  opacity: 0.44;
+}
+
+/* 调用的css效果 */
+
+.dots .actives {
+  background-color: #fff;
+  opacity: 1;
+}
+
+.bottomFixed {
+  width: 100%;
+  position: fixed;
+  bottom: 10rpx;
+}

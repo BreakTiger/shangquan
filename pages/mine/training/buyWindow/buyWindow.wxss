@@ -1,0 +1,84 @@
+page {
+  background: rgba(247, 247, 247, 1);
+}
+
+.window {
+  margin: 20rpx auto;
+  width: 95%;
+  height: 88rpx;
+  background: rgba(255, 255, 255, 1);
+  border-radius: 20rpx;
+  justify-content: space-between;
+  padding: 0 50rpx;
+  box-shadow: 12rpx 0px 21rpx rgba(153, 153, 153, 0.2);
+}
+
+.window text {
+  font-size: 30rpx;
+  color: rgba(51, 51, 51, 1);
+}
+
+input {
+  text-align: right;
+  color: #fd8230;
+  font-size: 30rpx;
+}
+
+.section {
+  width: 360rpx;
+  justify-content: flex-end;
+}
+
+.picker {
+  margin-right: 25rpx;
+  font-size: 30rpx;
+  color: rgba(253, 130, 48, 1);
+}
+
+.to-right {
+  width: 11rpx;
+  height: 19rpx;
+}
+
+.explain {
+  font-size: 28rpx;
+  margin-top: 25rpx;
+  margin-left: 77rpx;
+  color: #999;
+}
+
+button {
+  margin: 105rpx auto;
+  font-size: 32rpx;
+  width: 480rpx;
+  height: 80rpx;
+  color: #fff;
+  line-height: 80rpx;
+  background: linear-gradient(80deg, rgba(247, 97, 59, 1), rgba(253, 130, 48, 1));
+  border-radius: 8rpx;
+}
+
+/*客服  */
+
+.kefu {
+  position: fixed;
+  right: 10rpx;
+  bottom: 85rpx;
+  z-index: 30;
+}
+
+.kefu-icon {
+  width: 100rpx;
+  height: 100rpx;
+}
+
+.btn-kefu {
+  background: none;
+  opacity: 0.8;
+  width: 150rpx;
+  height: 100rpx;
+}
+
+.btn-kefu::after {
+  border: none;
+}

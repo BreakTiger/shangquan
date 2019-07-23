@@ -1,0 +1,34 @@
+<view class='people-container flexac'>
+  <view class='peopleImg'>
+    <image class='img' style='border-radius:10rpx;' src='/img/img/背景2副本2@2x.png'></image>
+  </view>
+  <view class='flexw peopleUser'>
+    <view class='f30 c3'>发起人名称</view>
+    <view class='f28 peopleUser-name'>发起人描述发起人描述发起人描述发起人描述发起人描述发起人描述发起人描述发F</view>
+  </view>
+</view>
+<!-- 活动 -->
+<view class='selectContent' wx:for="{{[0,1,2,3,4,5]}}" wx:key='this'>
+  <view class='flexac selectText'>
+    <view class='selectImg'>
+      <image class='img br' src='/img/img/微信图片_20180704150208@2x.png'></image>
+    </view>
+    <view class='flexw selectImgText'>
+      <view class='selectImgTextDate c6'>1997</view>
+      <view class='selectImgTextDate c9'>2017-10-12</view>
+    </view>
+    <!-- <view class='sign'>
+        立即报名
+      </view> -->
+    <view class='sign_ f28'>
+      报名已结束
+    </view>
+  </view>
+  <view class='centerSelect1'>
+    <image src='/img/img/背景2副本2@2x.png' class='img' style='border-radius:10rpx;'></image>
+    <view class='actmove'>公益活动</view>
+  </view>
+  <view class='bottomText f29'>
+    亲子欢乐时光这样的公益活动相信一定不会让你枯燥无聊。
+  </view>
+</view>

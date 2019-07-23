@@ -1,0 +1,20 @@
+<view class='banner flexjac' bindtap='goBanner'>
+  <view class='f30 c3'>添加推广轮播图</view>
+  <image src='/img/img/add_@2x.png' class='centerImg'></image>
+</view>
+
+<!-- 轮播图 -->
+<view class='banner-contaner flexjc' wx:if="{{banner != ''}}">
+  <block wx:for="{{banner}}" wx:key="banner">
+    <view class='bannerBox flexac' bindtap='goBannerBox' data-slider_id="{{item.id}}">
+      <view class='box-img'>
+        <image src='{{item.image_url}}' class='img' style='border-radius:10rpx;'></image>
+      </view>
+      <view class='box-content flex'>
+        <view class='boxcontentText'>购买时间：{{item.set_time}}</view>
+        <text class='boxcontentText'>推广到期时间：{{item.expire_time}}</text>
+      </view>
+    </view>
+  </block>
+</view>
+<view wx:else class='emp'>暂无推广的轮播图..</view>

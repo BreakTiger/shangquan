@@ -1,0 +1,90 @@
+<swiper autoplay="true" circular="true" class='header-swper' indicator-dots="true" indicator-color="rgba(0,0,0, .5)" indicator-active-color="#FA7A1E">
+  <block wx:for="{{top}}" wx:key="slider">
+    <swiper-item>
+      <image src="{{item.image_url}}" class="slideImage" bindtap='bigimg' data-item="{{item}}" />
+    </swiper-item>
+  </block>
+</swiper>
+
+<!-- 图片 -->
+<view class='container flexac'>
+
+  <swiper autoplay="true" circular="true" class='two-swiper'>
+    <block wx:for="{{down1}}" wx:key="this">
+      <swiper-item>
+        <image class='boxImg' src='{{item.image_url}}' bindtap='bigimgs' data-img="{{item}}"></image>
+      </swiper-item>
+    </block>
+  </swiper>
+
+  <swiper autoplay="true" circular="true" class='two-swiper'>
+    <block wx:for="{{down2}}" wx:key="this">
+      <swiper-item>
+        <image class='boxImg' src='{{item.image_url}}' bindtap='bigimgs' data-img="{{item}}"></image>
+      </swiper-item>
+    </block>
+  </swiper>
+
+</view>
+
+<view wx:for="{{shoplist}}" wx:key="this" style='margin-bottom:10rpx;'>
+
+  <!-- 店铺列表 -->
+  <view class='content flexac'>
+
+    <view class='contentImg' bindtap='shop' data-item='{{item}}'>
+      <image src='{{item.store_avatar}}' class='img'></image>
+    </view>
+
+    <view class='content_box flexc'>
+
+      <view class='content-top flexac'>
+        <text class='top'>{{item.store_name}}</text>
+        <text class='top_area f24' data-index='{{index}}'>{{item.juli}}km</text>
+      </view>
+
+      <view class='content-center flexac'>
+        <i-rate bind:change="onChange5" count="{{5}}" value="{{item.avg_cores}}" size="13">
+        </i-rate>
+        <text class='center-text' style='margin-left:15rpx;'>{{item.avg_cores}}</text>
+        <view class='unline'></view>
+        <view class='center-text'>月销{{item.m_salenum}}</view>
+      </view>
+
+      <view class='content_right flex'>
+
+        <!-- <text class='lables'>免费配送</text> -->
+        <!-- <text class='nofree'>会员专享</text> -->
+        <!-- <text class='nofree'>立减</teFxt> -->
+
+        <text class='right f24' wx:if="{{item.is_follow==0}}" bindtap='attentions' data-item='{{item}}'>关注</text>
+        <text class='right f24' wx:if="{{item.is_follow==1}}" bindtap='cancelattentions' data-item='{{item}}'>已关注</text>
+      </view>
+
+    </view>
+
+  </view>
+
+  <!-- 商品图片 -->
+
+  <view class='storeimgline' bindtap='shop' data-item='{{item}}'>
+
+    <view class='storeimg' wx:for='{{item.child}}' wx:key='proid' wx:for-item="value">
+      <image src='{{value.product_image}}' class='imgcontent'>
+        <view class='autoFix_' wx:if="{{value.freight==1}}">免费配送</view>
+        <view class='autoFix' wx:if="{{value.is_points!=0}}">立减{{value.is_points}}%</view>
+        <view class='autoFix' wx:if="{{value.is_member==1}}">会员专享</view>
+      </image>
+      <view class='goodsname'>{{item.product_name}}</view>
+    </view>
+
+
+  </view>
+
+
+</view>
+
+
+
+
+<view class='emp' wx:if='{{shoplist.length==0}}'>当前没有店铺哦，亲^_^</view>

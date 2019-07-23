@@ -1,0 +1,58 @@
+<!--  //我的余额  -->
+<form bindsubmit='pay' report-submit='true'>
+  <view class='currency flexw'>
+    <view class='currenTitle'>请选择充值大喇叭套餐</view>
+    <view class='curren-content flexw'>
+      <!-- 方块 -->
+      <view wx:for="{{cueernt}}" wx:key="cueernt">
+        <view class="{{idx == index?'curr-content':'_curr-content'}}" bindtap='curr' data-index="{{index}}" data-money="{{item.money}}" data-adv="{{item.adv_coin}}">
+          <!-- <view class="{{idx == index?'curr-price':'_curr-price'}}">{{item.money}}个</view> -->
+
+          <view class="{{idx == index?'curr-price':'_curr-price'}}" style='font-weight:bold;'>
+            {{item.adv_coin}}大喇叭
+            <!-- {{item.money}}个 -->
+          </view>
+          <!-- <view class="{{idx == index ? 'curr-price' : '_curr-price'}}" style='margin-top:20rpx;'>{{item.adv_coin}}大喇叭</view> -->
+          <view class="{{idx == index ? 'curr-price' : '_curr-price'}}" style='margin-top:20rpx;ont-size:26rpx;'>
+            售价:{{item.money}}元
+            <!-- {{item.adv_coin}}大喇叭 -->
+          </view>
+
+
+
+
+        </view>
+      </view>
+      <!--// 方块  -->
+      <!-- 方块 -->
+      <!-- <view class='curr-content-1 flexc'>
+        <view class='curr-price'>￥100</view>
+        <view class='curr-price' style='margin-top:20rpx;'>免换1000积分</view>
+      </view> -->
+      <!--// 方块  -->
+      <!-- 方块 -->
+      <!-- <view class='curr-content-2 flexc'>
+        <view class='curr-price'>￥100</view>
+        <view class='curr-price' style='margin-top:20rpx;'>免换1000积分</view>
+      </view> -->
+      <!--// 方块  -->
+      <!-- 方块 -->
+      <!-- <view class='curr-content-3 flexc'>
+        <view class='curr-price'>￥100</view>
+        <view class='curr-price' style='margin-top:20rpx;'>免换1000积分</view>
+      </view> -->
+      <!--// 方块  -->
+    </view>
+    <view style='margin:15rpx auto;width:90%;' class='flexac'>
+      <view class='box-price'>其他金额：</view>
+      <input name="adv" placeholder='请输入兑换数量' value="{{num}}" class='boxinput' bindinput='num' type='number'></input>
+    </view>
+
+
+
+
+
+    <view class='currcontent-price' style='color:rgba(51, 51, 51, 1);font-szie:30rpx;font-weight:bold;'>支付金额：￥{{money}}</view>
+    <button formType='submit'>立即兑换</button>
+  </view>
+</form>

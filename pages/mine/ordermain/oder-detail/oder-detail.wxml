@@ -1,0 +1,450 @@
+<view class='flexc auto'>
+  <!-- 头部 -->
+  <!-- 基本订单状态 -->
+  <view class='header mt b-r'>
+    <view class='flex mr'>
+      <view class='header-circle'></view>
+      <view class='header-status' wx:if='{{all.order_status==10}}'>订单状态：待支付</view>
+      <view class='header-status' wx:if='{{all.order_status==20}}'>订单状态：待发货</view>
+      <view class='header-status' wx:if='{{all.order_status==30}}'>订单状态：待收货</view>
+      <view class='header-status' wx:if='{{all.order_status==40}}'>订单状态：已完成</view>
+      <view class='header-status' wx:if='{{all.order_status==50}}'>订单状态：退款处理中</view>
+      <view class='header-status' wx:if='{{all.order_status==60}}'>订单状态：退款成功</view>
+    </view>
+  </view>
+
+  <!-- 用户地址信息 -->
+  <view class='header mt b-r'>
+    <!-- 收货人+电话 -->
+    <view class='name-phone'>
+      <text>收货人:{{all.name}}</text>
+      <text>{{all.phone}}</text>
+    </view>
+    <!-- 地址 -->
+    <view class='add'>
+      收货地址：{{all.address}}
+    </view>
+    <image src='/img/img/address.png' class="header-img"></image>
+  </view>
+
+
+  <!-- 店铺商品信息 -->
+  <view class='shop mt b-r'>
+    <view class='shop1 flexc mr'>
+      <!-- 店铺名称 -->
+      <view class='flex'>
+        <image src='/img/img/dianpu1@2x.png' class='shop-img'></image>
+        <view class='shop-name'>{{all.store_name}}</view>
+      </view>
+
+
+      <view class='flex' wx:for="{{all.product}}" wx:key="this" data-index='{{index}}'>
+
+        <image class='shop-image' src='{{item.product_image}}'></image>
+
+
+        <view class='flexc content_right'>
+          <view class='shopping-name'>{{item.product_name}}</view>
+          <view class='flex content_right'>
+            <view class='content-price flex'>
+              <view class='content-price-left'>
+                ￥{{item.pay_price}}
+              </view>
+              <view class='content-price-right'>
+                ￥{{all.money}}
+              </view>
+            </view>
+            <text class='content-price-right underline'>X {{item.goods_num}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+
+  <!-- 订单详细 -->
+  <view class='flexc mt b-r'>
+    <view class='vip-discount pd'>
+      <view class='line-75'>会员折扣</view>
+      <view class='line-75 color'>-￥39</view>
+    </view>
+    <view class='vip-discount pd'>
+      <view class='line-75'>积分抵扣</view>
+      <view class='line-75 color'>-￥{{all.points}}</view>
+    </view>
+    <view class='vip-discount pd'>
+      <view class='line-75'>运费</view>
+      <view class='line-75 color'>包邮</view>
+    </view>
+    <view class='vip-discount pd' style='justify-content: flex-end;height:88rpx;align-items: center;'>
+      <view class='vip-num'>共{{all.product.length}}件
+        <text style='padding-left:12rpx;'>合计：￥{{all.money}}</text>
+      </view>
+      <view class='vip-num' style='margin-right:10rpx;margin-left:10rpx;'>已优惠:
+        <text>￥128</text>
+      </view>
+      <view class='vip-num'>实际支付：
+        <text class='num-text'>￥117</text>
+      </view>
+    </view>
+    <view class='vip-discount pd' style='justify-content:center;'>
+      <view class='line-75'>联系商家</view>
+    </view>
+  </view>
+
+
+  <!-- 以上为所有订单都有的部分 -->
+
+
+  <!-- 下面的内容是根据订单的状态和订单的类型来区分显示的 -->
+
+  <!-- 待支付 -->
+
+  <!-- 订单明细 -->
+  <view wx:if='{{all.order_status==10}}'>
+    <view class='flexc mt b-r'>
+      <view class='vip-discount pd'>
+        <view class='line-75'>订单编号</view>
+        <view class='line-75 color'>{{all.order_sn}}</view>
+      </view>
+      <view class='vip-discount pd'>
+        <view class='line-75'>订单时间</view>
+        <view class='line-75 color'>{{all.buy_time}}</view>
+      </view>
+      <view class='vip-discount pd'>
+        <view class='line-75'>支付方式</view>
+        <view class='line-75 color' wx:if='{{all.payment==1}}'>微信支付</view>
+      </view>
+      <view class='vip-discount pd'>
+        <view class='line-75'>备注</view>
+        <input name="" placeholder='你的要求' value='{{}}' class='input-p'></input>
+      </view>
+    </view>
+  </view>
+
+
+  <!-- 代发货 -->
+
+  <!-- 订单明细 -->
+  <view wx:if='{{all.order_status==20}}'>
+    <view class='flexc mt b-r'>
+      <view class='vip-discount pd'>
+        <view class='line-75'>订单编号</view>
+        <view class='line-75 color'>123456</view>
+      </view>
+      <view class='vip-discount pd'>
+        <view class='line-75'>订单时间</view>
+        <view class='line-75 color'>2018-8-20 17：12</view>
+      </view>
+
+      <view class='vip-discount pd'>
+        <view class='line-75'>支付时间</view>
+        <view class='line-75 color'>2018-8-20 17：12</view>
+      </view>
+
+      <view class='vip-discount pd'>
+        <view class='line-75'>支付方式</view>
+        <view class='line-75 color' wx:if='{{all.payment==1}}'>微信支付</view>
+        <view class='line-75 color' wx:if=''>余额支付</view>
+      </view>
+
+      <view class='vip-discount pd'>
+        <view class='line-75'>备注</view>
+        <input name="" placeholder='你的要求' value='{{}}' class='input-p'></input>
+      </view>
+    </view>
+  </view>
+
+
+  <!-- 待收货 -->
+
+  <!-- 订单详细 -->
+
+  <view wx:if='{{all.order_status==30}}'>
+    <view class='flexc mt b-r'>
+
+      <view class='vip-discount pd'>
+        <view class='line-75'>订单编号</view>
+        <view class='line-75 color'>123456</view>
+      </view>
+
+      <view class='vip-discount pd'>
+        <view class='line-75'>订单时间</view>
+        <view class='line-75 color'>2018-8-20 17：12</view>
+      </view>
+
+      <view class='vip-discount pd'>
+        <view class='line-75'>支付时间</view>
+        <view class='line-75 color'>2018-8-20 17：12</view>
+      </view>
+
+      <view class='vip-discount pd'>
+        <view class='line-75'>快递编号</view>
+        <view class='line-75 color'>123456(顺丰快递)</view>
+      </view>
+
+      <view class='vip-discount pd'>
+        <view class='line-75'>支付方式</view>
+        <view class='line-75 color' wx:if='{{all.payment==1}}'>微信支付</view>
+        <view class='line-75 color' wx:if=''>余额支付</view>
+      </view>
+
+
+
+      <view class='vip-discount pd'>
+        <view class='line-75'>备注</view>
+        <input name="" placeholder='你的要求' value='{{}}' class='input-p'></input>
+      </view>
+
+      <view class='vip-discount pd'>
+        <view class='line-75'>联系电话</view>
+        <view class='line-75 color'>15927579564</view>
+      </view>
+
+    </view>
+  </view>
+
+
+  <!-- 退款售后 -->
+
+  <!-- 退款处理中 -->
+  <!-- 订单详细 -->
+  <view wx:if='{{all.order_status==50}}'>
+
+    <view class='flexc mt b-r'>
+      <view class='vip-discount pd'>
+        <view class='line-75'>订单编号</view>
+        <view class='line-75 color'>123456</view>
+      </view>
+      <view class='vip-discount pd'>
+        <view class='line-75'>订单时间</view>
+        <view class='line-75 color'>2018-8-20 17：12</view>
+      </view>
+
+      <view class='vip-discount pd'>
+        <view class='line-75'>支付时间</view>
+        <view class='line-75 color'>2018-8-20 17：12</view>
+      </view>
+
+      <view class='vip-discount pd'>
+        <view class='line-75'>快递编号</view>
+        <view class='line-75 color'>123456（顺丰快递）</view>
+      </view>
+
+      <view class='vip-discount pd'>
+        <view class='line-75'>支付方式</view>
+        <view class='line-75 color' wx:if='{{all.payment==1}}'>微信支付</view>
+        <view class='line-75 color' wx:if=''>余额支付</view>
+      </view>
+
+      <view class='vip-discount pd'>
+        <view class='line-75'>备注</view>
+        <input name="" placeholder='你的要求' value='{{}}' class='input-p'></input>
+      </view>
+
+      <view class='vip-discount pd'>
+        <view class='line-75'>联系电话</view>
+        <view class='line-75 color'>15927579564</view>
+      </view>
+
+    </view>
+
+    <!-- 申请缘由 -->
+    <view class='flexc mt b-r'>
+
+      <view class='vip-discount pd'>
+        <view class='line-75'>申请时间</view>
+        <view class='line-75 color'>2018-07-23 14:58</view>
+      </view>
+
+      <view class='vip-discount pd'>
+        <view class='line-75'>退款金额</view>
+        <view class='line-75 color'>￥123</view>
+      </view>
+
+      <view class='vip-discount pd reson'>
+        <view class='line-75'>退货缘由：</view>
+        <!-- 缘由+图片 -->
+        <view class='line-75 reson'>
+          <text>理由理由理由</text>
+          <view class='img-content'>
+            <block wx:for='{{[0,1,2]}}'>
+              <image class='resonimg' src='/img/img/add_pic@2x.png'></image>
+            </block>
+
+          </view>
+
+
+        </view>
+
+
+      </view>
+
+
+
+
+
+    </view>
+
+
+  </view>
+
+  <!-- 退款完成 -->
+  <view wx:if='{{all.order_status==60}}'>
+
+    <view class='flexc mt b-r'>
+      <view class='vip-discount pd'>
+        <view class='line-75'>订单编号</view>
+        <view class='line-75 color'>123456</view>
+      </view>
+      <view class='vip-discount pd'>
+        <view class='line-75'>订单时间</view>
+        <view class='line-75 color'>2018-8-20 17：12</view>
+      </view>
+
+      <view class='vip-discount pd'>
+        <view class='line-75'>支付时间</view>
+        <view class='line-75 color'>2018-8-20 17：12</view>
+      </view>
+
+      <view class='vip-discount pd'>
+        <view class='line-75'>快递编号</view>
+        <view class='line-75 color'>123456（顺丰快递）</view>
+      </view>
+
+      <view class='vip-discount pd'>
+        <view class='line-75'>支付方式</view>
+        <view class='line-75 color' wx:if='{{all.payment==1}}'>微信支付</view>
+        <view class='line-75 color' wx:if=''>余额支付</view>
+      </view>
+
+      <view class='vip-discount pd'>
+        <view class='line-75'>备注</view>
+        <input name="" placeholder='你的要求' value='{{}}' class='input-p'></input>
+      </view>
+
+      <view class='vip-discount pd'>
+        <view class='line-75'>联系电话</view>
+        <view class='line-75 color'>15927579564</view>
+      </view>
+
+    </view>
+
+    <!-- 申请缘由 -->
+    <view class='flexc mt b-r'>
+
+      <view class='vip-discount pd'>
+        <view class='line-75'>申请时间</view>
+        <view class='line-75 color'>2018-07-23 14:58</view>
+      </view>
+
+      <view class='vip-discount pd'>
+        <view class='line-75'>退款金额</view>
+        <view class='line-75 color'>￥123</view>
+      </view>
+
+      <view class='vip-discount pd reson'>
+        <view class='line-75'>退货缘由：</view>
+        <!-- 缘由+图片 -->
+        <view class='line-75 reson'>
+          <text>理由理由理由</text>
+          <view class='img-content'>
+            <block wx:for='{{[0,1,2]}}'>
+              <image class='resonimg' src='/img/img/add_pic@2x.png'></image>
+            </block>
+
+          </view>
+
+
+        </view>
+
+
+      </view>
+
+
+
+
+
+    </view>
+
+
+  </view>
+
+
+  <!-- 已完成 -->
+  <!-- 订单详细 -->
+  <view wx:if='{{all.order_status==40}}'>
+
+    <view class='flexc mt b-r'>
+
+      <view class='vip-discount pd'>
+        <view class='line-75'>订单编号</view>
+        <view class='line-75 color'>123456</view>
+      </view>
+
+      <view class='vip-discount pd'>
+        <view class='line-75'>订单时间</view>
+        <view class='line-75 color'>2018-8-20 17：12</view>
+      </view>
+
+      <view class='vip-discount pd'>
+        <view class='line-75'>支付时间</view>
+        <view class='line-75 color'>2018-8-20 17：12</view>
+      </view>
+
+      <view class='vip-discount pd'>
+        <view class='line-75'>快递编号</view>
+        <view class='line-75 color'>123456（顺丰快递）</view>
+      </view>
+
+      <view class='vip-discount pd'>
+        <view class='line-75'>支付方式</view>
+        <view class='line-75 color' wx:if='{{all.payment==1}}'>微信支付</view>
+        <view class='line-75 color' wx:if=''>余额支付</view>
+      </view>
+
+      <view class='vip-discount pd'>
+        <view class='line-75'>备注</view>
+        <input name="" placeholder='你的要求' value='{{}}' class='input-p'></input>
+      </view>
+      <!-- 联系电话 -->
+      <view class='vip-discount pd'>
+        <view class='line-75'>联系电话</view>
+        <view class='line-75 color'>15927579564</view>
+      </view>
+
+    </view>
+
+
+
+
+  </view>
+
+
+
+
+
+  <!-- 底部按钮 -->
+  <view class='flex footer  mt b-r'>
+
+    <!-- 待支付 -->
+    <button wx:if='{{all.order_status==10}}' bindtap='cancelTap'>取消订单</button>
+    <button wx:if='{{all.order_status==10}}' bindtap='payTap'>立即支付</button>
+
+    <!-- 待发货 -->
+   
+    <!-- 待收货 -->
+    <button wx:if='{{all.order_status==30}}' bindtap='refund'>申请退款</button>
+    <button wx:if='{{all.order_status==30}}' bindtap='receive'>确认收货</button>
+
+
+    <!-- 退货售后 -->
+    <!-- 无按钮 -->
+
+    <!-- 已完成 -->
+    <button wx:if='{{all.order_status==40||all.order_status==60}}' bindtap='evaluate'>立即评价</button>
+    <button wx:if='{{all.order_status==40||all.order_status==60}}' bindtap='del'>删除</button>
+
+  </view>
+
+</view>

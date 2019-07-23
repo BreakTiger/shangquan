@@ -1,0 +1,67 @@
+page {
+  background: #fff;
+}
+
+.forget-container {
+  width: 560rpx;
+  margin: 0 auto;
+  margin-top: 400rpx;
+}
+
+.username {
+  width: 100%;
+  height: 80rpx;
+  margin-top: 20rpx;
+  border-bottom: 1px solid #eceef3;
+  font-size: 30rpx;
+  position: relative;
+}
+
+.username image {
+  float: left;
+  height: 18px;
+  width: 18px;
+  margin-top: 22rpx;
+  margin-right: 10rpx;
+}
+
+.pwd-text-box {
+  width: 190rpx;
+  height: 60rpx;
+  border: 1rpx solid #ddd;
+  border-radius: 15rpx;
+  background: linear-gradient(80deg, rgba(250, 109, 34, 1), rgba(247, 96, 60, 1));
+  color: #fff;
+}
+
+.username .active {
+  background-color: rgba(255, 67, 66, 0.8);
+}
+
+.username .get-pwd {
+  font-size: 26rpx;
+  width: 220rpx;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 100;
+}
+
+.username input {
+  height: 80rpx;
+}
+
+button {
+  height: 80rpx;
+  font-size: 30rpx;
+  margin-top: 70rpx;
+  width: 80%;
+  border-radius: 50rpx;
+  color: white;
+  background: linear-gradient(80deg, rgba(250, 109, 34, 1), rgba(247, 96, 60, 1));
+}
+
+.bottom .btnText {
+  color: #ff4273;
+}

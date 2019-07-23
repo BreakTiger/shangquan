@@ -1,0 +1,156 @@
+page {
+  background: rgba(239, 239, 239, 1);
+}
+
+.pro-right {
+  width: 24rpx;
+  height: 24rpx;
+  margin-left: 25rpx;
+}
+
+.pro-content {
+  width: 702rpx;
+  height: auto;
+  padding-top: 20rpx;
+  padding-bottom: 36rpx;
+  margin: 20rpx auto;
+  border-radius: 20rpx;
+  background: rgba(255, 255, 255, 1);
+  justify-content: center;
+}
+
+.pro-box {
+  width: 95%;
+  border-bottom: 1rpx solid #efefef;
+  margin-top: 20rpx;
+  margin: 10rpx auto;
+}
+
+.pro-image {
+  width: 220rpx;
+  height: 198rpx;
+}
+
+.pro-box-right {
+  margin-left: 25rpx;
+  width: 418rpx;
+}
+
+.box-right-top {
+  width: 95%;
+  justify-content: space-between;
+  height: 150rpx;
+}
+
+.select-right {
+  font-size: 30rpx;
+  color: rgba(253, 130, 48, 1);
+}
+
+.box-price {
+  font-size: 28rpx;
+  color: rgba(253, 130, 48, 1);
+}
+
+.box-price text {
+  font-size: 24rpx;
+  color: rgba(153, 153, 153, 1);
+  text-decoration: line-through;
+  margin-left: 25rpx;
+}
+
+.pro-box-con {
+  padding-bottom: 25rpx;
+}
+
+.circular {
+  width: 12rpx;
+  height: 12rpx;
+  background: rgba(247, 95, 60, 1);
+  margin-left: 40rpx;
+  margin-right: 25rpx;
+}
+
+.duct {
+  font-size: 30rpx;
+  color: rgba(51, 51, 51, 1);
+}
+
+/* input */
+
+.from-box {
+  width: 702rpx;
+  margin: 20rpx auto;
+  height: 88rpx;
+  background: rgba(255, 255, 255, 1);
+  border-radius: 20rpx;
+  justify-content: space-between;
+  box-shadow: 12rpx 0px 21rpx rgba(153, 153, 153, 0.2);
+}
+
+.from-box text {
+  font-size: 30rpx;
+  margin-left: 35rpx;
+  color: rgba(51, 51, 51, 1);
+}
+
+.input-right {
+  width: 8rpx;
+  height: 16rpx;
+  margin-right: 25rpx;
+}
+
+.picker {
+  font-size: 30rpx;
+  color: rgba(253, 130, 48, 1);
+  margin-right: 15rpx;
+}
+
+input {
+  text-align: right;
+  width: 360rpx;
+  font-size: 30rpx;
+  font-family: PingFangSC-Regular;
+  color: rgba(253, 130, 48, 1);
+  margin-right: 25rpx;
+}
+
+.pay-box {
+  font-size: 28rpx;
+  color: rgba(51, 51, 51, 1);
+  margin-top: 15rpx;
+  margin-left: 34rpx;
+}
+
+button {
+  width: 188rpx;
+  height: 68rpx;
+  font-size: 30rpx;
+  color: #fff;
+  line-height: 68rpx;
+  background: linear-gradient(80deg, rgba(253, 130, 48, 1), rgba(247, 97, 59, 1));
+  border-radius: 10rpx;
+}
+
+/*客服 */
+
+.card-img {
+  width: 100rpx;
+  height: 100rpx;
+  position: fixed;
+  right: 30rpx;
+  bottom: 201rpx;
+}
+
+button::after {
+  background: none;
+}
+
+.buy {
+  width: 100rpx;
+  height: 100rpx;
+  position: fixed;
+  right: 30rpx;
+  bottom: 201rpx;
+  opacity: 0;
+}

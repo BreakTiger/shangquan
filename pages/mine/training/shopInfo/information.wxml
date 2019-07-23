@@ -1,0 +1,141 @@
+<form bindsubmit="teformSubmit">
+  <!-- 有横幅 -->
+  <!-- <image class='header_ flexjc' wx:if="{{imgbox3 !='' }}" src='{{imgbox3}}' style='position:relative;'>
+    <view class='zindex'></view>
+    上传头像
+    <view class='shopBack' bindtap='background'>+ 店铺背景</view>
+  </image> -->
+  <!-- end 有横幅 -->
+  <!-- ---------------- -->
+  <!-- 没有横幅 -->
+  <!-- <view class='header flexjc'>
+    上传头像
+    <view class='headerImg' bindtap='headImg' style='z-index:999;'>
+      <image class='img br' src='{{imgbox1 || img}}' bindtap='headImg'></image>
+    </view>
+    <view class='headerTop'>上传店铺头像</view>
+    <view class='shopBack' bindtap='background'>+ 店铺背景</view>
+  </view> -->
+  <!-- end 没有横幅  -->
+
+  <!-- 店铺名称 -->
+  <view class='form-input flexac'>
+    <text>店铺名称</text>
+    <input name="store_name" value="{{shop.store_name!=null?shop.store_name:''}}" placeholder='请输入店铺名称'></input>
+  </view>
+  <!-- 头像 -->
+  <view>
+    <view class='position flexac'>
+      <view>头像可修改
+        <text style="color:red;">*</text> </view>
+      <view class='headerImg' style='z-index:999;'>
+        <image class='img b10' src="{{imgbox1 || '/img/img/add_pic@2x.png'}}" bindtap='headUpdate'></image>
+        <!-- <image class='img br' src="/img/img/add_pic@2x.png" bindtap='headUpdate' wx:else></image> -->
+      </view>
+      <!-- <view class='headerTop'>上传店铺头像</view> -->
+    </view>
+  </view>
+  <!-- 经营类目 -->
+  <view class='form-input flexac'>
+    <view>经营类目不可修改
+      <text style='color:red;'>*</text>
+    </view>
+    <view class="section flexac">
+      <!-- <picker bindchange="bindchange3" range-key="{{'sc_name'}}" value="{{list[index1].sc_name}}" range='{{list}}' disabled="true">
+        <view class="picker f28">
+          {{list[index1].sc_name}}
+        </view>
+      </picker> -->
+      <input name='sc_id' value='{{arr}}' disabled="true"></input>
+      <!-- <image src='/img/img/rightto.png' class='right-right'></image> -->
+    </view>
+  </view>
+  <!-- 营业时间 -->
+  <!-- <view class='form-input flexac'>
+    <text>营业时间</text>
+    时间段
+    <view class="picker_group">
+      <picker mode="time" value="{{time}}" start="00:00" end="23:59" bindchange="bindTimeChange">
+        <view class="picker" style='padding-left: 39rpx;'>
+          {{time}}
+        </view>
+      </picker>
+      ~
+      <picker mode="time" value="{{time1}}" start="00:00" end="23:59" bindchange="bindTimeChange1">
+        <view class="picker">
+          {{time1}}
+        </view>
+      </picker>
+      <image src='/img/img/rightto.png' class='right-right'></image>
+      <input style='display:none;' name='time' value='{{time}}'></input>
+      <input style='display:none;' name='time1' value='{{time1}}'></input>
+    </view>
+  </view> -->
+  <!-- 联系电话 -->
+  <view class='form-input flexac'>
+    <text>联系电话</text>
+    <input name="mobile" value="{{user.mobile!=null?user.mobile:''}}" placeholder='请输入电话...' type='number'></input>
+  </view>
+  <!-- 详细地址 -->
+  <view class='form-input flexac'>
+    <text>联系地址</text>
+    <input name="area" value="{{address}}" placeholder='请输入详细地址' style='margin-right:60rpx;overflow:hidden;' disabled="true" bindtap='area'></input>
+    <image src='/img/img/area2x.png' class='right-area' bindtap='area'></image>
+  </view>
+  <!-- 是否支持开发票 -->
+  <view class='form-input flexac'>
+    <text>是否支持开发票</text>
+    <view class="section flexac">
+      <picker bindchange="bindPickerChange" value="{{inIndex}}" range="{{invoice}}">
+        <view class="picker f30">
+          {{invoice[inIndex]}}
+        </view>
+      </picker>
+      <input name='is_invoice' value="{{inIndex}}" style='display: none;'></input>
+      <image src='/img/img/rightto.png' class='right-right' style='margin-right:20rpx;'></image>
+    </view>
+  </view>
+  <!-- 注册时间*不可修改 -->
+  <view class='form-input flexac'>
+    <text>注册时间*不可修改</text>
+    <view class="section flexac">
+      <!-- <picker mode="date" value="{{date}}" start="1934-09-01" bindchange="bindDateChange">
+        <view class="picker f30">
+          {{date}}
+        </view>
+      </picker> -->
+      <!-- <image src='/img/img/rightto.png' class='right-right' style='margin-right:20rpx;'></image> -->
+      <input value="{{shop.created_at}}" disabled="true"></input>
+    </view>
+  </view>
+  <!--  营业执照-->
+  <view class='flexw business'>
+    <view class='businTetx f28'>营业许可证照（营业执照、各类许可证、特许证件）</view>
+    <!-- <image src='{{imgbox2 || img}}' class='upic' bindtap='business'></image> -->
+    <!-- 选择图片 -->
+    <!-- <view class='up-pic'>
+      <view class='flex pic-box'>
+        <block wx:key="imgbox" wx:for="{{imgbox2}}">
+          <view class='ap-box'>
+            <view class='add-pic'>
+              <image class='add-pic' src='{{item}}'></image>
+              <view class='img-de' data-deindex='{{index}}' bindtap='imgDelete1'>
+                <image class='img' src='/img/img/icon_close2@2x.png'></image>
+              </view>
+            </view>
+          </view>
+        </block>
+        <view class='add-pic' bindtap='addPic1' wx:if="{{imgbox2.length<1}}">
+          <image class='img' src='{{business_img || img}}'></image>
+          <input style='display: none;' value="{{business_img}}"></input>
+        </view>
+      </view>
+    </view> -->
+    <image src='{{business_img}}' class='upic'></image>
+  </view>
+  <!-- 输入框 -->
+  <!-- <view class='flexw business_area'>
+    <textarea name="summary" placeholder='请输入店铺简介' value="{{shop.summary!=null?shop.summary:''}}"></textarea>
+  </view> -->
+  <button formType="submit">保存</button>
+</form>

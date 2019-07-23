@@ -1,0 +1,14 @@
+<!--  //--商户币  -->
+<form bindsubmit='submit' report-submit='true'>
+  <view class='put-container flexw'>
+    <view class='put-con0'>兑换大喇叭</view>
+    <view class='put-c-con0'>兑换数量</view>
+    <view class='flexac put-input'>
+      <input placeholder='请输入兑换数量' name="num" value="{{money_}}" type='number'></input>
+      <view class='inputText' bindtap='money'>全部兑换</view>
+    </view>
+    <!-- <view class='put-c-con01'>提现到微信零钱</view> -->
+    <button formType='submit'>立即兑换</button>
+    <!-- <view class='inputContent flex'>1-5个工作日到账</view> -->
+  </view>
+</form>

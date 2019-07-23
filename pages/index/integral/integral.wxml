@@ -1,0 +1,85 @@
+<image src='/img/img/background_integral.png' class='header'></image>
+<!-- 我的积分 -->
+<view class='integral_box flexjac'>
+  <!-- <view class='box_name flexjac'>我的积分</view> -->
+  <!-- <view class='box_num flexjac'>{{topoint}}</view> -->
+</view>
+<view class='under'></view>
+<view class='accumulat flexac'>
+  <text>积分活动</text>
+</view>
+
+
+<!-- 活动 -->
+<!-- <view wx:for="{{image}}" wx:key="image" bindtap='envelopes' class='value_' data-index="{{index}}">
+  <image src='{{item.value}}' class='img' mode="widthFix"></image>
+</view> -->
+
+<view bindtap='envelopes' class='value_'>
+  <image src='{{image[0].value}}' class='img b10' mode="widthFix"></image>
+</view>
+
+
+
+<view bindtap='envelopes' class='value_' wx:if="{{ code == 1}}">
+  <image src='{{image[1].value}}' class='img b10' mode="widthFix"></image>
+</view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 积分详情 -->
+<!-- <view wx:if="{{loglist != ''}}">
+  <block wx:for="{{loglist}}" wx:key="loglist">
+    <view class='box-detail flexac'>
+      <view class='detailImg'>
+      <image src='/img/img/background_integral.png' class='img br'></image>
+    </view>
+      <view class='detailBox flexw'>
+        <view class='detailtop'>订单编号</view>
+        <view class='detailcenter'>{{item.jianjie}}</view>
+        <view class='detailbottom'>{{item.time}}</view>
+      </view>
+      <image src='/img/img/alert@2x.png' class='hot' bindtap='Receive'></image>
+      <view class='flexjac detailright' wx:if="{{item.type == 2}}" catchtap='envelopes'>
+        + {{item.money}}
+      </view>
+    </view>
+  </block>
+</view>
+<view wx:else class='none;'>
+  暂无记录..
+</view> -->
+
+
+
+
+<!-- 弹框 -->
+<!-- <view wx:if='{{alert}}'>
+    黑色背景
+    <view class='bg' bindtap='back'></view>
+    内容
+    <view class='bg-content'>
+      <image src='/img/img/toppic@2x.png' class='imgbox'></image>
+      <view class='widthF flexjac'>
+        <image src='{{user.avatar}}' class='header_'></image>
+      </view>
+      <view class='number_'>恭喜领取100积分！</view>
+    </view>
+
+  </view> -->

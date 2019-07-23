@@ -1,0 +1,194 @@
+/*tab框切换*/
+
+.nav_tab {
+  width: 100%;
+  height: 100rpx;
+  display: flex;
+  flex-direction: row;
+  /* margin: 20rpx auto; */
+  background: #fff;
+  border-radius: 20rpx;
+}
+
+.show {
+  line-height: 100rpx;
+  text-align: center;
+  flex: 1;
+  color: #333;
+  font-size: 28rpx;
+  opacity: 0.5;
+}
+
+.hidden {
+  line-height: 100rpx;
+  text-align: center;
+  color: #fa6d22;
+  flex: 1;
+  font-size: 28rpx;
+}
+
+.nav_underline {
+  background: #fa6d22;
+  width: 54rpx;
+  height: 6rpx;
+  margin-top: -10rpx;
+  margin-left: 35rpx;
+  border-radius: 8rpx;
+}
+
+page {
+  background-color: #ebebeb;
+  /* background: #fff; */
+}
+
+.bgr {
+  background-color: #fff;
+  border-radius: 10rpx;
+}
+
+.main-body {
+  width: 100%;
+  height: 100%;
+}
+
+.mt {
+  margin-top: 20rpx;
+}
+
+.mian {
+  width: 100%;
+  /* height: 100%; */
+}
+
+.size26 {
+  font-size: 26rpx;
+  line-height: 86rpx;
+  color: #333;
+}
+
+/* 上 */
+
+.mian-header {
+  justify-content: space-between;
+  margin: 0 25rpx;
+  border-bottom: 1px solid #efefef;
+}
+
+/* 中 */
+
+.content {
+  background-color: #fff;
+  width: 100%;
+  height: auto;
+  justify-content: space-around;
+  padding: 27rpx 0;
+}
+
+.contentImg {
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 8rpx;
+}
+
+.content_box {
+  width: 534rpx;
+  height: auto;
+}
+
+.content-top {
+  justify-content: space-between;
+  height: auto;
+  padding-top: 5rpx;
+}
+
+.top {
+  font-size: 28rpx;
+  font-family: PingFangSC-Medium;
+  color: rgba(48, 48, 48, 1);
+  width: 454rpx;
+  height: auto;
+  max-height: 112rpx;
+  line-height: 50rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.top_area {
+  font-family: PingFangSC-Regular;
+  color: #666;
+  margin-right: 15rpx;
+}
+
+.content-center {
+  height: 68rpx;
+  justify-content: space-between;
+}
+
+.content-price-left {
+  font-size: 28rpx;
+  color: #ff4427;
+  line-height: 50rpx;
+}
+
+.content-price-right {
+  font-size: 24rpx;
+  color: #999;
+  line-height: 50rpx;
+  text-decoration: line-through;
+  margin-left: 12rpx;
+}
+
+.color {
+  color: #666;
+}
+
+.underline {
+  text-decoration: none;
+}
+
+.content_right {
+  justify-content: space-between;
+}
+
+/* 下 */
+
+.main-bottom {
+  justify-content: space-between;
+  padding: 27rpx 0rpx;
+  border-top: 1px solid #efefef;
+  margin: 0 18rpx;
+}
+
+button {
+  width: 100%;
+  height: 48rpx;
+  background-color: #fff;
+  font-size: 26rpx;
+  line-height: 48rpx;
+  color: #333;
+  border: #333 1rpx solid;
+}
+
+.tab-h {
+  height: 100rpx;
+  min-width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+  line-height: 80rpx;
+  background: #efefef;
+  font-size: 16px;
+  white-space: nowrap;
+  /* position: fixed;
+  top: 0;
+  left: 0; */
+  z-index: 99;
+  border-top: 2rpx solid #efefef;
+  border-bottom: 2rpx solid #efefef;
+}
+
+.img-car {
+  margin: 200rpx auto;
+  height: 400rpx;
+  width: 400rpx;
+}

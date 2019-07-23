@@ -1,0 +1,43 @@
+<view class='background'>
+  <image src='{{slider.image}}' class='img'></image>
+</view>
+<!-- 标题 -->
+<view class='boxTitle'>
+  {{slider.title}}
+</view>
+<!-- 内容 -->
+<view class='boxContent'>
+  {{slider.content}}
+</view>
+<view class='post' data-item="{{slider}}" bindtap='_post'>
+  修改内容
+</view>
+
+
+
+<!-- ---------------------------------------------------------------------- -->
+<!-- 详情 -->
+<view wx:if="{{content != ''}}">
+  <block wx:for="{{content}}" wx:key="content">
+    <view class='boxDetail flexw'>
+      <view class='flex detailName'>{{index+1}}.{{item.title}}</view>
+      <view class='flex detailTitle'>{{item.content}}</view>
+      <view class='boxImage flexw'>
+        <view class='detailImg'>
+          <image src='{{item.product_image}}' class='img b10'></image>
+          <!-- <view class='zhezhao'></view> -->
+          <image src='/img/img/icon_close2@2x.png' class='close' bindtap='close' data-id="{{item.id}}"></image>
+          <!-- <view class='post' bindtap='_post' data-item="{{item}}">修改</view> -->
+          <!-- <view class='close'>删除</view> -->
+        </view>
+        <!-- <view class='flex boxTwo'>
+          <view class='boxPrice'>￥{{item.product_price}}</view>
+          <view class='boxbutton f28' bindtap='payBanner'>立即购买</view>
+        </view> -->
+      </view>
+    </view>
+  </block>
+</view>
+<view class='btn' bindtap='addShop' data-oid="{{slider.id}}">
+  + 添加商品图
+</view>

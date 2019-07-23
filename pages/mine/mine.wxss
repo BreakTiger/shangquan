@@ -1,0 +1,224 @@
+page {
+  background: rgba(247, 247, 247, 1);
+}
+
+.background {
+  width: 100%;
+  height: 150rpx;
+  background: linear-gradient(0deg, rgba(254, 134, 47, 1), rgba(247, 95, 60, 1));
+  box-shadow: 0px 0px 0px rgba(247, 247, 247, 0.35);
+  border-bottom-left-radius: 25%;
+  border-bottom-right-radius: 25%;
+}
+
+.myUser {
+  width: 702rpx;
+  height: 229rpx;
+  background: rgba(255, 255, 255, 1);
+  border-radius: 20rpx;
+  margin: -117rpx auto;
+}
+
+.userInfo {
+  margin-left: 25rpx;
+  width: 494rpx;
+}
+
+.username {
+  width: 100%;
+  margin-bottom: 30rpx;
+}
+
+.userImg {
+  width: 160rpx;
+  height: 160rpx;
+  margin-left: 25rpx;
+}
+
+.userInfoImg {
+  width: 90rpx;
+  height: 48rpx;
+  margin-left: 20rpx;
+}
+
+.userInfome {
+  font-size: 24rpx;
+  font-family: PingFangSC-Regular;
+  color: rgba(51, 51, 51, 1);
+  width: 100%;
+}
+
+.right {
+  width: 10rpx;
+  height: 18rpx;
+  margin-left: 15rpx;
+}
+
+/* 列表 */
+
+.box {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 115rpx;
+}
+
+.box_ {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.list {
+  width: 100%;
+  height: auto;
+  border-radius: 20rpx;
+  background: #fff;
+  margin-top: 40rpx;
+}
+
+.list_ {
+  width: 100%;
+  height: auto;
+  border-radius: 20rpx;
+  background: #fff;
+}
+
+.list-box {
+  width: 100%;
+  height: 100rpx;
+  /* padding: 0 40rpx;
+  box-sizing: border-box; */
+  border-bottom: 1rpx solid #efefef;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  line-height: 100rpx;
+  position: relative;
+}
+
+.list-img {
+  width: 45rpx;
+  height: 45rpx;
+  margin-right: 30rpx;
+  margin-left: 40rpx;
+}
+
+.list-text {
+  font-size: 28rpx;
+  color: #333;
+}
+
+.rightnarrow {
+  width: 11rpx;
+  height: 19rpx;
+  position: absolute;
+  right: 40rpx;
+}
+
+.circle {
+  /* width: 12rpx;
+  height: 12rpx; *//* border-radius: 50%;
+  font-size: 30rpx;
+  color: #f9ae0f;
+  position: absolute;
+  left: 614rpx; */
+  border-radius: 50%;
+  font-size: 30rpx;
+  color: #f9ae0f;
+  position: absolute;
+  right: 57rpx;
+}
+
+/* 遮罩 */
+
+.goInvitation {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+/* 底部 */
+
+.keep {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 60rpx;
+}
+
+button::after {
+  border: none;
+}
+
+.bb {
+  width: 480rpx;
+  /* height: 80rpx; */
+  background: linear-gradient(90deg, #fb6368, #ee0b88);
+  color: #fff;
+  z-index: 999;
+}
+
+.while {
+  width: 100%;
+  height: 200rpx;
+}
+
+/* 遮罩 */
+
+.select-alert {
+  width: 100%;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.6);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.mask {
+  width: 480rpx;
+  height: 600rpx;
+  border-radius: 10rpx;
+  margin: 0 auto;
+}
+
+.name {
+  width: auto;
+  max-width: 167rpx;
+  height: 50rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.lv {
+  padding-left: 15rpx;
+  max-width: 97rpx;
+  height: 42rpx;
+  overflow: hidden;
+  line-height: 42rpx;
+  padding-right: 15rpx;
+  margin-left: 15rpx;
+  border: 1rpx solid #fe862f;
+  color: #fe862f;
+}
+
+.grade {
+  height: 42rpx;
+  color: #999;
+  padding-right: 15rpx;
+  padding-top: 13rpx;
+  font-size: 26rpx;
+}

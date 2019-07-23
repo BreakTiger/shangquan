@@ -1,0 +1,228 @@
+page {
+  background: rgba(247, 247, 247, 1);
+}
+
+.header {
+  width: 702rpx;
+  flex-wrap: wrap;
+  background: rgba(255, 255, 255, 1);
+  border-radius: 40rpx;
+  margin: 20rpx auto;
+  box-shadow: 12rpx 0px 21rpx rgba(153, 153, 153, 0.2);
+  position: relative;
+  padding-bottom: 115rpx;
+}
+
+.header_ {
+  width: 702rpx;
+  height: 364rpx;
+  flex-wrap: wrap;
+  border-radius: 40rpx;
+  margin: 20rpx auto;
+  box-shadow: 12rpx 0px 21rpx rgba(153, 153, 153, 0.2);
+}
+
+.headerImg {
+  width: 140rpx;
+  height: 140rpx;
+  z-index: 999;
+  border: 1rpx solid #999;
+  border-radius: 10rpx;
+}
+
+.headerTop {
+  text-align: center;
+  width: 100%;
+  margin-top: 25rpx;
+  font-size: 30rpx;
+  color: rgba(51, 51, 51, 1);
+}
+
+.shopBack {
+  font-size: 28rpx;
+  width: 160rpx;
+  height: 60rpx;
+  text-align: center;
+  line-height: 60rpx;
+  position: absolute;
+  top: 51rpx;
+  background: linear-gradient(80deg, rgba(250, 109, 34, 1), rgba(247, 96, 60, 1));
+  color: rgba(255, 255, 255, 1);
+  right: 0;
+  border-top-left-radius: 25rpx;
+  border-bottom-left-radius: 25rpx;
+  z-index: 999;
+}
+
+.form-input {
+  width: 93%;
+  height: 88rpx;
+  background: rgba(255, 255, 255, 1);
+  border-radius: 20rpx;
+  margin: 20rpx auto;
+  box-shadow: 12rpx 0px 21rpx rgba(153, 153, 153, 0.2);
+  justify-content: space-between;
+}
+
+input {
+  text-align: right;
+  font-size: 30rpx;
+  color: rgba(51, 51, 51, 1);
+  margin-right: 30rpx;
+  width: 301rpx;
+}
+
+.form-input text {
+  margin-left: 15rpx;
+  font-size: 30rpx;
+  color: rgba(51, 51, 51, 1);
+}
+
+.right-right {
+  width: 11rpx;
+  height: 19rpx;
+  margin-left: 15rpx;
+}
+
+.right-area {
+  width: 22rpx;
+  height: 28rpx;
+  position: absolute;
+  right: 40rpx;
+}
+
+.business {
+  width: 703rpx;
+  height: 379rpx;
+  margin: 20rpx auto;
+  background: rgba(255, 255, 255, 1);
+  border-radius: 20rpx;
+  box-shadow: 12rpx 0px 21rpx rgba(153, 153, 153, 0.2);
+}
+
+.businTetx {
+  color: #999;
+  margin-top: 20rpx;
+  margin-left: 31rpx;
+}
+
+.upic {
+  width: 270rpx;
+  height: 270rpx;
+  margin-left: 31rpx;
+}
+
+.business_area {
+  width: 703rpx;
+  height: 291rpx;
+  margin: 20rpx auto;
+  background: rgba(255, 255, 255, 1);
+  border-radius: 20rpx;
+  box-shadow: 12rpx 0px 21rpx rgba(153, 153, 153, 0.2);
+}
+
+textarea {
+  margin: 22rpx auto;
+  width: 655rpx;
+  height: 225rpx;
+  background: rgba(247, 247, 247, 1);
+  border-radius: 10rpx;
+  color: #666;
+  font-size: 28rpx;
+  padding: 10rpx 0;
+  padding-left: 15rpx;
+}
+
+button {
+  margin: 50rpx auto;
+  width: 480rpx;
+  height: 80rpx;
+  background: linear-gradient(80deg, rgba(250, 109, 34, 1), rgba(247, 96, 60, 1));
+  border-radius: 8rpx;
+  font-size: 32rpx;
+  font-family: PingFangSC-Regular;
+  color: rgba(255, 255, 255, 1);
+  line-height: 80rpx;
+}
+
+/* 日期选择 */
+
+.picker_group {
+  height: 85rpx;
+  line-height: 85rpx;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  font-size: 30rpx;
+  color: #000;
+  width: 307rpx;
+}
+
+.picker_group picker {
+  /* background-color: yellow; */
+  color: #000;
+  height: 55rpx;
+  line-height: 55rpx;
+  /* margin: 0 2%; *//* padding: 0 2%; */
+}
+
+.position {
+  width: 93%;
+  background: #fff;
+  border-radius: 20rpx;
+  margin: 20rpx auto;
+  justify-content: space-between;
+  padding: 20rpx 30rpx;
+}
+
+/* 上传图片 */
+
+.flex {
+  display: flex;
+}
+
+.up-pic {
+  /* padding:20rpx 24rpx; */
+  width: 100%;
+  justify-content: center;
+}
+
+.pic-box {
+  margin-top: 20rpx;
+  flex-flow: wrap;
+  width: 95%;
+}
+
+.ap-box {
+  position: relative;
+}
+
+.add-pic {
+  width: 350rpx;
+  height: 250rpx;
+  margin-right: 20rpx;
+  position: relative;
+  margin: 20rpx 30rpx 20rpx 30rpx;
+}
+
+/* 删除图片 */
+
+.img-de {
+  width: 45rpx;
+  height: 45rpx;
+  border-radius: 50%;
+  position: absolute;
+  right: -41rpx;
+  top: 5rpx;
+}
+
+.hong-contant .teamwork-btn {
+  width: 360rpx;
+  height: 88rpx;
+  border-radius: 50rpx;
+  color: white;
+  background-color: #14a1fd;
+  margin: 0 auto;
+  margin-top: 80rpx;
+  margin-bottom: 40rpx;
+}

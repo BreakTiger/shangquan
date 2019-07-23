@@ -1,0 +1,13 @@
+<form bindsubmit="teformSubmit">
+  <view class='motion flexac'>
+    <!-- <view class='motionText' wx:if="{{sc_id == 2}}">订单管理</view> -->
+    <view class='motionText'>订单信息</view>
+    <input name='courier_company' value='' placeholder='请输入订单信息'></input>
+  </view>
+  <!-- 广告币 -->
+  <view class='motion flexac'>
+    <view class='motionText'>订单编号</view>
+    <input name='shipping_code' value='' placeholder='请输入订单编号'></input>
+  </view>
+  <button formType="submit">确认</button>
+</form>

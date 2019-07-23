@@ -1,0 +1,131 @@
+<import src="/pages/wxParse/wxParse.wxml" />
+<view class='line'></view>
+<view wx:if="{{code == 0}}">
+  <image src='{{img}}' class='back'></image>
+</view>
+<view wx:else>
+  <view class='shop flexw'>
+    <view class='shoptext'>请填写店铺资料</view>
+    <view class='shopContent'>请认真并准确地填写或修改您的报名基本资料</view>
+  </view>
+
+  <!-- from表单提交 -->
+  <view>
+    <form bindsubmit="toformSubmit" report-submit='true'>
+      <view class='flexw inputs'>
+        <!-- 店铺名称 -->
+        <view class='input-box flexac'>
+          <view class='f28'>店铺</view>
+          <input name='store_name' value='' placeholder='请输入店铺名称'></input>
+        </view>
+        <!-- 姓名 -->
+        <view class='input-box flexac'>
+          <view class='f28'>姓名</view>
+          <input name='store_user_name' value='' placeholder='请输入您的姓名'></input>
+        </view>
+        <!-- 经营类型 -->
+        <!-- 密码 -->
+        <view class='input-box flexac'>
+          <view class='f28'>支付密码</view>
+          <input name='password' value='' placeholder='请输入您的支付密码' password maxlength='6' bindblur='password'></input>
+        </view>
+        <!-- 确认密码 -->
+        <view class='input-box flexac'>
+          <view class='f28'>确认密码</view>
+          <input name='password1' value='' placeholder='请再次输入您的密码' password maxlength='6' bindblur='password1'></input>
+        </view>
+        <!-- 经营类型 -->
+        <view class='input-box flexac'>
+          <view class='f28'>经营类型</view>
+          <view class="section flexac">
+            <picker bindchange="bindchange3" range-key="{{'sc_name'}}" value="{{list[index1].sc_name}}" range='{{list}}'>
+              <view class="picker f28">
+                {{list[index1].sc_name}}
+              </view>
+            </picker>
+            <input name='sc_id' value='{{list[index1].id}}' style='display:none;'></input>
+            <image src='/img/img/rightto.png' class='right-right'></image>
+          </view>
+        </view>
+        <!-- 经营类型 -->
+        <!-- <view class='input-box flexac'>
+          <view class='f28'>营业时间</view>
+          时间段
+          <view class="picker_group">
+            <picker mode="time" value="{{time}}" start="00:00" end="23:59" bindchange="bindTimeChange">
+              <view class="picker" style='padding-left: 39rpx;'>
+                {{time}}
+              </view>
+            </picker>
+            <input style='display: none;' name='time' value="{{time}}"></input>
+            ~
+            <picker mode="time" value="{{time1}}" start="{{time}}" end="23:59" bindchange="bindTimeChange1">
+              <view class="picker">
+                {{time1}}
+              </view>
+            </picker>
+            <input style='display:none;' name='time1' value='{{time1}}'></input>
+            <image src='/img/img/rightto.png' class='right-right'></image>
+          </view>
+        </view> -->
+        <!-- 地址 -->
+        <view class='input-box flexac'>
+          <view class='f28'>详细地址</view>
+          <view class='flexac' bindtap='area'>
+            <input name='address' value='{{address}}' placeholder='详情地址' disabled='true' style='margin-right:20rpx;'></input>
+            <image src='/img/img/area2x.png' class='area_'></image>
+          </view>
+        </view>
+        <!-- 图片 -->
+        <view class='input-img flexac'>
+          <text class='f28 c6'>营业许可证照（营业执照、各类许可证、特许证件）</text>
+        </view>
+        <!-- 上传图片 -->
+        <view class='up-pic'>
+          <view class='flex pic-box'>
+            <block wx:key="imgbox" wx:for="{{imgbox}}">
+              <view class='ap-box'>
+                <view class='add-pic'>
+                  <image class='add-pic' src='{{item}}'></image>
+                  <view class='img-de' data-deindex='{{index}}' bindtap='imgDelete1'>
+                    <image class='img' src='/img/img/icon_close2@2x.png'></image>
+                  </view>
+                </view>
+              </view>
+            </block>
+            <view class='add-pic' bindtap='addPic1' wx:if="{{imgbox.length == 0}}">
+              <image class='img' src='/img/img/add_pic@2x.png'></image>
+            </view>
+          </view>
+        </view>
+        <view class='flexac argee'>
+          <icon wx:if="{{_selected==1?true:''}}" bindtap='currency' type="success_circle" size="18" color="#ff5d0f" />
+          <icon wx:if="{{_selected==1?'':'true'}}" data-index='{{index}}' bindtap='currency' type="circle" size="18" color="#ff5d0f" />
+          <view>我已阅读并接受
+            <text class='c9' bindtap='hideview'>《商家入驻协议》</text>
+          </view>
+        </view>
+        <button formType="submit">提交申请</button>
+      </view>
+    </form>
+  </view>
+</view>
+
+<!-- //《商家入驻协议》 -->
+<view wx:if="{{paihang}}">
+  <view>
+    <view class="bg" bindtap='hideview' wx:if="{{displaya}}"></view>
+    <view class="show" bindtap='hideview' wx:if="{{displaya}}">
+      <image src='/img/img/bg_rank@2x.png' class='houlai'>
+        <view>入驻协议</view>
+        <scroll-view class='zheZhao-top' scroll-y>
+          <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+        </scroll-view>
+      </image>
+      <!-- 取消按钮 -->
+      <view class='cancel_btn' catchtap='quxiao'>
+        <image src="/img/img/btn_close@2x.png" style='width: 76rpx; height:76rpx;'></image>
+      </view>
+    </view>
+  </view>
+</view>

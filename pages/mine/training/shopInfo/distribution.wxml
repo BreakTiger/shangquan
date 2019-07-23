@@ -1,0 +1,22 @@
+<form bindsubmit="teformSubmit">
+  <view class='distri flexac'>
+    <text>配送服务</text>
+    <view class="section flexac">
+      <picker bindchange="bindPickerChange" value="{{array[arrIndex].courier_company}}" range-key="{{'courier_company'}}" range="{{array}}">
+        <view class="picker">
+          {{array[arrIndex].courier_company}}
+        </view>
+      </picker>
+      <input name="courier_id" value="{{array[arrIndex].id}}" style='display: none;'></input>
+      <image src='/img/img/rightto.png' class='distriImg'></image>
+    </view>
+  </view>
+  <view class='distri_ flexac'>
+    <text>配送金额（元）</text>
+    <view class='flexac'>
+      <input name='price' value="" placeholder='请输入配送费'></input>
+      <image src='/img/img/rightto.png' class='distriImg'></image>
+    </view>
+  </view>
+  <button formType="submit">保存</button>
+</form>

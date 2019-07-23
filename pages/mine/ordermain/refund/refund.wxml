@@ -1,0 +1,56 @@
+<form bindsubmit="ToSubmit">
+  <view class='form-container flexw'>
+
+    <block wx:for='{{goods}}' wx:key='this'>
+      <view class='flexjac form-box'>
+        <view class='box-image'>
+          <image src='{{item.product_image}}' class='img b10'></image>
+        </view>
+        <view class='flexw box-gorm'>
+          <view class='box-text'>{{item.product_name}}</view>
+          <view class='box-price'>￥{{item.pay_price}}</view>
+          <view class='box-time'>{{all.buy_time}}</view>
+          <view class='box-time'>订单编号：{{all.order_sn}}</view>
+        </view>
+      </view>
+    </block>
+    <view class='form-shop flexjac'>
+      <text class='f28 c6' bindtap='phonecall'>联系商家</text>
+    </view>
+  </view>
+
+
+
+  <!--评论  -->
+  <view class='comment'>
+    <textarea placeholder='请输入' name="text"></textarea>
+    <!-- 上传图片 -->
+    <!-- <view class='up-pic'>
+      <view class='flex pic-box'>
+        <block wx:key="imgbox" wx:for="{{imgbox}}">
+          <view class='ap-box'>
+            <view class='add-pic'>
+              <image class='add-pic' src='{{item}}'></image>
+              <view class='img-de' data-deindex='{{index}}' bindtap='imgDelete1'>
+                <image class='img' src='/img/img/icon_close2@2x.png'></image>
+              </view>
+            </view>
+          </view>
+        </block>
+        <view class='add-pic' bindtap='addPic1' wx:if="{{imgbox.length<9}}">
+          <image class='img' src='/img/img/add_pic@2x.png'></image>
+        </view>
+      </view>
+    </view> -->
+
+  </view>
+
+  <!-- 退款金额 -->
+  <view class='refund-money flexac'>
+    <text>退款金额</text>
+    <view class='money-to'>￥{{all.money}}</view>
+  </view>
+
+  <button formType="submit">提交申请</button>
+
+</form>

@@ -1,0 +1,147 @@
+page {
+  background: rgba(247, 247, 247, 1);
+}
+
+.form-container {
+  width: 705rpx;
+  margin: 20rpx auto;
+  background: rgba(255, 255, 255, 1);
+  border-radius: 20rpx;
+}
+
+.form-box {
+  width: 100%;
+  height: 223rpx;
+}
+
+.box-image {
+  width: 160rpx;
+  height: 160rpx;
+}
+
+.box-gorm {
+  width: 473rpx;
+  margin-left: 15rpx;
+}
+
+.box-text {
+  width: 100%;
+  font-size: 28rpx;
+  color: #333;
+}
+
+.box-price {
+  font-size: 28rpx;
+  color: rgba(250, 109, 34, 1);
+}
+
+.box-time {
+  width: 100%;
+  font-size: 28rpx;
+  color: #666;
+}
+
+.form-shop {
+  border-top: 1rpx solid #efefef;
+  width: 100%;
+  height: 88rpx;
+}
+
+.comment {
+  width: 702rpx;
+  padding: 20rpx 0;
+  margin: 20rpx auto;
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 0px 0px 0px rgba(153, 153, 153, 0.2);
+}
+
+textarea {
+  width: 95%;
+  margin: 10rpx auto;
+  background: #f7f7f7;
+  font-size: 30rpx;
+}
+
+/*  */
+
+.up-pic {
+  /* padding:20rpx 24rpx; */
+  width: 100%;
+  justify-content: center;
+}
+
+.pic-box {
+  margin-top: 20rpx;
+  flex-flow: wrap;
+  width: 95%;
+}
+
+.ap-box {
+  position: relative;
+}
+
+.add-pic {
+  width: 160rpx;
+  height: 160rpx;
+  margin-right: 20rpx;
+  position: relative;
+  margin: 20rpx 30rpx 20rpx 30rpx;
+}
+
+/* 删除图片 */
+
+.img-de {
+  width: 45rpx;
+  height: 45rpx;
+  border-radius: 50%;
+  position: absolute;
+  right: -41rpx;
+  top: 5rpx;
+}
+
+.hong-contant .teamwork-btn {
+  width: 360rpx;
+  height: 88rpx;
+  border-radius: 50rpx;
+  color: white;
+  background-color: #14a1fd;
+  margin: 0 auto;
+  margin-top: 80rpx;
+  margin-bottom: 40rpx;
+}
+
+.refund-money {
+  width: 705rpx;
+  height: 88rpx;
+  margin: 20rpx auto;
+  background: rgba(255, 255, 255, 1);
+  border-radius: 20rpx;
+  box-shadow: 0px 0px 0px rgba(153, 153, 153, 0.2);
+}
+
+.refund-money {
+  justify-content: space-between;
+}
+
+.refund-money text {
+  margin-left: 35rpx;
+  font-size: 30rpx;
+}
+
+.money-to {
+  margin-right: 35rpx;
+  font-size: 30rpx;
+  color: #666;
+}
+
+button {
+  width: 480rpx;
+  margin: 50rpx auto;
+  line-height: 80rpx;
+  height: 80rpx;
+  color: #fff;
+  font-size: 30rpx;
+  background: linear-gradient(0deg, rgba(250, 109, 34, 1), rgba(247, 96, 60, 1));
+  border-radius: 8rpx;
+}

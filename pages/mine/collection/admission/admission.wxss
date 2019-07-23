@@ -1,0 +1,33 @@
+page {
+  background: #fff;
+}
+
+.textText {
+  width: 100%;
+  color: #333;
+  font-size: 30rpx;
+  margin-top: 20rpx;
+}
+
+.take {
+  width: 100%;
+  position: fixed;
+  bottom: 35rpx;
+}
+
+button {
+  width: 480rpx;
+  text-align: center;
+  color: #fff;
+  line-height: 80rpx;
+  height: 80rpx;
+  background: linear-gradient(0deg, rgba(250, 109, 34, 1), rgba(247, 96, 60, 1));
+  border-radius: 8rpx;
+}
+
+.content-text {
+  width: 90%;
+  padding-top: 15rpx;
+  margin: 20rpx auto;
+  padding-bottom: 141rpx;
+}

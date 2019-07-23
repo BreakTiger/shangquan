@@ -1,0 +1,301 @@
+<form bindsubmit='addSubmit' report-submit='true'>
+  <!-- 百货才能添加的轮播图 -->
+  <block wx:if="{{sc_id == 4}}">
+    <view class="banner-box" wx:if="{{imgbox1 != ''}}">
+      <swiper class="home-banner swiper" indicator-dots="true" autoplay="true" indicator-color="rgba(255,255,255,0.4)" indicator-active-color="rgba(255,255,255,1)" circular='true' interval="3000" duration="1000">
+        <block wx:key="unique" wx:for="{{imgbox1}}" wx:for-index="index">
+          <swiper-item>
+            <image class="banner-img" src="{{item}}" bindtap='clickBanner' data-id="{{item}}" data-banner="{{item}}" data-index="{{index}}" class="slide-image" mode="aspectFill" />
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+    <!-- 上传 -->
+    <view class='form-image' wx:else>
+      <image src='/img/img/add_pic@2x.png' class='img'></image>
+      <!-- <view class='image-text' bindtap='addImg'>+ 商品图</view> -->
+    </view>
+    <!-- 选择图片 -->
+    <view class='up-pic'>
+      <view class='flex pic-box'>
+        <block wx:key="imgbox" wx:for="{{imgbox1}}">
+          <view class='ap-box'>
+            <view class='add-pic'>
+              <image class='add-pic' src='{{item}}'></image>
+              <view class='img-de' data-index='{{index}}' bindtap='imgDelete'>
+                <image class='img' src='/img/img/icon_close2@2x.png'></image>
+              </view>
+            </view>
+          </view>
+        </block>
+        <view class='add-pic' bindtap='addPic1' wx:if="{{imgbox1.length<9}}">
+          <image class='img' src='/img/img/add_pic@2x.png' style='margin-top:29rpx;'></image>
+        </view>
+      </view>
+    </view>
+  </block>
+  <!-- end 百货 -->
+  <block wx:if="{{sc_id != 4}}">
+    <view class='form-image'>
+      <image src='{{imgbox1 || img}}' class='img'></image>
+      <view class='image-text' bindtap='addimage'>+ 商品图</view>
+    </view>
+  </block>
+  <!-- end 添加的轮播图 -->
+
+  <!-- 商品详情图 -->
+  <view class='up-pic'>
+    <view class='detail'>商品详情图</view>
+    <view class='flex pic-box'>
+      <block wx:key="imgbox" wx:for="{{detailimg}}">
+        <view class='ap-box'>
+          <view class='add-pic'>
+            <image class='add-pic' src='{{item}}'></image>
+            <view class='img-de' data-index='{{index}}' bindtap='imgDelete2'>
+              <image class='img' src='/img/img/icon_close2@2x.png'></image>
+            </view>
+          </view>
+        </view>
+      </block>
+      <view class='add-pic' bindtap='addPic2' wx:if="{{detailimg.length<9}}">
+        <image class='img' src='/img/img/add_pic@2x.png' style='margin-top:29rpx;'></image>
+      </view>
+    </view>
+  </view>
+
+
+
+  <!-- end 商品详情图 -->
+
+  <!-- 销售方式 -->
+  <!-- <view class='input-box flexac'>
+    <text>销售方式</text>
+    <view>
+      <view class="section flexac">
+        <picker bindchange="method" value="{{mindex}}" range="{{method}}">
+          <view class="picker">
+            {{method[mindex]}}
+          </view>
+        </picker>
+        <image src='/img/img/rightto.png' class='right'></image>
+      </view>
+    </view>
+    <input name="sales_method" value="{{mindex}}" placeholder='请输入销售方式' style='display:none;'></input>
+  </view> -->
+  <!-- 商品名称 -->
+
+  <view class='input-box flexac'>
+    <text>商品名称</text>
+    <input name="goods_name" value="{{shopData.product_name!=null?shopData.product_name:''}}" placeholder='请输入商品名称'></input>
+  </view>
+
+  <!-- 原价（元） -->
+  <view class='input-box flexac'>
+    <text>原价（元）</text>
+    <input name="market_price" value="{{shopData.market_price!=null?shopData.market_price:''}}" placeholder='请输入原价'></input>
+  </view>
+
+  <!-- 价格（元） -->
+  <!-- <view class='input-box flexac'>
+    <text>价格（元）</text>
+    <input name="price" value="{{shopData.price!=null?shopData.price:''}}" placeholder='请输入价格'></input>
+  </view>
+ -->
+
+  <!-- 添加规格 -->
+  <view class='input-box flexac' bindtap='addTo'>
+    <text>添加规格</text>
+    <!-- <input name="" value="" placeholder='请输入原价'></input> -->
+    <image src='/img/img/add_@2x.png' class='to-right'></image>
+  </view>
+
+
+
+  <!-- 规格一 -->
+  <view wx:if="{{arr !='' }}">
+    <view wx:for="{{arr}}" wx:key="arr" class='flexac'>
+      <scroll-view scroll-x="true" class="tab-h" scroll-left="{{scrollLeft}}">
+        <view class='input-box flexac' style="padding:0 25rpx;min-width:100%;">
+          <!-- <text>规格{{index + 1}}</text> -->
+          <view style='width:50%;'>{{item.list}}</view>
+          <!-- <input name="" value="" placeholder='请输入规格一'></input> -->
+          <view class='flex' style='width:20%;'>
+            <view style="width:50%;">{{item.price}}元</view>
+            <view class="del" bindtap='del' data-index="{{index}}" bindtap='Delete'>删除</view>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+  <!-- 库存 -->
+  <view class='input-box flexac'>
+    <text>库存</text>
+    <input name="stock" value="{{shopData.stock!=null?shopData.stock:''}}" placeholder='请输入库存'></input>
+  </view>
+
+
+
+  <!-- 会员专享 -->
+  <view class='input-box flexac'>
+    <text>会员专享</text>
+    <view>
+      <view class="section flexac">
+        <picker bindchange="vip" value="{{vipIndex}}" range="{{vip}}">
+          <view class="picker">
+            {{vip[vipIndex]}}
+          </view>
+        </picker>
+        <image src='/img/img/rightto.png' class='right'></image>
+      </view>
+    </view>
+    <input name="is_member" value="{{vipIndex}}" placeholder='请输入库存' style='display:none;'></input>
+  </view>
+
+
+
+  <!-- 积分抵扣（%） -->
+  <view wx:if="{{_points}}">
+    <view class='input-box flexac'>
+      <text>积分抵扣（%）</text>
+      <input name="is_points" value="{{points[pindex].text}}" placeholder='请输入积分抵扣' type="number" style='display:none;'></input>
+      <view class="section flexac">
+        <picker bindchange="points_" value="{{points[pindex].text}}" range="{{points}}" range-key="{{'text'}}">
+          <view class="picker">
+            {{points[pindex].text}}
+          </view>
+        </picker>
+        <image src='/img/img/rightto.png' class='right'></image>
+      </view>
+    </view>
+  </view>
+  <view wx:if="{{!_points}}">
+    <view class='input-box flexac'>
+      <text style='color:#999;'>积分抵扣（%）</text>
+      <input name="is_points" value="{{points[pindex].text}}" placeholder='请输入积分抵扣' type="number" style='display:none;'></input>
+      <view class="section flexac">
+        <picker bindchange="points_" value="{{points[pindex].text}}" range="{{points}}" range-key="{{'text'}}" disabled="true">
+          <view class="picker" style='color:#999;'>
+            {{points[pindex].text}}
+          </view>
+        </picker>
+        <image src='/img/img/rightto.png' class='right'></image>
+      </view>
+    </view>
+  </view>
+  <!-- 积分抵扣 -->
+
+
+  <!-- 美食 -- 包配送费 -->
+  <view class='input-box flexac' wx:if="{{sc_id == 1}}">
+    <text>免配送费</text>
+    <view>
+      <view class="section flexac">
+        <picker bindchange="distribution" value="{{disindex}}" range="{{distribution}}">
+          <view class="picker">
+            {{distribution[disindex]}}
+          </view>
+        </picker>
+        <image src='/img/img/rightto.png' class='right'></image>
+      </view>
+    </view>
+    <input name="distribution" value="{{disindex}}" placeholder='请输入销售方式' style='display:none;'></input>
+  </view>
+  <!-- end 包配送费 -->
+
+  <!-- 百货 -- 是否包邮 -->
+  <view class='input-box flexac' wx:if="{{sc_id == 4}}">
+    <text>包邮</text>
+    <view>
+      <view class="section flexac">
+        <picker bindchange="free" value="{{freeindex}}" range="{{free}}">
+          <view class="picker">
+            {{free[freeindex]}}
+          </view>
+        </picker>
+        <image src='/img/img/rightto.png' class='right'></image>
+      </view>
+    </view>
+    <input name="distribution" value="{{freeindex}}" placeholder='请输入销售方式' style='display:none;'></input>
+  </view>
+  <!-- end 包配送费 -->
+
+
+  <!-- 生活服务 -- 上门配送 -->
+  <view class='input-box flexac' wx:if="{{sc_id == 3 }}">
+    <text>上门服务</text>
+    <view>
+      <view class="section flexac">
+        <picker bindchange="door" value="{{doorindex}}" range="{{door}}">
+          <view class="picker">
+            {{door[doorindex]}}
+          </view>
+        </picker>
+        <image src='/img/img/rightto.png' class='right'></image>
+      </view>
+    </view>
+    <input name="distribution" value="{{doorindex}}" placeholder='请输入销售方式' style='display:none;'></input>
+  </view>
+  <!-- end 包配送费 -->
+
+
+
+
+
+
+
+
+
+
+  <!-- 如果我的店铺是百货 -->
+  <view wx:if="{{sc_id == 4 || sc_id == 2}}">
+    <view class='input-box flexac'>
+      <text>分类</text>
+      <view>
+        <view class="section flexac">
+          <picker bindchange="goodlist" value="{{goodlist[goodIndex].stc_name}}" range-key="{{'stc_name'}}" range="{{goodlist}}">
+            <view class="picker">
+              {{goodlist[goodIndex].stc_name}}
+            </view>
+          </picker>
+          <input name="product_category" value="{{goodlist[goodIndex].id}}" style='display: none;'></input>
+          <image src='/img/img/rightto.png' class='right'></image>
+        </view>
+      </view>
+    </view>
+  </view>
+
+
+  <!-- //如果我是百货 -->
+  <view class='width'>
+    <view class='shop-detail f30'>商品描述</view>
+    <textarea placeholder='请输入描述信息' name='product_body' value="{{shopData.product_body!=null?shopData.product_body:''}}"></textarea>
+  </view>
+  <button formType="submit">修改</button>
+</form>
+
+<!--  -->
+<view wx:if="{{specifications}}">
+  <form bindsubmit='toSubmit'>
+    <!-- 遮罩 -->
+    <view class='zhezhao'>
+    </view>
+    <view class='flexjac box-Mask'>
+      <view class='mask flexw'>
+        <view class='mask-input flexac'>
+          <input name="" value='' placeholder='请输入规格' class='left-to' name="list" bindinput='length'></input>
+          <text>{{length}}/30</text>
+        </view>
+        <view class='mask-input flexac' style='margin-top: 35rpx;'>
+          <input name="" value='' placeholder='请输入价格' class='left-to' name="price"></input>
+          <text>元</text>
+        </view>
+        <view></view>
+        <view class='flexac bottom-btn'>
+          <view class='add' bindtap='quxiao'>取消</view>
+          <button class='add' formType="submit">添加</button>
+        </view>
+      </view>
+    </view>
+  </form>
+</view>
+<view class='_while'></view>

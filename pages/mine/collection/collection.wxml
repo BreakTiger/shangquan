@@ -1,0 +1,7 @@
+<view class='backgroundImg'>
+  <image class='img' src='{{img}}' mode="widthFix"></image>
+</view>
+
+<view class='flexjac check'>
+  <!-- <button bindtap='admission' data-text="{{text}}">我要入驻</button> -->
+</view>

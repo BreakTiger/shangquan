@@ -1,0 +1,107 @@
+<view class='container'>
+  <view class='header flexc'>
+    <view class='headerImg'>
+      <image src='{{shop.store_avatar}}' class='img b10'></image>
+    </view>
+    <view class='box_name f30'>{{shop.store_name}}</view>
+    <view class='flexac box-con0'>
+      <view>评分{{avg_cores}}</view>
+      <view class='under'></view>
+      <view>月销{{shop.m_salenum}}</view>
+    </view>
+  </view>
+  <view class='box-con0-name f32'>店铺简介</view>
+  <!-- 查看更多 -->
+  <view class='flexjac flexc' wx:if="{{length <= 30}}" style='width:90%;margin:5rpx auto;'>
+    {{shop.summary}}
+  </view>
+  <view wx:if="{{length > 30}}">
+    <view wx:if="{{few}}">
+      <view class='flexjac flexc'>
+        <view class='new text_hidden'>
+          {{shop.summary}}
+        </view>
+        <view class='flexac textcon0' bindtap='few_'>
+          查看更多
+          <image src='/img/img/bottom.png' class='btomm'></image>
+        </view>
+      </view>
+    </view>
+    <!-- end 查看更多 -->
+    <!-- 收起 -->
+    <view class='flexjac flexc' wx:if="{{lot}}">
+      <view class='new_ text_hidden_'>
+        {{shop.summary}}
+      </view>
+      <view class='flexac textcon0' bindtap='lot_'>
+        收起
+        <!-- <image src='/img/img/箭头(5)拷贝2@2x.png' class='btomm'></image> -->
+      </view>
+    </view>
+  </view>
+  <!--  end 收起-->
+  <view class='inputbox flexac'>
+    <view class='input-name'>{{shop.address}}</view>
+    <image src='/img/img/weizhi@2x.png' class='box-area' bindtap='area' data-lat="{{shop.lat}}" data-lon="{{shop.lon}}"></image>
+  </view>
+  <view class='inputbox1 flexac'>
+    <view class='input-name'>联系商家</view>
+    <image src='/img/img/dianhua@2x.png' class='box-area' bindtap='phone'></image>
+  </view>
+  <view class='inputbox2 flexac' bindtap='ecode' data-id="{{shop.id}}">
+    <view class='input-name'>店铺二维码</view>
+    <image src='/img/img/ecode@2x.png' class='box-area'></image>
+  </view>
+</view>
+<!-- 内容 -->
+<view class='container_ flexw'>
+  <view class='container-text'>全部商品</view>
+  <view class='container-box' wx:for="{{mall}}" wx:key="mall">
+    <view class='containerImg'>
+      <image src='{{item.product_image}}' class='img b10'></image>
+      <!-- <image src='{{item.product_image[0]}}' class='img b10' wx:if="{{item.product_image.length >2}}"></image> -->
+      <view class='vip' wx:if="{{item.is_member != ''}}">会员专享</view>
+      <view class='discount' wx:if="{{item.is_points != ''}}">积分抵扣{{item.is_points}}</view>
+    </view>
+    <view class='containertitle'>{{item.product_name}}</view>
+    <view class='containerPrice'>
+      <text class='price'>￥{{item.price}}</text>
+      <text class='_price'>￥{{item.market_price}}</text>
+      <view></view>
+    </view>
+  </view>
+</view>
+<!-- //内容 -->
+
+<!-- 上传我的店铺 -->
+<!-- <view class='total-box flexjac'>
+  <view class='flexac center'>
+    <view class='return' bindtap='return_'>返回</view>
+    <view bindtap='Immediately' class='imm'>上传我的店铺</view>
+  </view>
+</view> -->
+
+<view class='page-add-data flexca' wx:if="{{mall.length > 10}}">
+  <text>{{pageTottomText}}</text>
+</view>
+
+<!-- <view class='backimg flexjac'>
+<view class='share' bindtap='previewImage'>
+<image src='{{shareTempFilePath}}' class='img'></image>
+</view>
+</view>
+<view class='keep'>
+<button bindtap='saveImageToPhotosAlbum' class='bb'>保存到相册</button>
+</view> -->
+<view wx:if="{{toInvitation}}">
+  <view class='select-alert' style='height:{{winHeight * 2}}rpx'>
+    <view class='cal-alert' style='width:100;height:150rpx;' bindtap='cal_alert'></view>
+    <view class='mask'>
+      <image src='{{shareTempFilePath}}' class='img b10' bindtap='previewImage' data-img="{{img}}" style='z-index:999;'></image>
+    </view>
+    <view class='keep '>
+      <button bindtap='saveImageToPhotosAlbum' class='bb'>保存到相册</button>
+    </view>
+    <view class='cal-alert' style='width:100;height:260rpx;' bindtap='cal_alert'></view>
+  </view>
+</view>

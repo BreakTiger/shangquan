@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "活动主题",
+  "usingComponents": {
+    "i-rate": "/component/rate/index"
+  }
+}

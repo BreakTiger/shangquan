@@ -1,0 +1,19 @@
+<view class='container'>
+
+  <view class='top-line'>
+    <text>当前定位城市</text>
+    <text>{{now_city}}</text>
+  </view>
+
+
+  <view class='city-content'>
+    <view class='title'>选择城市</view>
+    <view class='city-list'>
+      <block wx:for='{{city}}' wx:key='lab'>
+        <text class='list-item' bindtap='resetcity' data-index='{{index}}'>{{item}}</text>
+      </block>
+
+    </view>
+  </view>
+
+</view>

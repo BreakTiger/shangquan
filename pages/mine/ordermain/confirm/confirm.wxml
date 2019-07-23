@@ -1,0 +1,69 @@
+<form bindsubmit="toformSubmit" report-submit='true'>
+
+  <view class='header flexac'>
+    <image src='{{all.store_avatar}}' class='header-image'></image>
+    <text>{{all.store_name}}</text>
+  </view>
+
+  <view class='content'>
+
+    <view class="content-start flex">
+      <text>为商家打分</text>
+      <i-cell title="基本用法">
+        <i-rate bindchange="onChange1" value="{{starIndex}}">
+          <input style='display:none;' name="onChange1" value="{{starIndex}}"></input>
+        </i-rate>
+      </i-cell>
+    </view>
+
+
+    <view class="page-section">
+      <view class="textarea-wrp">
+        <textarea auto-focus="true" placeholder='写下你对商家的建议' name="sunmmy" bindinput='advice' />
+      </view>
+    </view>
+
+
+  </view>
+
+
+
+
+  <view class='up-pic'>
+    <view class='flex pic-box'>
+      <block wx:key="imgbox" wx:for="{{imgbox}}">
+        <view class='ap-box'>
+          <view class='add-pic'>
+            <image class='add-pic' src='{{item}}'></image>
+            <view class='img-de' data-deindex='{{index}}' bindtap='imgDelete1'>
+              <image class='img' src='/img/img/icon_close2@2x.png'></image>
+            </view>
+          </view>
+        </view>
+      </block>
+      <view class='add-pic' bindtap='addPic1' wx:if="{{imgbox.length<9}}">
+        <image class='img' src='/img/img/add_pic@2x.png'></image>
+      </view>
+    </view>
+  </view>
+
+
+
+  <view class='stars'>
+    <block wx:for='{{all.product}}' wx:key='this'>
+      <view class='starts-l'>
+        <text>{{item.product_name}}</text>
+        <view class='stars-start'>
+          <i-cell title="基本用法">
+            <i-rate bind:change="onChange2" value="{{item.star}}" data-id="{{item.id}}">
+              <input style='display:none;' name="onChange2" value="{{item.star}}"></input>
+            </i-rate>
+          </i-cell>
+        </view>
+      </view>
+
+    </block>
+  </view>
+
+  <button formType="submit">提交评价</button>
+</form>

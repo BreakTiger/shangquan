@@ -1,0 +1,19 @@
+<view class='banner flexjac' bindtap='payAdver'>
+  <view class='f30 c3'>添加推广广告</view>
+  <image src='/img/img/add_@2x.png' class='centerImg'></image>
+</view>
+
+<!-- 轮播图 -->
+<view class='banner-contaner flexjc'>
+  <block wx:for="{{[0,1,2,3,4,5,6]}}" wx:key="this">
+    <view class='bannerBox flexac' bindtap='goBannerBox'>
+      <view class='box-img'>
+        <image src='/img/img/_20180713172418@2x.png' class='img' style='border-radius:10rpx;'></image>
+      </view>
+      <view class='box-content flexc'>
+        <view class='boxcontentText'>购买时间：2018-08-28</view>
+        <text class='boxcontentText'>推广到期时间：2018-08-28</text>
+      </view>
+    </view>
+  </block>
+</view>

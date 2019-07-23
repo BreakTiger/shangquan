@@ -1,0 +1,249 @@
+/*tab框切换*/
+
+.nav_tab {
+  width: 100%;
+  height: 100rpx;
+  display: flex;
+  flex-direction: row;
+  margin: 20rpx auto;
+  background: #fff;
+  border-radius: 20rpx;
+}
+
+.show {
+  line-height: 100rpx;
+  text-align: center;
+  flex: 1;
+  color: #333;
+  font-size: 28rpx;
+  opacity: 0.5;
+}
+
+.hidden {
+  line-height: 100rpx;
+  text-align: center;
+  color: #fa6d22;
+  flex: 1;
+  font-size: 28rpx;
+}
+
+.nav_underline {
+  background: #fa6d22;
+  width: 54rpx;
+  height: 6rpx;
+  margin-top: -10rpx;
+  margin-left: 50rpx;
+  border-radius: 8rpx;
+}
+
+page {
+  background-color: #ebebeb;
+}
+
+.bgr {
+  background-color: #fff;
+  border-radius: 10rpx;
+}
+
+.main-body {
+  width: 100%;
+  height: 100%;
+}
+
+.mt {
+  margin-top: 20rpx;
+}
+
+.mian {
+  width: 100%;
+  /* height: 100%; */
+}
+
+.size26 {
+  font-size: 26rpx;
+  line-height: 86rpx;
+  color: #333;
+}
+
+/* 上 */
+
+.mian-header {
+  justify-content: space-between;
+  margin: 0 25rpx;
+  border-bottom: 1px solid #efefef;
+}
+
+/* 中 */
+
+.content {
+  background-color: #fff;
+  width: 100%;
+  justify-content: space-around;
+}
+
+.contentImg {
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 8rpx;
+  margin: 15rpx 0;
+}
+
+.content_box {
+  width: 534rpx;
+}
+
+.content-top {
+  width: 510rpx;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  margin-bottom: 20rpx;
+}
+
+.top {
+  font-size: 30rpx;
+  font-family: PingFangSC-Medium;
+  color: rgba(48, 48, 48, 1);
+}
+
+.top_area {
+  font-family: PingFangSC-Regular;
+  color: #666;
+  margin-right: 15rpx;
+}
+
+.content-center {
+  height: 68rpx;
+  margin-top: -10rpx;
+}
+
+.content-price-left {
+  font-size: 28rpx;
+  color: #ff4427;
+  line-height: 50rpx;
+}
+
+.content-price-right {
+  font-size: 24rpx;
+  color: #999;
+  line-height: 50rpx;
+  text-decoration: line-through;
+}
+
+.color {
+  color: #666;
+}
+
+.underline {
+  text-decoration: none;
+}
+
+.content_right {
+  justify-content: space-between;
+}
+
+.main-bottom {
+  /* justify-content: space-between; */
+  justify-content: flex-end;
+  padding: 27rpx 0rpx;
+  border-top: 1px solid #efefef;
+  margin: 0 18rpx;
+}
+
+/* 支付 */
+
+.pay {
+  width: 125rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  font-size: 30rpx;
+  margin-right: 0rpx;
+}
+
+/* 取消订单 */
+
+.cancel {
+  width: 190rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  font-size: 30rpx;
+  margin-right: 0rpx;
+  margin-left: 25rpx;
+}
+
+/* 确认收货 */
+
+.affirm {
+  width: 190rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  font-size: 30rpx;
+  margin-right: 0rpx;
+}
+
+/* 立即使用 */
+
+.user {
+  width: 190rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  font-size: 30rpx;
+  margin-right: 0rpx;
+}
+
+.used {
+  width: 190rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  font-size: 30rpx;
+  margin-right: 0rpx;
+  margin-left: 25rpx;
+}
+
+/* 确定退款 */
+
+.refund {
+  width: 190rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  font-size: 30rpx;
+  margin-right: 0rpx;
+  margin-left: 25rpx;
+}
+
+.del {
+  width: 190rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  font-size: 30rpx;
+  margin-right: 0rpx;
+}
+
+.img-car {
+  margin: 200rpx auto;
+  height: 400rpx;
+  width: 400rpx;
+}
+
+.listall {
+  width: 100%;
+  position: fixed;
+  top: 160rpx;
+}
+
+button {
+  background: #fff;
+  border: 1rpx solid #999;
+  margin: 0;
+  font-size: 26rpx;
+}
+
+.ison {
+  /* position: absolute; *//* right: 10rpx; */
+  z-index: 999;
+  height: 50rpx;
+  line-height: 50rpx;
+  background: #fff;
+  font-size: 30rpx;
+  margin-left: 10rpx;
+}

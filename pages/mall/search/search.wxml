@@ -1,0 +1,58 @@
+<view class='line'></view>
+<view class='container flexjac'>
+  <view class='box flexac'>
+    <icon type='search' size='16'></icon>
+    <input placeholder='请输入搜索内容' name="key" value="" bindblur="wxSearchConfirm"></input>
+  </view>
+  <view class='box-end'>搜索</view>
+</view>
+<!-- 热门搜索 -->
+<!-- <view class='search'>
+  <view class='search-box'>
+    <view class='box-left'>热门搜索</view>
+    <view class='lot'>
+      <block wx:for="{{[0,1,2,4,5,6,7,8,9,10,11,12,13,14,15]}}" wx:key="this">
+        <view bindtap='lotSelect' data-index="{{index}}" class="{{idx == index ?'lot-lot':'_lot-lot'}}">配件</view>
+      </block>
+    </view>
+    <view class='line_'></view>
+  </view>
+</view> -->
+
+<!-- 历史搜索 -->
+<!-- <view class='search-box'>
+  <view class='_box-left flexac'>历史搜索
+    <image src='/img/img/delete@2x.png' class='detale'></image>
+  </view>
+  <view class='lot'>
+    <block wx:for="{{[0,1,2,4,5,6,7,8,9,10]}}" wx:key="this">
+      <view class="{{indexid == index? 'lot-lot' : '_lot-lot'}}" bindtap='select' data-index="{{index}}">配件</view>
+    </block>
+  </view>
+  <view class='line_'></view>
+</view> -->
+
+<!-- 搜索 -->
+
+<!-- 内容 -->
+<view class='container1 flexw' wx:if="{{ search != ''}}">
+  <view class='container-box' wx:for="{{search}}" wx:key="search" bindtap='shopDetail' data-id="{{item.id}}">
+    <view class='containerImg'>
+      <image src='{{item.product_image}}' class='img' style='border-radius:10rpx;'></image>
+      <view class='vip' wx:if="{{item.is_member != 0}}">会员专享</view>
+      <view class='discount_' wx:if="{{item.freight == 1}}">包邮</view>
+    </view>
+    <view class='containertitle'>{{item.product_name}}</view>
+    <view class='containerPrice flexac'>
+      <text class='price'>￥{{item.price}}</text>
+      <!-- <text class='_price'>销量{{item.market_price}}</text> -->
+      <!-- <view class='discount' wx:if="{{item.is_points != 0}}">减{{item.is_points}}%</view> -->
+    </view>
+    <view style='width:100%;' class='flexac'>
+      <view class='discount' wx:if="{{item.is_points != 0}}">减{{item.is_points}}%</view>
+    </view>
+  </view>
+</view>
+<view class='none' wx:else>
+  抱歉，暂未搜索到相关商品！
+</view>

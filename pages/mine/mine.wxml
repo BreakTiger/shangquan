@@ -1,0 +1,78 @@
+<view class='background'></view>
+<!-- 我的 -->
+<view class='myUser flexac' bindtap='userInfo'>
+  <view class='userImg'>
+    <image src='{{userInfo.avatar}}' class='img br'></image>
+  </view>
+  <view class='userInfo flexw'>
+    <view class='flexac username'>
+      <view class='f36 name'>{{userInfo.nickname}}</view>
+      <!-- <image wx:if="{{false}}" src='/img/img/vipone.png' class='userInfoImg'></image> -->
+      <view class='lv'>{{lv}}</view>
+      <view class='grade'>会员专享{{grade}}折</view>
+    </view>
+    <view class='flexac userInfome'>查看并修改个人资料
+      <image src='/img/img/rightto.png' class='right'></image>
+    </view>
+  </view>
+</view>
+
+<!--列表  -->
+<view wx:if='{{appstatus==1}}'>
+  <view class='box'>
+    <view class='list'>
+      <view wx:for="{{list}}" wx:key="list">
+        <view wx:if="{{item.none != 1}}">
+          <view class='list-box' data-path="{{item.path}}" bindtap='toNext' data-index="{{index}}">
+            <image src='{{item.url}}' class='list-img'></image>
+            <text class='list-text'>{{item.title}}</text>
+            <view class='circle' wx:if="{{item.isInFo == 1}}">{{points}}</view>
+            <image src='/img/img/rightto.png' class='rightnarrow'></image>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+
+<view wx:if='{{appstatus==0}}'>
+  <view class='box'>
+    <view class='list'>
+      <view wx:for="{{list_send}}" wx:key="list">
+        <view wx:if="{{item.none != 1}}">
+          <view class='list-box' data-path="{{item.path}}" bindtap='toNext'>
+            <image src='{{item.url}}' class='list-img'></image>
+            <text class='list-text'>{{item.title}}</text>
+            <view class='circle' wx:if="{{item.isInFo == 1}}">{{points}}</view>
+            <image src='/img/img/rightto.png' class='rightnarrow'></image>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+
+<view class='box_'>
+  <view class='list_'>
+    <view class='list-box' bindtap='toInvitation'>
+      <image src='/img/img/gojoin.png' class='list-img'></image>
+      <text class='list-text'>我的推广</text>
+      <image src='/img/img/rightto.png' class='rightnarrow'></image>
+    </view>
+  </view>
+</view>
+
+<view wx:if="{{toInvitation}}">
+  <view class='select-alert' style='height:{{winHeight * 2}}rpx'>
+    <view class='cal-alert' style='width:100;height:150rpx;' bindtap='cal_alert'></view>
+    <view class='mask'>
+      <image src='{{img}}' class='img b10' bindtap='previewImage1' data-img="{{img}}" style='z-index:999;'></image>
+    </view>
+    <view class='keep '>
+      <button bindtap='saveImageToPhotosAlbum' class='bb'>保存到相册</button>
+    </view>
+    <view class='cal-alert' style='width:100;height:260rpx;' bindtap='cal_alert'></view>
+  </view>
+</view>

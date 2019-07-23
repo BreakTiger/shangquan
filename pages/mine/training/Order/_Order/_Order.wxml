@@ -1,0 +1,259 @@
+<view class='flexc auto'>
+  <!-- 头部 -->
+  <view class='header mt b-r'>
+    <view class='flex mr'>
+      <view class='header-circle'></view>
+      <!-- 
+          <view class='size26' style='color:#fa6d22' wx:if="{{item.order_status == 20}}">待发货</view>
+          <view class='size26' style='color:#fa6d22' wx:if="{{item.order_status == 30}}">已发货</view>
+          <view class='size26' style='color:#fa6d22' wx:if="{{item.order_status == 40}}">已完成</view>
+          <view class='size26' style='color:#fa6d22' wx:if="{{item.order_status == 50}}">退款中</view>
+          <view class='size26' style='color:#fa6d22' wx:if="{{item.order_status == 60}}">退款完成</view>
+          <view class='size26' style='color:#fa6d22' wx:if="{{item.order_status == 70}}">退款失败</view> -->
+
+      <view class='header-status' wx:if='{{allinfo.order_status == 20}}'>订单状态：待发货</view>
+      <view class='header-status' wx:if='{{allinfo.order_status == 30}}'>订单状态：已发货</view>
+      <view class='header-status' wx:if='{{allinfo.order_status == 40}}'>订单状态：已完成</view>
+      <view class='header-status' wx:if='{{allinfo.order_status == 50}}'>订单状态：退款中</view>
+      <view class='header-status' wx:if='{{allinfo.order_status == 60}}'>订单状态：退款完成</view>
+      <view class='header-status' wx:if='{{allinfo.order_status == 70}}'>订单状态：退款失败</view>
+    </view>
+  </view>
+
+  <!-- 头部end -->
+
+  <!-- 用户信息 -->
+  <view class='header mt b-r'>
+    <view class='flexc mr'>
+      <view class='size28'>
+        姓名：{{allinfo.name}}
+      </view>
+      <view>
+        电话：{{allinfo.phone}}
+      </view>
+      <view class='size28' style='margin-bottom:39rpx;' wx:if="{{!code}}">
+        地址：{{allinfo.address}}
+      </view>
+      <view wx:if="{{code}}" class='size28' style='margin-bottom:39rpx;'>
+        身份证号：{{allinfo.identity_number}}
+      </view>
+      <view>
+        <image src='/img/img/address.png' class="header-img"></image>
+      </view>
+    </view>
+  </view>
+  <!-- 用户信息end -->
+
+  <!-- 店铺商品信息 -->
+  <view class='shop mt b-r' wx:if="{{sc_id != 2}}">
+    <view class='shop1 flexc mr'>
+      <!-- 第一层 -->
+      <view class='flex' style='padding:25rpx 0;'>
+        <!-- 店铺名称 -->
+        <image src='/img/img/dianpu1@2x.png' class='shop-img'></image>
+        <view class='shop-name'>{{allinfo.store_name}}</view>
+      </view>
+      <!-- 第二层 -->
+      <view class='flex' wx:for="{{allinfo.product}}" wx:key="this">
+        <view>
+          <image class='shop-image b10' src='{{item.product_image}}'></image>
+        </view>
+        <!-- 第三层 -->
+        <view class='flexc content_right'>
+          <view class='shopping-name'>{{item.product_name}}</view>
+          <view>{{item.product_spec}}</view>
+          <view class='flex content_right'>
+            <view class='content-price flex'>
+              <view class='content-price-left'>
+                {{item.goods_price}}
+              </view>
+              <!-- <view class='content-price-right'>
+                ￥135
+              </view> -->
+            </view>
+            <text class='content-price-right underline'>X {{item.goods_num}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 店铺商品信息end-->
+
+  <view class='shop mt b-r' wx:if="{{sc_id == 2}}">
+    <view class='shop1 flexc mr'>
+      <!-- 第一层 -->
+      <view class='flex' style='padding:25rpx 0;'>
+        <!-- 店铺名称 -->
+        <image src='/img/img/dianpu1@2x.png' class='shop-img'></image>
+        <view class='shop-name'>{{allinfo.store_name}}</view>
+      </view>
+      <!-- 第二层 -->
+      <view class='flex' wx:for="{{allinfo.product}}" wx:key="this">
+        <view>
+          <image class='shop-image b10' src='{{item.product_image}}'></image>
+        </view>
+        <!-- 第三层 -->
+        <view class='flexc content_right'>
+          <view class='shopping-name'>{{item.product_name}}</view>
+          <view>{{item.product_spec}}</view>
+          <view class='flex content_right'>
+            <view class='content-price flex'>
+              <view class='content-price-left'>
+                {{item.pay_price}}
+              </view>
+              <!-- <view class='content-price-right'>
+                ￥135
+              </view> -->
+            </view>
+            <text class='content-price-right underline'>X {{item.goods_num}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+
+
+
+
+
+  <!-- 订单详细 -->
+  <view class='flexc mt b-r'>
+    <view class='vip-discount pd' wx:if="{{allinfo.record[0].is_member_zhekou > 0}}">
+      <view class='line-75'>会员折扣</view>
+      <view class='line-75 color'>{{zhekou}}</view>
+    </view>
+    <view class='vip-discount pd' wx:if="{{points > 0}}">
+      <view class='line-75'>积分抵扣</view>
+      <view class='line-75 color'>{{points}}</view>
+    </view>
+    <view class='beizhu'>
+      <view class='beizhu-box'>备注:</view>
+      <view style='width:550rpx;'>{{allinfo.beizhu!=null?allinfo.beizhu:'无'}}</view>
+    </view>
+    <!-- <view class='vip-discount pd' wx:if="{{!code}}">
+      <view class='line-75'>运费</view>
+      <view class='line-75 color' wx:if="{{shipping_fee == 0}}">包邮</view>
+      <view class='line-75 color' wx:if="{{shipping_fee != 0}}">包邮</view>
+    </view> -->
+    <view class='vip-discount pd' style='justify-content: flex-end;height:88rpx;align-items: center;'>
+      <view class='vip-num'>共{{num}}件
+        <text style='padding-left:12rpx;'>合计：￥{{goodAll}}</text>
+      </view>
+      <view class='vip-num' style='margin-right:10rpx;margin-left:10rpx;'>已优惠:
+        <text>￥{{concession}}</text>
+      </view>
+      <view class='vip-num'>实际支付：
+        <text class='num-text'>￥{{pay_all}}</text>
+      </view>
+    </view>
+    <view class='vip-discount pd' style='justify-content:center;'>
+      <view class='line-75' bindtap='phone'>联系买家</view>
+    </view>
+  </view>
+  <!-- 折扣end -->
+  <view>
+    <view class='flexc mt b-r'>
+      <view class='vip-discount pd'>
+        <view class='line-75'>订单编号</view>
+        <view class='line-75 color'>{{allinfo.order_sn}}</view>
+      </view>
+      <view class='vip-discount pd'>
+        <view class='line-75'>订单时间</view>
+        <view class='line-75 color'>{{allinfo.buy_time}}</view>
+      </view>
+      <!-- 支付时间 -->
+      <!-- <view class='vip-discount pd'>
+        <view class='line-75'>支付时间</view>
+        <view class='line-75 color'>2018-8-20 17：12</view>
+      </view> -->
+      <!-- // 支付时间 -->
+      <!-- 快递编号 -->
+      <!-- <view class='vip-discount pd'>
+        <view class='line-75'>快递编号</view>
+        <view class='line-75 color'>123456（顺丰快递）</view>
+      </view> -->
+      <!-- //快递编号 -->
+      <!-- <view class='vip-discount pd'>
+        <view class='line-75'>备注</view>
+        <input name="" placeholder='你的要求' value='' class='input-p'></input>
+      </view> -->
+      <!-- 联系电话 -->
+      <!-- <view class='vip-discount pd'>
+        <view class='line-75'>联系电话</view>
+        <view class='line-75 color'>15927579564</view>
+      </view> -->
+      <!-- //快递编号 -->
+    </view>
+  </view>
+
+  <!-- <view> -->
+  <!-- 申请时间 -->
+  <!-- <view class='flexc mt b-r'>
+      <view class='vip-discount pd'>
+        <view class='line-75'>申请时间</view>
+        <view class='line-75 color'>2018-07-23 14:58</view>
+      </view>
+      退款金额
+      <view class='vip-discount pd'>
+        <view class='line-75'>退款金额</view>
+        <view class='line-75 color'>2018-8-20 17：12</view>
+      </view>
+      退款缘由
+      <view class='vip-discount pd' style='align-items:center;'>
+        <view class='line-75'>备注</view>
+        <input name="" placeholder='你的要求' value='' class='input-p'></input>
+      </view>
+      <view class='vip-areatext'>
+        <textarea name='' value='' placeholder='请输入原因'></textarea>
+        选择图片
+        <view class='up-pic'>
+          <view class='flex pic-box'>
+            <block wx:key="imgbox" wx:for="{{imgbox}}">
+              <view class='ap-box'>
+                <view class='add-pic'>
+                  <image class='add-pic' src='{{item}}'></image>
+                  <view class='img-de' data-deindex='{{index}}' bindtap='imgDelete1'>
+                    <image class='img' src='/img/img/icon_close2@2x.png'></image>
+                  </view>
+                </view>
+              </view>
+            </block>
+            <view class='add-pic' bindtap='addPic1' wx:if="{{imgbox.length<1}}">
+              <image class='img' src='/img/img/add_pic@2x.png'></image>
+            </view>
+          </view>
+        </view>
+      </view>
+      // 退款缘由
+    </view>
+  </view> -->
+  <!-- 折扣end -->
+
+  <!-- 底部按钮 -->
+  <view class='flex footer  mt b-r' wx:if='{{allinfo.order_status == 20}}'>
+    <view>
+      <button bindtap="canceled" data-id="{{allinfo.id}}">
+        确认发货
+      </button>
+    </view>
+  </view>
+
+  <view wx:if='{{allinfo.order_status == 50}}'>
+    <view class='flex footer  mt b-r'>
+      <view class='refund' bindtap='refund'>拒绝退款</view>
+      <view>
+        <button bindtap="confirm">
+          同意退款
+        </button>
+      </view>
+    </view>
+  </view>
+  <!-- 底部按钮end -->
+</view>
+
+<view wx:if="{{alert}}" class='alert'>
+  <view class='mask'>
+
+  </view>
+</view>

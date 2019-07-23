@@ -1,0 +1,57 @@
+<view class='line'></view>
+
+<!-- tab框 -->
+<view class="nav_title">
+  <view class="nav_tab">
+    <view wx:for="{{list}}" class="{{selected==index?'hidden':'show'}}" data-index='{{index}}' bindtap="selected" wx:key="list">{{item}}
+      <view class="{{selected==index?'nav_underline':''}}"></view>
+    </view>
+  </view>
+  <!-- tab框显示内容 -->
+  <!-- 我的店铺 -->
+  <view wx:if="{{selected == 0}}">
+    <!-- 遮罩 -->
+    <view class='select-alert' style='height:{{winHeight * 2}}rpx'>
+      <view class='mask'>
+        <image src='{{img}}' class='img b10' bindtap='previewImage1' data-img="{{img}}" style='z-index:999;'></image>
+      </view>
+      <view class='keep '>
+        <button bindtap='saveImageToPhotosAlbum1' class='bb'>保存到相册</button>
+      </view>
+    </view>
+    <!-- <view class=' backimg flexjac ' style='height:{{winHeight * 2}}rpx '>
+      <image src='{{img}} ' class='img ' bindtap='previewImage1 ' data-img="{{img}}"></image>
+    </view>
+    <view class='keep '>
+      <button bindtap='saveImageToPhotosAlbum1 ' class='bb '>保存到相册</button>
+    </view> -->
+  </view>
+</view>
+
+
+
+<!-- 店铺邀请 -->
+<view wx:if="{{selected == 1}}">
+  <!-- 店铺邀请 -->
+  <view class="{{selected1?'show ':'hidden '}}">
+    <!-- 遮罩 -->
+    <view class='select-alert' style='height:{{winHeight * 2}}rpx'>
+      <view class='mask'>
+        <image src='{{shareTempFilePath}}' class='img b10' bindtap='previewImage1' data-img="{{img}}" style='z-index:999;'></image>
+      </view>
+      <view class='keep '>
+        <button bindtap='saveImageToPhotosAlbum' class='bb'>保存到相册</button>
+      </view>
+    </view>
+
+    <!-- <view class='backimg flexjac ' style='height:{{winHeight * 2}}rpx '>
+      <image src='{{shareTempFilePath}} ' class='img ' bindtap='previewImage '>
+      </image>
+    </view>
+    <view class='keep '>
+      <button bindtap='saveImageToPhotosAlbum ' class='bb '>保存到相册</button>
+    </view> -->
+  </view>
+</view>
+
+<view class='while '></view>

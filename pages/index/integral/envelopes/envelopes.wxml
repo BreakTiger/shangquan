@@ -1,0 +1,72 @@
+<!-- <view class='position'>
+  <image src='/img/img/toppic@2x.png' class='top'>
+  </image>
+  <view class='header-top flexjac'>
+    <image src='{{avatar}}' class='img_'></image>
+  </view>
+</view> -->
+<image src='/img/img/toppic@2x.png' class='header-img'>
+  <view class='header-top flexjac'>
+    <image src='{{avatar}}' class='img_'></image>
+  </view>
+</image>
+
+<!-- 记录 -->
+<view class='center flexjac'>恭喜发财， 大吉大利！</view>
+<view class='money flexjac'>
+  <text style='margin-right:10rpx;'>共抢到</text> {{points_count || 0 }}个
+  <text wx:if="{{code == 0}}" style='margin-left:10rpx;'>奖励金</text>
+  <text wx:if="{{code == 1}}" style='margin-left:10rpx;'>商基金</text>
+</view>
+<view class='text_ flexjac'>邀请记录</view>
+<view class='box-container' wx:if="{{list != ''}}">
+  <block wx:for="{{list}}" wx:key="list">
+    <view class='box-detail flexac' bindtap='envelopes'>
+      <view class='detailImg'>
+        <image src='{{item.avatar}}' class='img br'></image>
+      </view>
+      <view class='detailBox flexw'>
+        <view class='detailcenter'>{{item.nickname}}</view>
+      </view>
+      <image src='/img/img/redbig.png' style="width:50rpx;height:50rpx;margin-left:170rpx;" bindtap='join' wx:if="{{item.hongbao == 0 || item.hongbao == null}}" data-id="{{item.id}}"></image>
+      <view class='flexjac detailright' wx:else>
+        {{item.hongbao}}
+      </view>
+    </view>
+  </block>
+</view>
+<view class='none' wx:else>
+  暂无记录..
+</view>
+
+<!-- 客服 -->
+<!-- <view>
+  <image src='/img/img/icon_share2@2x.png' class='card-img_'>
+    <button open-type="share" class='card-img' style="opacity:0"></button>
+  </image>
+  <button open-type="share" class='buy_'></button>
+</view> -->
+
+<!-- <view class='share-text'>
+  邀请好友一起来
+</view> -->
+<image src="/img/img/sharetext.png" class='share-text'></image>
+  <button open-type="share" class='buy_'></button>
+
+<view>
+  <image src='/img/img/red.png' class='card-img' bindtap='toInvitation'>
+  </image>
+</view>
+
+<view wx:if="{{toInvitation}}">
+  <view class='select-alert' style='height:{{winHeight * 2}}rpx'>
+    <view class='cal-alert' style='width:100;height:150rpx;' bindtap='cal_alert'></view>
+    <view class='mask'>
+      <image src='{{img}}' class='img b10' bindtap='previewImage1' data-img="{{img}}" style='z-index:999;'></image>
+    </view>
+    <view class='keep '>
+      <button bindtap='saveImageToPhotosAlbum' class='bb'>保存到相册</button>
+    </view>
+    <view class='cal-alert' style='width:100;height:260rpx;' bindtap='cal_alert'></view>
+  </view>
+</view>

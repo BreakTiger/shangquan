@@ -1,0 +1,13 @@
+<!--pages/mine/myshop/fullyear/fullyear.wxml-->
+<view class='title'>
+  <!-- <view class='left' bindtap='left'> -->
+  <image src='/img/img/right_.png' class='left_' bindtap='left'></image>
+  <!-- 《 </view> -->
+  {{year}}年
+  <image class='right_' bindtap='right' src='/img/img/left_.png'></image>
+  <!-- <view class='right' bindtap='right'> -->
+  <!-- 》  -->
+</view>
+<!-- </view> -->
+<view class='title mone'>{{sum_money}}</view>
+<canvas canvas-id="stock"></canvas>
